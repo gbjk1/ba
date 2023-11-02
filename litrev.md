@@ -38,6 +38,8 @@ and
 https://github.com/kubernetes/ingress-nginx/issues/10572 
 state that Multi-tenant environments where non-admin users have permissions to create Ingress objects are most affected by this issue. disc.: This can be attributed to poor access control implementations. It is not necessary for every contributor to a Kubernetes environment to have admin access leve. 
 
+explore the Security Threat Landscape:
+
 
 
 
