@@ -272,18 +272,45 @@ Date: \hspace{6cm} Signature:\\
 \newpage
 \newpage
 \chapter{Literature Review}
-
+Kubernetes is highly customizable and offers a range of configuration options which determine the security posture of
+individual applications and the cluster as a whole. 
 The purpose of this literature review is to explore the security threat landscape of Kubernetes environments. 
 Specifically, recurring concepts and common denominators across vulnerabilities shall be identified and discussed. For this, 
 the database of Common Vulnerabilities and Exposures (CVE), the IEEE database, the ACM digital library and the official
 Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. The acquired papers, 
-articles and CVE descriptions are skimmed through. the most relevant results are narrowed down and selected for closer inspection. 
+articles and CVE descriptions are skimmed through. The most relevant results are narrowed down and selected for closer inspection. 
 It shall be noted that Kubernetes vulnerabilities do not only entail standard Kubernetes components, but also add-ons deployed on
 top of 'plain' Kubernetes. Such can be the Nginx Ingress-Controller, a Service-Mesh, CI/CD tools closely embedded into Kubernetes
 and more. Generally, this can be anything that extends the Kubernetes API through Custom Resource Definitions (CRDs).    
 \\
 \\
-According to RedHat's report on the state of Kubernetes security in 2022, .... yes hello
+It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
+the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
+in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
+were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
+in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
+2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
+increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
+advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
+But if security is neglected, you can lose out on containerization's biggest benefit: agility.
+It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
+environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
+great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
+\\
+\\
+Major vulnerabilities include those which fall under the category of a so called container-escape. Since a container is intended to be a 
+runtime environment isolated from the underlying host, the concept of a container-escape relates to performing an exploit that breaks the confines 
+of exactly this isolation, resulting in full or limited access to the underlying host machine and/or network. Querying the CVE database using 
+the search term "container escape" yields 25 results. The most notable ones, which have a severity score above 8, according to the NIST, are 
+such and such because they have been shown to provide full root access once successfully exploited. 
+\\
+\\
+We see that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying
+kernel of a k8s node. However, all these things can be prevented or alleviated by applying the concept of least privilege to containers, 
+access to Kubernetes and the Kubernetes network. For example, if a malicious actor cannot freely create files in any desired directory of a 
+compromised container, it significantly reduces his ability to exploit a given vulnerability. Not being able to create that file in the first 
+place, due to missing write permissions, would be a major obstacle for performing a container escape. It is not always possible to completely 
+avoid a vulnerability. This is due to software bugs and unidentified weaknesses in the code that have passed through the testing and review process. 
 \section{State of the Art}
 \newpage
 \section{CVE Numbers}
@@ -301,6 +328,9 @@ According to RedHat's report on the state of Kubernetes security in 2022, .... y
 \subsection{Rootless Policy Enforcement}
 \newpage
 \section{Securing the Network}
+
+Default pod-to-pod network settings, as an example, allow open communication to quickly get a cluster up and running, at the expense of 
+security hardening. Network segmentation.....
 \subsection{Network Policies}
 \newpage
 \subsection{Service Mesh}

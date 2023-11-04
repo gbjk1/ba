@@ -40,6 +40,8 @@ state that Multi-tenant environments where non-admin users have permissions to c
 
 explore the Security Threat Landscape:
 
+LOG4SHELL as example for rootless containers
+
 
 
 
