@@ -298,10 +298,22 @@ environement that leverages this orchestration technology requires attention for
 great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
 \\
 \\
+Container Escape
 Major vulnerabilities include those which fall under the category of a so called container-escape. Since a container is intended to be a 
 runtime environment isolated from the underlying host, the concept of a container-escape relates to performing an exploit that breaks the confines 
-of exactly this isolation, resulting in full or limited access to the underlying host machine and/or network. Querying the CVE database using 
-the search term "container escape" yields 25 results. The most notable ones, which have a severity score above 8, according to the NIST, are 
+of exactly this isolation, resulting in full or limited access to the underlying host machine and/or network. A study conducted by Reeves 
+et al. at the end of 2021 investigates the susceptibility of different container runtime systems to escape exploits by studying a batch of CVE 
+reports.
+
+CVE-2019-14891 is an example of host network access 
+
+
+CVE-2022-0811 (not discussed by above report) CRIO runtime escape 
+
+the foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container. 
+
+The most notable ones, which have a severity score above 8, according to the Common Vulnerability 
+Scoring System (CVSS), are CVE-2022-0811 and 
 such and such because they have been shown to provide full root access once successfully exploited. 
 \\
 \\

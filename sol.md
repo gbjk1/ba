@@ -1,0 +1,1 @@
+seccomp, capabilities, Show simple non root Dockerfile, user creation, chown1000:1000 
