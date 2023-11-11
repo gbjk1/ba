@@ -42,6 +42,15 @@ explore the Security Threat Landscape:
 
 LOG4SHELL as example for rootless containers
 
+search for RBAC kubernetes
+
+describe most recent nginx vulns
+
+CVE-2019-5736 CAN BE MITIGATED WITH NON ROOT USER!
+
+
+Kubernetes uses a container runtime like CRI-O or Docker to safely share each node’s kernel and resources with the various containerized applications running on it. The Linux kernel accepts runtime parameters that control its behavior. Some parameters are namespaced and can therefore be set in a single container without impacting the system at large. Kubernetes and the container runtimes it drives allow pods to update these “safe” kernel settings while blocking access to others. from https://www.crowdstrike.com/blog/cr8escape-new-vulnerability-discovered-in-cri-o-container-engine-cve-2022-0811/
+
 
 
 
