@@ -51,6 +51,15 @@ CVE-2019-5736 CAN BE MITIGATED WITH NON ROOT USER!
 
 Kubernetes uses a container runtime like CRI-O or Docker to safely share each node’s kernel and resources with the various containerized applications running on it. The Linux kernel accepts runtime parameters that control its behavior. Some parameters are namespaced and can therefore be set in a single container without impacting the system at large. Kubernetes and the container runtimes it drives allow pods to update these “safe” kernel settings while blocking access to others. from https://www.crowdstrike.com/blog/cr8escape-new-vulnerability-discovered-in-cri-o-container-engine-cve-2022-0811/
 
+CVE-2022-0811, both rootless container and RBAC
+
+
+Many things can be done, as low level on the linux vm etc. id like to shift attention to the simple docker and kubernetes part of things. 
+
+Specifically in the
+example of CVE-2022-0811, the "kernel.core_pattern" kernel parameter is specified, which controls the kernel's reaction to a core dump. If a core dump is done 
+in a CRI-O container, the parameter states the execution of a malicious binary in the root context of the container, on the host. 
+the foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container. 
 
 
 
