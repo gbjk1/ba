@@ -352,14 +352,18 @@ to the image. This allows them to copy arbitrary files from the host to a contai
 mounted inside a container. An attacker can trick this function into copying arbitrary files from the host filesystem using path traversal.
 This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5.
 \\
+CVE-2022-1708 is a vulnerability found in Cri-o, a lightweight container runtime for Kubernetes. This vulnerability is related to the allocation of resources 
+without any limits or throttling, which can lead to uncontrolled resource consumption. The official CVE description states: "The ExecSync request runs commands 
+in a container and logs the output of the command. This output is then read by CRI-O after command execution, and it is read in a manner where the entire file 
+corresponding to the output of the command is read in." It is thus possible to exhaust memory or disk space of the node when CRI-O reads an extensive output 
+of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability.
+\\
 A successful container-escape arguably poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,
 network traffic can be inspected and resources can be deleted. In contrast, vulnerabilities such as CVE-2022-1708 'only' target the availability of the system. 
 The average CVE scores of
 \\
-The foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container. 
-\\
-the foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container
+The foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container
 The most notable ones, which have a severity score above 8, according to the Common Vulnerability 
 \\
 We see that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying

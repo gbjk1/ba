@@ -53,6 +53,8 @@ Kubernetes uses a container runtime like CRI-O or Docker to safely share each no
 
 CVE-2022-0811, both rootless container and RBAC
 
+At start of literature review collect statistics on CVE scores, then talk more deeply about higher CVE scores.
+
 
 Many things can be done, as low level on the linux vm etc. id like to shift attention to the simple docker and kubernetes part of things. 
 
