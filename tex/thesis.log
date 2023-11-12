@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  12 NOV 2023 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  13 NOV 2023 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -646,6 +646,81 @@ chapter 2.
 
 ] [5] [6] [7] [8] [9] [10]
 chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--327
+
+ []
+
 [11
 
 
@@ -713,9 +788,9 @@ Here is how much of TeX's memory you used:
  37014 multiletter control sequences out of 15000+600000
  553242 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,106p,10628b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10628b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (40 pages, 305818 bytes).
+Output written on thesis.pdf (40 pages, 306248 bytes).
 PDF statistics:
  433 PDF objects out of 1000 (max. 8388607)
  375 compressed objects within 4 object streams
