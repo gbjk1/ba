@@ -277,25 +277,12 @@ individual applications and the cluster as a whole.
 The purpose of this literature review is to explore the security threat landscape of Kubernetes environments. 
 Specifically, recurring concepts and common denominators across vulnerabilities shall be identified and discussed. For this, 
 the database of Common Vulnerabilities and Exposures (CVE), the IEEE database, the ACM digital library and the official
-Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. The acquired papers, 
+Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. In order to minimize manual 
+labor to research the sheer amount of CVE reports, a Python script was developed to automate the research. The acquired papers, 
 articles and CVE descriptions are skimmed through. The most relevant results are narrowed down and selected for closer inspection. 
 It shall be noted that Kubernetes vulnerabilities do not only entail standard Kubernetes components, but also add-ons deployed on
 top of 'plain' Kubernetes. Such can be the Nginx Ingress-Controller, a Service-Mesh, CI/CD tools closely embedded into Kubernetes
 and more. Generally, this can be anything that extends the Kubernetes API through Custom Resource Definitions (CRDs).    
-\\
-\\
-It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
-the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
-in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
-were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
-in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
-2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
-increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
-advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
-But if security is neglected, you can lose out on containerization's biggest benefit: agility.
-It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
-environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
-great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
 \\
 CVE:
 The main goal of the Common Vulnerabilities and Exposures (CVE) Programme is to identify vulnerabilities in a unique way and link particular 
@@ -314,6 +301,30 @@ the score, is another way to visualise a CVSS score. Therefore, enterprises, org
 vulnerability severity scores can benefit greatly from using CVSS as a standard measurement system. CVSS is frequently used to prioritise vulnerability 
 mitigation efforts and to determine the severity of vulnerabilities found on a system. All publicly available CVE records are assessed by the National
 Vulnerability Database (NVD).
+\\
+There are multiple public APIs which allow for querying for various information on CVEs. The goal of the Python script is to quickly
+collect CVEs for a given keyword with a CVSS base score higher than a given integer. To achieve this, the OpenCVE project's API is queried for all CVEs
+containing a given keyword. The returned JSON response is filtered for the CVE number. This number is then used to call the NVD API of the NIST organization,
+whose response can then be filtered for the base severity score according to the CVSS framework. As a result, interesting insights can be gained by
+programmatic means. The following figures shall depict data on CVE's for the keyword 'Kubernetes'.
+
+Pie chart 
+Average value
+Median value
+modus value
+\\
+It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
+the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
+in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
+were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
+in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
+2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
+increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
+advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
+But if security is neglected, you can lose out on containerization's biggest benefit: agility.
+It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
+environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
+great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
 \\
 Container Escape
 \\
