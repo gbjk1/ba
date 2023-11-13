@@ -306,32 +306,54 @@ There are multiple public APIs which allow for querying for various information 
 collect CVEs for a given keyword with a CVSS base score higher than a given integer. To achieve this, the OpenCVE project's API is queried for all CVEs
 containing a given keyword. The returned JSON response is filtered for the CVE number. This number is then used to call the NVD API of the NIST organization,
 whose response can then be filtered for the base severity score according to the CVSS framework. As a result, interesting insights can be gained by
-programmatic means. The following figures shall depict data on CVE's for the keyword 'Kubernetes'.
+programmatic means. The following figure depicts the collected data on CVE's for the keyword 'Kubernetes'.
 \\
 \\
+Total results: 269
 \\
+Base score average: 7.13
 \\
+Base score median: 7.2
 \\
-insert pie chart with cool stats here
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\\
+Base score modus: 6.5
 \\
 \\
 
-Pie chart 
-Average value 7.13
-Median value 7.2
-modus value 6.5
+\begin{figure}[htbp]
+	  \centering
+		    \includegraphics[height=5cm]{../images/cvepie}
+	  \caption{Makeup of base scores of CVEs about Kubernetes}
+	  \label{fig:cvepie}
+\end{figure}
 
-This script enables to quickly retrieve the tendencially more severe vulnerabilities. Some CVEs marked with a CVSS base score higher than 7 shall
+
+The chart below depicts the collected data on CVE's containing either of the keywords 'containerd', 'CRI-O' or 'Docker Container'.
+\\
+\\
+Total results: 75
+\\
+Base score average: 7.9
+\\
+Base score median: 7.8
+\\
+Base score modus: 9.8
+\\
+\\
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=5cm]{../images/cvepie2}
+  \caption{Makeup of base scores of CVEs about Kubernetes}
+  \label{fig:cvepie}
+\end{figure}
+
+Based on collected data, it is noticeable that CVSS base severity scores in the realm of Containervirtualization and Kubernetes tend toward extremes
+on the higher end. For the keyword 'Kubernetes', more than half of CVEs are rated with a base score higher than 6.66, while there are hardly any 
+scores smaller than 3.33. For CVEs that draw on popular container runtimes, an overwhelming majority close to 75 percent of cases holds base scores 
+between 6.66 and 10. Here, once again, scores smaller than 3.33 are low. These two observations additionally emphasize the necessity for a clear 
+security perspective when orchestrating containers in Kubernetes. 
+The script enables to quickly retrieve the tendencially more severe vulnerabilities. Some CVEs marked with a CVSS base scores higher than 7 shall
 be explored in the following chapters.
+\\
 \\
 It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
 the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
@@ -389,10 +411,16 @@ in a container and logs the output of the command. This output is then read by C
 corresponding to the output of the command is read in." It is thus possible to exhaust memory or disk space of the node when CRI-O reads an extensive output 
 of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability.
 \\
+Cilium is an eBPF-based solution for network connectivity between workloads in Kubernetes CLusters. CVE-2022-29179 reports yet another subjection to the risk of 
+container breakouts.  The CVE number is not directly about a technique to gain access outside the container, it rather addresses a vulnerability in Cilium given a 
+successful container escape. It explicitly mentions root containers as a prerequesite. According to this CVE entry, Cilium's service account in versions prior to
+version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as Pods and Nodes. 
+The entry is marked with a base score of 8.2 which is considered high.
+\\
 A successful container-escape arguably poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,
-network traffic can be inspected and resources can be deleted. In contrast, vulnerabilities such as CVE-2022-1708 'only' target the availability of the system. 
-The average CVE scores of
+network traffic can be inspected and resources can be deleted. In contrast, other vulnerabilities 'only' allow for more restricted exploitability. For example, 
+CVE-2022-1708, CVE------- and CVE---------- target the availability of the system, but not the confidentiality or integrity of data. The average CVE scores of
 \\
 The foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container
 The most notable ones, which have a severity score above 8, according to the Common Vulnerability 

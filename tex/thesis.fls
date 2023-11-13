@@ -807,6 +807,14 @@ INPUT thesis.toc
 OUTPUT thesis.toc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT ../images/cvepie.png
+INPUT ../images/cvepie.png
+INPUT ../images/cvepie.png
+INPUT ../images/cvepie.png
+INPUT ../images/cvepie2.png
+INPUT ../images/cvepie2.png
+INPUT ../images/cvepie2.png
+INPUT ../images/cvepie2.png
 INPUT ./thesis.bbl
 INPUT thesis.bbl
 INPUT ./thesis.bbl
