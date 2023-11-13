@@ -349,8 +349,8 @@ Base score modus: 9.8
 Based on collected data, it is noticeable that CVSS base severity scores in the realm of Containervirtualization and Kubernetes tend toward extremes
 on the higher end. For the keyword 'Kubernetes', more than half of CVEs are rated with a base score higher than 6.66, while there are hardly any 
 scores smaller than 3.33. For CVEs that draw on popular container runtimes, an overwhelming majority close to 75 percent of cases holds base scores 
-between 6.66 and 10. Here, once again, scores smaller than 3.33 are low. These two observations additionally emphasize the necessity for a clear 
-security perspective when orchestrating containers in Kubernetes. 
+between 6.66 and 10. Here, once again, scores smaller than 3.33 are low. These two observations additionally emphasize the necessity for clear 
+security measures when orchestrating containers in Kubernetes. 
 The script enables to quickly retrieve the tendencially more severe vulnerabilities. Some CVEs marked with a CVSS base scores higher than 7 shall
 be explored in the following chapters.
 \\
@@ -416,6 +416,14 @@ container breakouts.  The CVE number is not directly about a technique to gain a
 successful container escape. It explicitly mentions root containers as a prerequesite. According to this CVE entry, Cilium's service account in versions prior to
 version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as Pods and Nodes. 
 The entry is marked with a base score of 8.2 which is considered high.
+\\
+nginx ingress cve 1 CVE-2020-8554:
+\\
+nginx ingress cve 2 CVE-2023-5043:
+\\
+nginx ingress cve 3 CVE-2023-5044:
+\\
+disclosed tokens CVE-2023-2878
 \\
 A successful container-escape arguably poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,
