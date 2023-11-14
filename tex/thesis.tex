@@ -417,9 +417,29 @@ successful container escape. It explicitly mentions root containers as a prerequ
 version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as Pods and Nodes. 
 The entry is marked with a base score of 8.2 which is considered high.
 \\
-nginx ingress cve 1 CVE-2020-8554:
-\\
-nginx ingress cve 2 CVE-2023-5043:
+CVE-2020-8554:
+In the case of CVE-2020-8554, the source is a design defect in the External IPs and Load Balancer IPs components of Kubernetes Services. An application running on a collection 
+of pods can be exposed as a network service in an abstract manner using Kubernetes Services. One or more IPs are used to access a service. When the cluster's nodes 
+are deployed, traffic intended for the service IPs will be routed through one of the backing pods that comprise the service. By assigning IP addresses that are already 
+being used by other endpoints (internal or external), a malevolent user might intercept all cluster traffic directed towards those IP addresses. 
+With the service shown below, it used to be possible to intercept UDP traffic to IP 8.8.8.8, which is Google's DNS server, and direct it to the "evil-dns-server" 
+pod when it is deployed to the cluster.
+
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=5cm]{../images/service}
+  \caption{YAML declaration of a malicious service}
+  \label{fig:cvepie}
+\end{figure}
+
+Of the more recent vulnerabilities with high severity, CVE-2023-5043 and CVE-2023-5044 report problems with the Nginx Ingress Controller. 
+The Nginx Ingress Controller is a popular add-on to Kubernetes with which cluster incoming traffic is managed. Instead of assigning
+each Kubernetes Service an IP and port directly on the underlying node, the Nginx container serves as a single point of entry and acts as a reverse proxy to the cluster
+workloads. To expose a cluster workload, a Kubernetes resource of type 'Ingress' is defined. Within this YAML definition, the nginx ingress controller picks up custom configuration
+through so called annotation snippets. This allows for fine-grained, customized behavior of the controller for a respective service. It was however discovered that 
+specific declarations of the "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-redirect" annotations of an Ingress Object can be 
+used to inject arbitrary commands, making it possible to obtain credentials of the said nginx ingress controller. Utilizing this credential, even more cluster secrets could 
+be obtained. Multi-tenant environments are most affected by the issue.  
 \\
 nginx ingress cve 3 CVE-2023-5044:
 \\
