@@ -441,9 +441,15 @@ specific declarations of the "nginx.ingress.kubernetes.io/configuration-snippet"
 used to inject arbitrary commands, making it possible to obtain credentials of the said nginx ingress controller. Utilizing this credential, even more cluster secrets could 
 be obtained. Multi-tenant environments are most affected by the issue.  
 \\
-nginx ingress cve 3 CVE-2023-5044:
 \\
-disclosed tokens CVE-2023-2878
+As reported in  CVE-2022-24817, Flux2 can reconcile the state of a remote cluster when provided with a kubeconfig with the correct access rights. Kubeconfig files can define commands to be executed to generate 
+on-demand authentication tokens. A malicious user with write access to a Flux source or direct access to the target cluster, could craft a kubeconfig to execute arbitrary code 
+inside the controller’s container. In multi-tenancy deployments this can also lead to privilege escalation if the controller's service account has elevated permissions.
+Within the affected versions range, one of the permissions set below would be required for the vulnerability to be exploited:
+Direct access to the cluster to create Flux Kustomization or HelmRelease objects and Kubernetes Secrets.
+Direct access to the cluster to modify existing Kubernetes secrets being used as kubeconfig in existing Flux Kustomization or HelmRelease objects.
+Direct access to the cluster to modify existing Flux Kustomization or HelmRelease objects and access to create or modify existing Kubernetes secrets.
+Access rights to make changes to a configured Flux Source. The vulnerability is marked with a CVSS base score of 9.9. 
 \\
 A successful container-escape arguably poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,

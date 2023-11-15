@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  14 NOV 2023 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  14 NOV 2023 14:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -704,8 +704,13 @@ File: ../images/service.png Graphic file (type png)
 Package pdftex.def Info: ../images/service.png  used on input line 430.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 435--462
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 435--468
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--468
+
  []
 
 [15 <../images/service.png>] [16] [17] [18]
@@ -777,7 +782,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,19n,106p,10628b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (42 pages, 440226 bytes).
+Output written on thesis.pdf (42 pages, 441101 bytes).
 PDF statistics:
  453 PDF objects out of 1000 (max. 8388607)
  387 compressed objects within 4 object streams
