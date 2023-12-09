@@ -252,6 +252,47 @@ Date: \hspace{6cm} Signature:\\
 \section{Containervirtualization}
 \label{sec:Unterkapitel21}
 
+The high level definition of a container is that of a lightweight, standalone, and executable software package 
+that includes everything needed to run a piece of software. A container bundles the code itself, any required
+runtime environments, dependencies, settings as well as system tools and libraries into a tangible, portable format. 
+To exemplify this definition, picture an enterprise Java application. The container of such an application
+would specify the underlying Host-OS, the JDK, which includes the JVM and other Java binaries, an application 
+server such as JBoss, Wildfly or Tomcat, the source code itself with its dependent libraries and configuration files,
+and host packages such as bash, curl, jq, envsubst, etc. 
+
+Containers run as isolated environments, separate from the host system and other containers. 
+This isolation of environments is mainly achieved by the namespace and cgroup technology of the Linux kernel.
+
+The kernel:
+The Linux kernel is the core component of the Linux operating system. It acts as a communication bridge between a user's 
+applications and the underlying hardware. It is responsible for managing the fundamental functionality of the Linux system, from 
+scheduling processes to providing resources to applications.
+
+The kernel can be modified according to user needs and provides a wide range of features such as memory management, 
+file system management, process management, device drive management, and network support. For example, the actual low level 
+implementation of the TCP protocol is handled by the kernel.  
+
+Piecing together the functionality of 
+
+
+
+
+Cgroups:
+Cgroups, short for control groups, are a Linux kernel feature that limits, accounts for, and isolates the resource usage 
+(CPU, memory, disk I/O, etc.) of a collection of processes. 
+
+Cgroups are a key component of containers because there are often multiple processes running in a container that you need to 
+control together. In a Kubernetes environment, cgroups can be used to implement resource requests and limits and corresponding 
+QoS classes at the pod level.
+
+Namespaces: 
+
+
+
+Finally:
+Piecing together the functionality of cgroups and namespaces: screenshot of 
+
+
 \newpage
 \subsection{Linux Kernel}
 \newpage
