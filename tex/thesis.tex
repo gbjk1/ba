@@ -231,6 +231,9 @@ Date: \hspace{6cm} Signature:\\
 
 \newpage
 \section{Background: Enterprises and Cloud}
+Kubernetes has become a popular choice for managing containerized applications, particularly in cloud-native environments.
+Its ability to automate tasks, scale applications, and support a wide range of use cases makes it a powerful tool for both 
+large enterprises and small teams.
 \label{sec:Unterkapitel1}
 
 \section{Research Objectives}
@@ -254,25 +257,37 @@ Date: \hspace{6cm} Signature:\\
 
 The high level definition of a container is that of a lightweight, standalone, and executable software package 
 that includes everything needed to run a piece of software. A container bundles the code itself, any required
-runtime environments, dependencies, settings as well as system tools and libraries into a tangible, portable format. 
-To exemplify this definition, picture an enterprise Java application. The container of such an application
-would specify the underlying Host-OS, the JDK, which includes the JVM and other Java binaries, an application 
+runtime environments, dependencies, settings as well as system tools and libraries into a tangible, portable format, 
+which is executed in an isolated environment on the underlying host machine.  
+To exemplify this definition, picture a containerized enterprise Java application. Such a container specifies 
+the underlying Host-OS, the JDK, which includes the JVM and other Java binaries, an application 
 server such as JBoss, Wildfly or Tomcat, the source code itself with its dependent libraries and configuration files,
-and host packages such as bash, curl, jq, envsubst, etc. 
-
-Containers run as isolated environments, separate from the host system and other containers. 
-This isolation of environments is mainly achieved by the namespace and cgroup technology of the Linux kernel.
+and host packages such as bash, curl, jq, envsubst, etc.
+This isolation of environments is possible through the namespace and cgroup technology of the Linux kernel.
 
 The kernel:
-The Linux kernel is the core component of the Linux operating system. It acts as a communication bridge between a user's 
-applications and the underlying hardware. It is responsible for managing the fundamental functionality of the Linux system, from 
+The operating system kernel is the core component of any operating system. It acts as a communication bridge between a user's 
+applications and the underlying hardware. It is responsible for managing the fundamental functionality of the system, from 
 scheduling processes to providing resources to applications.
 
-The kernel can be modified according to user needs and provides a wide range of features such as memory management, 
-file system management, process management, device drive management, and network support. For example, the actual low level 
-implementation of the TCP protocol is handled by the kernel.  
+The kernel performs a number of crucial functions, including low-level networking, disk storage, and the control of processes 
+and memory. The primary goal's of the kernel include:
 
-Piecing together the functionality of 
+1) Establish the process that will run next on the CPU, when it will run, and for how long.
+2) Keep track of the amount of memory being used of each process
+3) Act as mediator between processes and hardware
+4) Handle requests for execution from the processes through system calls
+
+The kernel performs its tasks in its own, designated part of the system memory called "kernel space". In contrast, custom applications
+such as web-browsers, texteditors and mail clients run in "user space". In order to safeguard memory and hardware against harmful or 
+abnormal program behaviour, kernel space and user space are kept apart. 
+While the kernel has access to all of the memory, processes operating in the user space can only access a portion of it. Additionally, 
+processes that are operating in user space are not able to access kernel space. Only a limited portion of the kernel is accessible to user 
+space processes through an interface that the kernel exposes, the system calls. Through system calls, a user-level program invokes services
+from the kernel. 
+
+The Linux kernel offers a wide variety of features which can be consumed by programmes. The isolated, virtualized environements which make up
+so called containers are mainly achieved by the namespace and cgroup technology of the Linux kernel.
 
 
 
@@ -291,6 +306,14 @@ Namespaces:
 
 Finally:
 Piecing together the functionality of cgroups and namespaces: screenshot of 
+Companies like Docker, and initiatives such as the "Open Container Interface" build sophisticated products and standards around
+these features. 
+
+
+Container images:
+
+Container runtimes:
+
 
 
 \newpage
@@ -303,11 +326,61 @@ Piecing together the functionality of cgroups and namespaces: screenshot of
 \newpage
 \section{Kubernetes}
 \label{sec:Unterkapitel23}
-
+Kubernetes is an open-source system for for managing containerized workloads and services. It provides a portable, extensible, 
+and scalable platform that automates the deployment, scaling, and management of applications.
 \subsection{Components}
+A Kubernetes cluster is separated into a control plane and data plane. The control plane groups the components responsible for 
+the underlying system of Kubernetes itself. The data plane hosts the actual user containers. Machines that run control-plane services
+are referred to as master-nodes, whereas machines that host user applications are referred to as worker-nodes. 
+There are four core control-plane components which work together to manage the cluster and ensure that applications run smoothly.
+These components run as containers themselves inside the reserved 'kube-system' namespace. 
+\newline
+The API server is the entrance to the Kubernetes cluster. It provides a REST API that allows users and applications to interact 
+with the cluster and manage its resources. The API server is responsible for handling requests from clients, validating them, and 
+enforcing access control policies. It allows you to query the state of the cluster, as well as the configuration of all resources and the 
+status of all pods.
+\newline
+Etcd is a distributed key-value store that is used to store the cluster's state. It is highly available and replicated across multiple nodes, 
+ensuring that the cluster's state is always consistent. Etcd is used by all of the control plane components to store information about the cluster, 
+such as the configuration of resources and the status of pods.
+\newline
+The scheduler is responsible for assigning pods to nodes in the cluster. It takes into account the resources available on each node, as well as the 
+resource requirements of each pod, to ensure that pods are placed on nodes where they can run successfully. The scheduler also tries to spread pods 
+across multiple nodes to improve availability and resilience. 
+\newline
+The controller manager is a process that runs on each node in the cluster. It is responsible for monitoring the state of the cluster and taking corrective 
+action when necessary. The controller manager watches for events, such as the creation or deletion of pods, and takes action to ensure that the cluster 
+remains in a healthy state. For example, the controller manager can restart pods that are unhealthy or create new pods to meet demand. 
+\newline
+In addition, Kube-DNS provides DNS resolution for services and pods within the cluster. It creates DNS records for services, allowing pods to reach services by name 
+rather than IP address. This simplifies the process of accessing services and makes it more consistent with traditional application development without 
+the need to map IP addresses to service names. It also  acts as the authoritative DNS server for the cluster's default domain, which is 'cluster.local'.
+This ensures that DNS queries for names within the cluster are resolved correctly and consistently across all pods in the cluster. For example, if a service
+named 'frontend' inside the 'myapp' namespace exposes an application, it can be called from another application inside the cluster via the domain 
+'frontend.myapp.svc.cluster.local' or just 'frontend.myapp'. 
+\newline
+The Kubelet is an agent process that runs on each node in a Kubernetes cluster. Its primary responsibility is to manage the lifecycle of Kubernetes pods, which are the 
+fundamental unit of deployment in Kubernetes. Kubelet ensures that pods are running, healthy, and up-to-date with the desired state. It also interacts with the Container 
+Runtime Interface (CRI) to run and manage containers, and it communicates with the Kubernetes API server to retrieve and update pod information.
+\newline
+Next to the Kubelet, the Kube-proxy, is a network proxy that runs on each node in a Kubernetes cluster. It is responsible for maintaining network connectivity between pods and 
+services. Services are abstractions that represent groups of pods that expose their endpoints to the outside world. Kube-proxy translates service definitions into network 
+rules that direct traffic to the appropriate pods. This ensures that requests to a service are routed to the correct pods, even if the pods are dynamically provisioned or scaled.
+\newline
+Summarizing the aforementioned concepts, figure 3.1 depicts an overview over Kubernetes.
+\newline
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=10cm]{../images/kubernetes}
+  \caption{Kubernetes Architecture Diagram [source: author]}
+  \label{fig:k8arch}
+\end{figure}
+
+
+
 \newpage
 \newpage
-\subsection{Cluster Architecture}
+\subsection{Core Concepts}
 \newpage
 \subsection{Cluster Objects}
 \newpage
