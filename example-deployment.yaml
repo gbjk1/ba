@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thesis-example-deployment
+  labels:
+    app: thesis-example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: thesis-example
+  template:
+    metadata:
+      labels:
+        app: thesis-example
+    spec:
+      containers:
+      - name: thesis-app
+        image: docker.io/thesis-app-example:1.0.0
+        ports:
+        - containerPort: 8080
