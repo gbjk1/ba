@@ -91,7 +91,7 @@
 %Left header shows chapter and chapter name, will not display on first chapter page use \ihead*{\leftmark} to show on every page
 \ihead{\leftmark} 	
 %\ohead*{\rightmark}	%optional right header
-\ifoot*{Student}		%left footer shows student name
+\ifoot*{Guntram Björn Klaus}	%left footer shows student name
 \ofoot*{\thepage}		%right footer shows pagination
 %---------------------------------------------------------------------
 
@@ -205,6 +205,7 @@ Date: \hspace{6cm} Signature:\\
       RAM & Random Access Memory \\
       OS & Operating System \\
       API & Application Programmable Interface \\
+      REST & Representational State Transfer \\
 		\end{tabular}
 \end{table*}
 
@@ -232,7 +233,19 @@ Date: \hspace{6cm} Signature:\\
 \label{chap:intro}
 
 \section{Enterprises and Cloud}
-Kubernetes has become a popular choice for managing containerized applications, particularly in cloud-native environments.
+
+Over the last years, there has been a significant shift in the way enterprises around the world deploy, scale and maintain the 
+lifecycle of their computing infrastructure and the software that runs on top of it. Applications used to be primarily constructed 
+as one large software unit that bundles all features, business logic, the user interface and data access components.
+Increasing necessity for scalability, flexibility and maintainability made organizations transition from such monolithic architectures
+to Microservices, which are smaller, separated but loosely coupled software units implementing one component of the larger system at hand.
+
+
+This shift goes hand in hand with 'DevOps', a philosophy and an approach to the software lifecycle which aims to increase the 
+efficiency of an organization's by emphasizing integration of responsibilities between development and operations. 
+With the release of Docker in 2013 and Kubernetes in 2014, companies have increasingly adopted microservice architecture. 
+
+Kubernetes has become the go-to choice for managing containerized applications, particularly in cloud-native environments.
 Its ability to automate tasks, scale applications, and support a wide range of use cases makes it a powerful tool for both 
 large enterprises and small teams.
 \label{sec:Unterkapitel1}
@@ -240,7 +253,6 @@ large enterprises and small teams.
 \section{Research Objectives}
 \label{sec:Unterkapitel2}
 
-\newpage
 \section{Methodology}
 \label{sec:Unterkapitel3}
 
@@ -248,7 +260,6 @@ large enterprises and small teams.
 \section{Structure}
 \label{sec:Unterkapitel4}
 
-\newpage
 \chapter{Concepts}
 \label{chap:back}
 
@@ -418,9 +429,8 @@ selected namespaces within the cluster.
 In Kubernetes, pods are the fundamental building block for deploying and managing containerized applications. 
 A pod is a group of one or more containers, which are tightly coupled and share resources such as network 
 namespaces and filesystems. This tight coupling allows pods to be treated as a single unit for scheduling, 
-management, and resource allocation. Port Forwarding: Pods can have ports exposed, allowing external traffic 
-to reach the containers within the pod. This enables applications to be accessible from outside the cluster and 
-promotes communication between applications.
+management, and resource allocation. Pods expose the ports exposed by its containers, allowing external traffic 
+to reach its intendend recipient. 
 
 \subsubsection{Deployment}
 labels
@@ -752,37 +762,51 @@ compromised container, it significantly reduces his ability to exploit a given v
 place, due to missing write permissions, would be a major obstacle for performing a container escape. It is not always possible to completely 
 avoid a vulnerability. This is due to software bugs and unidentified weaknesses in the code that have passed through the testing and review process. 
 \section{State of the Art}
-\newpage
-\section{CVE Numbers}
-\newpage
-\section{Incident Reports}
-\newpage
 
-\newpage
 \chapter{Hardening Measures}
-\section{Securing Containers}
-\subsection{Linux File Permissions}
-\newpage
-\subsection{Root versus Rootless}
-\newpage
-\subsection{Rootless Policy Enforcement}
-\newpage
-\section{Securing the Network}
+These are not problems exclusive to Kubernetes, they exist in any architecture using any tools, setups, services 
+Measures are not exclusive to Kubernetes - containers 
+Generally - regardless of the setup, tools and architecture used, granular access controls, network segmentation
+or  
+Kubernetes offers an insane range of configuration possibilitites out of the box / native kubernetes
+or by installing custom tools inside the cluster 
+
+\section{Rootless Containers}
+
+Assigning least privileges to a process has always been done 
+The user which executes the application process only has the ability to perform actions on the system that are absolutely
+required to perform its purpose. 
+The image needs to create a non root user (linux user) which then gets permissions on executables (directory main binary, libs, config files)
+needed to perform its purpose. 
+
+securityContext:
+
+runAsNonRoot true
+runAsUser 1000
+allowPrivilegeEscalation false 
+readonlyrootfilesystem
+seccomp profile ?
+selinux options ?
+this alone does not help if the underlying container image doesnt set up a non-root user. The container wont be able to perform its function
+
+
+Kyverno and co exist to block the instantiation of non root container in the first place 
+\section{Network} 
 
 Default pod-to-pod network settings, as an example, allow open communication to quickly get a cluster up and running, at the expense of 
 security hardening. Network segmentation.....
-\subsection{Network Policies}
-\newpage
-\subsection{Service Mesh}
-\newpage
-\section{Authentication and Authorization}
-\subsection{Role Based Access Control}
-\newpage
-\subsection{Kubeconfig Keys and Certificates}
-\newpage
-\subsection{Service Accounts}
+Default setting is pods are able to communicate freely 
+However it is not necessary for every pod in the cluster to talk to every other pod 
+Also not necessary for pods to have access to the internet 
+Different type of networkpolicy (Calico/Flannel/Cilium use NATTING at node/vm level)
+NetworkPolicy is a simple declaration of networking capabilities. 
 
-\newpage
+\section{Role Based Access Control}
+
+Roles - bindings 
+ClusterRoles - bindings
+ServiceAccounts 
+
 \chapter{Discussion}
 \section{Implications for businesses}
 \newpage
