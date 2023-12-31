@@ -206,6 +206,7 @@ Date: \hspace{6cm} Signature:\\
       OS & Operating System \\
       API & Application Programmable Interface \\
       REST & Representational State Transfer \\
+      CNI & Container Network Interface \\
 		\end{tabular}
 \end{table*}
 
@@ -795,12 +796,27 @@ Kyverno and co exist to block the instantiation of non root container in the fir
 
 A fresh installation of Kubernetes has no restrictions on network communication. Pods are free to receive ingress traffic from and send egress
 traffic to any other endpoints inside the cluster or the outside world. This overly permissive default setting must be restricted by applying 
-'NetworkPolicy' objects. Such objects require the additional installation of Container Networking Interfaces
+'NetworkPolicy' objects. Such objects require the installation of a Container Networking Interface (CNI) on top of Kubernetes. A CNI is a prerequesite 
+for implementing Ingress, Service and NetworkPolicy objects. 
 
-at IP address or port level for UDP and TCP 
+The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. The following figure depicts 
+a NetworkPolicy object which blocks all ingress and egress traffic. 
+\newline
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: block-all-traffic
+  namespace: my-app
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+\newline
+NetworkPolicies are additive. If there is a policy allowing traffic for a certain IP + port pattern, it overrules a blocking policy. 
 
-Different type of networkpolicy (Calico/Flannel/Cilium use NATTING at node/vm level)
-NetworkPolicy is a simple declaration of networking capabilities. 
+
+
 
 \section{Role Based Access Control}
 

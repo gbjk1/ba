@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  31 DEC 2023 19:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  31 DEC 2023 20:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -655,32 +655,32 @@ chapter 2.
 <../images/kubernetes.png, id=125, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
-Package pdftex.def Info: ../images/kubernetes.png  used on input line 406.
+Package pdftex.def Info: ../images/kubernetes.png  used on input line 407.
 (pdftex.def)             Requested size: 470.08992pt x 284.52756pt.
 
-Overfull \hbox (29.07219pt too wide) in paragraph at lines 406--407
+Overfull \hbox (29.07219pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
 [5] [6 <../images/kubernetes.png>]
-Overfull \hbox (3.67346pt too wide) in paragraph at lines 467--468
+Overfull \hbox (3.67346pt too wide) in paragraph at lines 468--469
 []\T1/lmr/m/n/10.95 Dynamic Up-dates: Con-figMaps can be up-dated dy-nam-i-cally, with-out re-quir-ing Pod restarts.
  []
 
 [7] [8] [9] [10] [11]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 572--618
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 572--618
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 572--618
 
  []
 
@@ -691,25 +691,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 571--617
 <../images/cvepie.png, id=195, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
-Package pdftex.def Info: ../images/cvepie.png  used on input line 620.
+Package pdftex.def Info: ../images/cvepie.png  used on input line 621.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
 <../images/cvepie2.png, id=196, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
-Package pdftex.def Info: ../images/cvepie2.png  used on input line 640.
+Package pdftex.def Info: ../images/cvepie2.png  used on input line 641.
 (pdftex.def)             Requested size: 255.45726pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--644
+Underfull \hbox (badness 10000) in paragraph at lines 627--645
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--644
+Underfull \hbox (badness 10000) in paragraph at lines 627--645
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--723
+Underfull \hbox (badness 10000) in paragraph at lines 646--724
 
  []
 
@@ -717,15 +717,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 645--723
 <../images/service.png, id=213, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
-Package pdftex.def Info: ../images/service.png  used on input line 726.
+Package pdftex.def Info: ../images/service.png  used on input line 727.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 731--764
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 732--765
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--764
+Underfull \hbox (badness 10000) in paragraph at lines 732--765
 
  []
 
@@ -798,7 +798,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10629b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (33 pages, 630135 bytes).
+Output written on thesis.pdf (33 pages, 630596 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  348 compressed objects within 4 object streams
