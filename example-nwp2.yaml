@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+ name: allow-app-x-and-egress-to-fh
+spec:
+ podSelector: {}
+ policyTypes:
+ - Ingress
+ - Egress
+ ingress:
+ - from:
+  - namespaceSelector:
+      matchLabels:
+        name: app-x
+ egress:
+ - to:
+  - ipBlock:
+      cidr: 91.213.77.62/32
+  ports:
+  - protocol: TCP
+    port: 443

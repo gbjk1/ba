@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  31 DEC 2023 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  31 DEC 2023 20:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -443,6 +443,9 @@ LaTeX Warning: Label `fig:cvepie' multiply defined.
 
 LaTeX Warning: Label `fig:cvepie' multiply defined.
 
+
+LaTeX Warning: Label `fig:cvepie' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -731,22 +734,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 732--765
 
 [16 <../images/service.png>] [17]
 chapter 4.
+<../images/nwp.png, id=224, 439.6425pt x 203.76125pt>
+File: ../images/nwp.png Graphic file (type png)
+<use ../images/nwp.png>
+Package pdftex.def Info: ../images/nwp.png  used on input line 807.
+(pdftex.def)             Requested size: 306.96947pt x 142.26378pt.
 [18
 
 
-]
+] [19 <../images/nwp.png>]
 chapter 5.
-[19
+[20
 
 
-] [20]
+] [21]
 chapter 6.
-[21
+[22
 
 
 ]
 chapter 7.
-[22
+[23
 
 
 ] (./thesis.bbl (./thesis.brf)
@@ -758,26 +766,26 @@ chapter 7.
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 23.
 
-) [23
+) [24
 
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [24
+ [25
 
 
 ] (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
- [25
+ [26
 
 
 ]
 chapter without number
-[26
+[27
 
 
 
@@ -790,18 +798,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16951 strings out of 476025
- 324444 string characters out of 5790016
+ 16966 strings out of 476025
+ 324731 string characters out of 5790016
  1872388 words of memory out of 5000000
- 37067 multiletter control sequences out of 15000+600000
+ 37079 multiletter control sequences out of 15000+600000
  553242 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10629b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (33 pages, 630596 bytes).
+Output written on thesis.pdf (34 pages, 665592 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 348 compressed objects within 4 object streams
- 108 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 

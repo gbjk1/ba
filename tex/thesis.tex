@@ -802,22 +802,19 @@ for implementing Ingress, Service and NetworkPolicy objects.
 The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. The following figure depicts 
 a NetworkPolicy object which blocks all ingress and egress traffic. 
 \newline
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: block-all-traffic
-  namespace: my-app
-spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
-  - Egress
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=5cm]{../images/nwp}
+  \caption{A NetworkPolicy blocking all ingress and egress [source: author]}
+  \label{fig:cvepie}
+\end{figure}
 \newline
-NetworkPolicies are additive. If there is a policy allowing traffic for a certain IP + port pattern, it overrules a blocking policy. 
+NetworkPolicies are additive. If there is a policy allowing traffic for certain IPs, ports and namespaces, it overrules a blocking policy. 
+The following figure depicts a NetworkPolicy object which whitelists connections from the 
 
 
 
-
+\newpage
 \section{Role Based Access Control}
 
 Roles - bindings 
