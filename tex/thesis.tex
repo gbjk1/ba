@@ -793,11 +793,12 @@ this alone does not help if the underlying container image doesnt set up a non-r
 Kyverno and co exist to block the instantiation of non root container in the first place 
 \section{Network} 
 
-Default pod-to-pod network settings, as an example, allow open communication to quickly get a cluster up and running, at the expense of 
-security hardening. Network segmentation.....
-Default setting is pods are able to communicate freely 
-However it is not necessary for every pod in the cluster to talk to every other pod 
-Also not necessary for pods to have access to the internet 
+A fresh installation of Kubernetes has no restrictions on network communication. Pods are free to receive ingress traffic from and send egress
+traffic to any other endpoints inside the cluster or the outside world. This overly permissive default setting must be restricted by applying 
+'NetworkPolicy' objects. Such objects require the additional installation of Container Networking Interfaces
+
+at IP address or port level for UDP and TCP 
+
 Different type of networkpolicy (Calico/Flannel/Cilium use NATTING at node/vm level)
 NetworkPolicy is a simple declaration of networking capabilities. 
 
