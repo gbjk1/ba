@@ -797,20 +797,25 @@ Kyverno and co exist to block the instantiation of non root container in the fir
 A fresh installation of Kubernetes has no restrictions on network communication. Pods are free to receive ingress traffic from and send egress
 traffic to any other endpoints inside the cluster or the outside world. This overly permissive default setting must be restricted by applying 
 'NetworkPolicy' objects. Such objects require the installation of a Container Networking Interface (CNI) on top of Kubernetes. A CNI is a prerequesite 
-for implementing Ingress, Service and NetworkPolicy objects. 
+for implementing Ingress, Service and NetworkPolicy objects. The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. 
+The following figure depicts a NetworkPolicy object which blocks all ingress and egress traffic. 
 
-The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. The following figure depicts 
-a NetworkPolicy object which blocks all ingress and egress traffic. 
-\newline
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=5cm]{../images/nwp}
   \caption{A NetworkPolicy blocking all ingress and egress [source: author]}
   \label{fig:cvepie}
 \end{figure}
-\newline
 NetworkPolicies are additive. If there is a policy allowing traffic for certain IPs, ports and namespaces, it overrules a blocking policy. 
-The following figure depicts a NetworkPolicy object which whitelists connections from the 
+The following figure depicts a NetworkPolicy object which whitelists incoming traffic from the app-x namespace and outgoing traffic to the 
+public IP of 91.213.77.62 on port 443. 
+
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=5cm]{../images/nwp2}
+  \caption{A NetworkPolicy allowing ingress from a namespace and egress to a public IP}
+  \label{fig:cvepie}
+\end{figure}
 
 
 

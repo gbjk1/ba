@@ -8,6 +8,7 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces YAML declaration of a malicious service}}{16}{figure.3.3}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A NetworkPolicy blocking all ingress and egress [source: author]}}{19}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A NetworkPolicy allowing ingress from a namespace and egress to a public IP}}{19}{figure.4.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
