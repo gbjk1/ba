@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  31 DEC 2023 21:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  1 JAN 2024 22:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -740,17 +740,18 @@ chapter 4.
 <../images/nwp.png, id=224, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 805.
+Package pdftex.def Info: ../images/nwp.png  used on input line 823.
 (pdftex.def)             Requested size: 306.96947pt x 142.26378pt.
-<../images/nwp2.png, id=225, 525.965pt x 425.59pt>
-File: ../images/nwp2.png Graphic file (type png)
-<use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 815.
-(pdftex.def)             Requested size: 175.81613pt x 142.26378pt.
 [18
 
 
-] [19 <../images/nwp.png> <../images/nwp2.png>] [20]
+]
+<../images/nwp2.png, id=232, 525.965pt x 425.59pt>
+File: ../images/nwp2.png Graphic file (type png)
+<use ../images/nwp2.png>
+Package pdftex.def Info: ../images/nwp2.png  used on input line 833.
+(pdftex.def)             Requested size: 175.81613pt x 142.26378pt.
+ [19 <../images/nwp.png> <../images/nwp2.png>] [20]
 chapter 5.
 [21
 
@@ -806,18 +807,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16981 strings out of 476025
- 325031 string characters out of 5790016
+ 16983 strings out of 476025
+ 325059 string characters out of 5790016
  1872388 words of memory out of 5000000
  37091 multiletter control sequences out of 15000+600000
  553242 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10629b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (35 pages, 730656 bytes).
+Output written on thesis.pdf (35 pages, 731380 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 360 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 500000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

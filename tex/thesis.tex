@@ -770,16 +770,30 @@ Measures are not exclusive to Kubernetes - containers
 Generally - regardless of the setup, tools and architecture used, granular access controls, network segmentation
 or  
 Kubernetes offers an insane range of configuration possibilitites out of the box / native kubernetes
-or by installing custom tools inside the cluster 
+or by installing custom tools inside the cluster. 
+
+
 
 \section{Rootless Containers}
 
-Assigning least privileges to a process has always been done 
-The user which executes the application process only has the ability to perform actions on the system that are absolutely
-required to perform its purpose. 
-The image needs to create a non root user (linux user) which then gets permissions on executables (directory main binary, libs, config files)
-needed to perform its purpose. 
+A rootless container is a container which runs its processes without root privileges. The root user in Linux is the account 
+with the highest access rights on the instance. It can modify any system configuration, install and remove software packages, upgrade 
+the operating system and firmware, read, write and execute any files on the system, and operate as any other user on the host. 
+Any process that does not require such powerful access must be restricted in its permissions. The user which executes the application 
+process inside the container must have the limited ability to perform only absolutely necessary actions to fulfill its purpose. 
 
+\subsubsection{Dockerfile}
+
+Running rootless containers in Kubernetes starts at the definition of the image. A Dockerfile is a text document which specifies 
+commands to be executed for constructing the environment. This file is consumed by the Docker to build the image. The following 
+Dockerfile, based on Alpine-Linux, installs nodejs, creates an unprivileged user with UID 1000, and assigns that user ownership
+to the /app directory, from where it can run its application process. 
+
+Dockerfile here 
+
+
+
+To enforce usage of user 1000 on Kubernetes level, 
 securityContext:
 
 runAsNonRoot true
@@ -788,10 +802,14 @@ allowPrivilegeEscalation false
 readonlyrootfilesystem
 seccomp profile ?
 selinux options ?
-this alone does not help if the underlying container image doesnt set up a non-root user. The container wont be able to perform its function
+
 
 
 Kyverno and co exist to block the instantiation of non root container in the first place 
+
+
+Thus, compromising the container instance through, for example, a reverse shell, gives the perpatrator limited ability to operate 
+from inside the container, or break out of the container instance. 
 \section{Network} 
 
 A fresh installation of Kubernetes has no restrictions on network communication. Pods are free to receive ingress traffic from and send egress
