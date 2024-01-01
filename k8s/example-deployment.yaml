@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: thesis-example-deployment
+  name: node-app
   labels:
-    app: thesis-example
+    app: node-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: thesis-example
+      app: node-app
   template:
     metadata:
       labels:
-        app: thesis-example
+        app: node-app
     spec:
       containers:
-      - name: thesis-app
+      - name: node-app
         image: docker.io/thesis-app-example:1.0.0
         ports:
-        - containerPort: 8080
+        - containerPort: 3000

@@ -36,16 +36,24 @@
 \contentsline {chapter}{\numberline {4}Hardening Measures}{18}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Rootless Containers}{18}{section.4.1}%
 \contentsline {subsubsection}{\nonumberline Dockerfile}{18}{subsubsection*.43}%
-\contentsline {section}{\numberline {4.2}Network}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Role Based Access Control}{20}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications for businesses}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tradeoffs and Difficulties}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Complexity}{22}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{23}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Outlook / Future work}{24}{chapter.7}%
-\contentsline {chapter}{Bibliography}{25}{chapter.7}%
-\contentsline {chapter}{List of Figures}{26}{chapter*.44}%
-\contentsline {chapter}{List of Tables}{27}{chapter*.45}%
-\contentsline {chapter}{\nonumberline Appendix}{28}{chapter*.47}%
+\contentsline {subsubsection}{\nonumberline runAsNonRoot}{18}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline runAsUser}{19}{subsubsection*.47}%
+\contentsline {subsubsection}{\nonumberline allowPrivilegeEscalation}{19}{subsubsection*.49}%
+\contentsline {subsubsection}{\nonumberline readOnlyRootFilesystem}{19}{subsubsection*.51}%
+\contentsline {subsubsection}{\nonumberline Capabilities}{19}{subsubsection*.53}%
+\contentsline {subsubsection}{\nonumberline AppArmor}{19}{subsubsection*.55}%
+\contentsline {subsubsection}{\nonumberline SELinux}{19}{subsubsection*.57}%
+\contentsline {subsubsection}{\nonumberline Seccomp}{19}{subsubsection*.59}%
+\contentsline {section}{\numberline {4.2}Network}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Role Based Access Control}{22}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications for businesses}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tradeoffs and Difficulties}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Complexity}{24}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Outlook / Future work}{26}{chapter.7}%
+\contentsline {chapter}{Bibliography}{27}{chapter.7}%
+\contentsline {chapter}{List of Figures}{28}{chapter*.60}%
+\contentsline {chapter}{List of Tables}{29}{chapter*.61}%
+\contentsline {chapter}{\nonumberline Appendix}{30}{chapter*.63}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
