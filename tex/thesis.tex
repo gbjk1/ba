@@ -843,40 +843,45 @@ thereby lowering the kernel's attack surface. The set of system calls that the c
 seccomp-profiles also defined under securityContext. 
 \newline
 \newline
-Thus, compromising the container instance through, for example, a reverse shell, gives the perpatrator limited ability to operate 
+Thus, compromising the container instance through a reverse shell, for example, gives perpatrators limited ability to operate 
 from inside the container, or break out of the container instance. 
+
+
+
 \section{Network} 
 
 A fresh installation of Kubernetes has no restrictions on network communication. Pods are free to receive ingress traffic from and send egress
 traffic to any other endpoints inside the cluster or the outside world. This overly permissive default setting must be restricted by applying 
-'NetworkPolicy' objects. Such objects require the installation of a Container Networking Interface (CNI) on top of Kubernetes. A CNI is a prerequesite 
+'NetworkPolicy' objects. Such objects require the installation of a Container Networking Interface (CNI) on top of Kubernetes. CNIs are Kubernetes
+plugins which set up the network environment of the cluster. It handles network interfaces, IP addresses and routing of traffic of containers.  A CNI is a prerequesite 
 for implementing Ingress, Service and NetworkPolicy objects. The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. 
 The following figure depicts a NetworkPolicy object which blocks all ingress and egress traffic. 
 
 \begin{figure}[htbp]
   \centering
-      \includegraphics[height=5cm]{../images/nwp}
+      \includegraphics[height=3.5cm]{../images/nwp}
   \caption{A NetworkPolicy blocking all ingress and egress [source: author]}
   \label{fig:cvepie}
 \end{figure}
 NetworkPolicies are additive. If there is a policy allowing traffic for certain IPs, ports and namespaces, it overrules a blocking policy. 
 The following figure depicts a NetworkPolicy object which whitelists incoming traffic from the app-x namespace and outgoing traffic to the 
-public IP of 91.213.77.62 on port 443. 
+public IP of 91.213.77.62 on port 443. \newline
 
 \begin{figure}[htbp]
   \centering
-      \includegraphics[height=5cm]{../images/nwp2}
-  \caption{A NetworkPolicy allowing ingress from a namespace and egress to a public IP}
+      \includegraphics[height=6.5cm]{../images/nwp2}
+  \caption{A NetworkPolicy allowing ingress from a namespace and egress to a public IP [source: author]}
   \label{fig:cvepie}
 \end{figure}
-
+\newpage
 Standard NetworkPolicies are simple yet effective means to allow only the absolutely necessary origins and destinations of pod connections.
-More fine grained and powerful settings can be achieved through the implementation of a Service-Mesh. Istio, a popular service-mesh solution,
-provides mutual TLS authentication out of the box. 
-Mutual TLS authentication mtls
-RequestAuthentication
-AuthorizationPolicy 
-
+More fine grained and powerful settings can be achieved through the implementation of a service-mesh. Istio and Linkerd, popular service-mesh solutions
+enable mutual TLS authentication in Kubernetes clusters. mTLS, an extension of standard TLS, requires both
+parties to authenticate themselves, instead of just the server authenticating itself to the client. In mTLS, both client and server 
+present and verify certificates to establish a secure connection. mTLS is a crucial component for implementing zero trust networks.
+In addition to mTLS, service mesh solutions such as Linkerd and Istio provide AuthorizationPolicy objects. AuthorizationPolicies are used
+to granularly control access to specific endpoints of specific services with specific authorization protocols within the cluster.   
+The following Istio AuthorizationPolicy 
 
 
 
