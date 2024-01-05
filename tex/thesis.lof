@@ -10,6 +10,7 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Rootless image specification using Dockerfile}}{18}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A NetworkPolicy blocking all ingress and egress [source: author]}}{20}{figure.4.2}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A NetworkPolicy allowing ingress from a namespace and egress to a public IP [source: author]}}{20}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Granular access control with AuthorizationPolicy [source: Istio ]}}{21}{figure.4.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

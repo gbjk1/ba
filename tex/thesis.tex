@@ -207,6 +207,7 @@ Date: \hspace{6cm} Signature:\\
       API & Application Programmable Interface \\
       REST & Representational State Transfer \\
       CNI & Container Network Interface \\
+      JWT & JSON Web Token \\
 		\end{tabular}
 \end{table*}
 
@@ -283,19 +284,17 @@ This isolation of environments is possible through the namespace and cgroup tech
 The kernel:
 The operating system kernel is the core component of any operating system. It acts as a communication bridge between a user's 
 applications and the underlying hardware. It is responsible for managing the fundamental functionality of the system, from 
-scheduling processes to providing resources to applications.
+scheduling processes to providing resources to applications. The kernel performs a number of crucial functions, including 
+low-level networking, disk storage, and the control of processes and memory. The primary goals of the kernel include:
 
-The kernel performs a number of crucial functions, including low-level networking, disk storage, and the control of processes 
-and memory. The primary goal's of the kernel include:
-\newline
-1) Establish the process that will run next on the CPU, when it will run, and for how long.
-\newline
-2) Keep track of the amount of memory being used of each process
-\newline
-3) Act as mediator between processes and hardware
-\newline
-4) Handle requests for execution from the processes through system calls
-\newline
+\begin{itemize}
+  \item Establish the process that will run next on the CPU, when it will run, and for how long.
+  \item Keep track of the amount of memory being used of each process
+  \item Act as mediator between processes and hardware
+  \item Handle requests for execution from the processes through system calls
+\end{itemize}
+
+
 The kernel performs its tasks in its own, designated part of the system memory called "kernel space". In contrast, custom applications
 such as web-browsers, texteditors and mail clients run in "user space". In order to safeguard memory and hardware against harmful or 
 abnormal program behaviour, kernel space and user space are kept apart. 
@@ -881,7 +880,22 @@ parties to authenticate themselves, instead of just the server authenticating it
 present and verify certificates to establish a secure connection. mTLS is a crucial component for implementing zero trust networks.
 In addition to mTLS, service mesh solutions such as Linkerd and Istio provide AuthorizationPolicy objects. AuthorizationPolicies are used
 to granularly control access to specific endpoints of specific services with specific authorization protocols within the cluster.   
-The following Istio AuthorizationPolicy 
+Figure 4.4 is an example of an Istio AuthorizationPolicy object, which implements the following rules for all pods inside the 'foo' namespace:
+
+\begin{itemize}
+  \item Requests by pods identifying themselves with the cluster.local/ns/default/sa/sleep service account are allowed
+  \item Request by pods inside the 'test' namespace are allowed
+  \item GET methods to /info are only allowed when requests carry valid JWT issued by accounts.google.com
+  \item POST methods to /data are only allowed when requests carry valid JWT issued by accounts.google.com
+  \item Any other requests are denied 
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=6.5cm]{../images/authpolicy}
+  \caption{Granular access control with AuthorizationPolicy [source: Istio ]}
+  \label{fig:cvepie}
+\end{figure}
 
 
 

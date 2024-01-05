@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  4 JAN 2024 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  4 JAN 2024 22:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -449,6 +449,9 @@ LaTeX Warning: Label `fig:cvepie' multiply defined.
 
 LaTeX Warning: Label `fig:cvepie' multiply defined.
 
+
+LaTeX Warning: Label `fig:cvepie' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -654,39 +657,42 @@ Class scrbook Warning: \float@addtolists detected!
 
 ]
 chapter 2.
-[2
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 291.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2
 
 
-] [3] [4]
-<../images/kubernetes.png, id=125, 1029.8475pt x 623.32875pt>
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [3] [4]
+<../images/kubernetes.png, id=126, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
-Package pdftex.def Info: ../images/kubernetes.png  used on input line 407.
+Package pdftex.def Info: ../images/kubernetes.png  used on input line 406.
 (pdftex.def)             Requested size: 470.08992pt x 284.52756pt.
 
-Overfull \hbox (29.07219pt too wide) in paragraph at lines 407--408
+Overfull \hbox (29.07219pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
 [5] [6 <../images/kubernetes.png>]
-Overfull \hbox (3.67346pt too wide) in paragraph at lines 468--469
+Overfull \hbox (3.67346pt too wide) in paragraph at lines 467--468
 []\T1/lmr/m/n/10.95 Dynamic Up-dates: Con-figMaps can be up-dated dy-nam-i-cally, with-out re-quir-ing Pod restarts.
  []
 
 [7] [8] [9] [10] [11]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--618
+Underfull \hbox (badness 10000) in paragraph at lines 571--617
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--618
+Underfull \hbox (badness 10000) in paragraph at lines 571--617
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--618
+Underfull \hbox (badness 10000) in paragraph at lines 571--617
 
  []
 
@@ -694,84 +700,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 572--618
 
 
 ]
-<../images/cvepie.png, id=195, 1156.32pt x 591.20876pt>
+<../images/cvepie.png, id=196, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
-Package pdftex.def Info: ../images/cvepie.png  used on input line 621.
+Package pdftex.def Info: ../images/cvepie.png  used on input line 620.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
-<../images/cvepie2.png, id=196, 1155.31625pt x 643.40375pt>
+<../images/cvepie2.png, id=197, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
-Package pdftex.def Info: ../images/cvepie2.png  used on input line 641.
+Package pdftex.def Info: ../images/cvepie2.png  used on input line 640.
 (pdftex.def)             Requested size: 255.45726pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--645
+Underfull \hbox (badness 10000) in paragraph at lines 626--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--645
+Underfull \hbox (badness 10000) in paragraph at lines 626--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--724
+Underfull \hbox (badness 10000) in paragraph at lines 645--723
 
  []
 
 [13 <../images/cvepie.png> <../images/cvepie2.png>] [14] [15]
-<../images/service.png, id=213, 337.26pt x 318.18875pt>
+<../images/service.png, id=214, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
-Package pdftex.def Info: ../images/service.png  used on input line 727.
+Package pdftex.def Info: ../images/service.png  used on input line 726.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 732--765
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 731--764
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--765
+Underfull \hbox (badness 10000) in paragraph at lines 731--764
 
  []
 
 [16 <../images/service.png>] [17]
 chapter 4.
-<../images/dockerfile.png, id=224, 571.13374pt x 125.46875pt>
+<../images/dockerfile.png, id=225, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
-Package pdftex.def Info: ../images/dockerfile.png  used on input line 796.
+Package pdftex.def Info: ../images/dockerfile.png  used on input line 795.
 (pdftex.def)             Requested size: 284.52756pt x 62.50638pt.
 [18
 
 
  <../images/dockerfile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 816--820
+Underfull \hbox (badness 10000) in paragraph at lines 815--819
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 841--848
+Underfull \hbox (badness 10000) in paragraph at lines 840--847
 
  []
 
 [19]
-<../images/nwp.png, id=254, 439.6425pt x 203.76125pt>
+<../images/nwp.png, id=255, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 862.
+Package pdftex.def Info: ../images/nwp.png  used on input line 861.
 (pdftex.def)             Requested size: 214.8699pt x 99.58464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 866--869
+Underfull \hbox (badness 10000) in paragraph at lines 865--868
 
  []
 
-<../images/nwp2.png, id=255, 525.965pt x 425.59pt>
+<../images/nwp2.png, id=256, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 872.
+Package pdftex.def Info: ../images/nwp2.png  used on input line 871.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
-[20 <../images/nwp.png> <../images/nwp2.png>] [21] [22]
+[20 <../images/nwp.png> <../images/nwp2.png>]
+<../images/authpolicy.png, id=265, 605.26125pt x 463.7325pt>
+File: ../images/authpolicy.png Graphic file (type png)
+<use ../images/authpolicy.png>
+Package pdftex.def Info: ../images/authpolicy.png  used on input line 895.
+(pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
+ [21 <../images/authpolicy.png>] [22]
 chapter 5.
 [23
 
@@ -827,18 +839,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17016 strings out of 476025
- 325684 string characters out of 5790016
+ 17064 strings out of 476025
+ 326930 string characters out of 5790016
  1872388 words of memory out of 5000000
- 37104 multiletter control sequences out of 15000+600000
- 553242 words of font info for 54 fonts, out of 8000000 for 9000
+ 37145 multiletter control sequences out of 15000+600000
+ 553607 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10629b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (37 pages, 770933 bytes).
+Output written on thesis.pdf (37 pages, 854345 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
- 133 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 134 named destinations out of 1000 (max. 500000)
+ 286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

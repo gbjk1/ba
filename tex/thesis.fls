@@ -807,6 +807,12 @@ INPUT thesis.toc
 OUTPUT thesis.toc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ../images/kubernetes.png
 INPUT ../images/kubernetes.png
 INPUT ../images/kubernetes.png
@@ -835,6 +841,10 @@ INPUT ../images/nwp2.png
 INPUT ../images/nwp2.png
 INPUT ../images/nwp2.png
 INPUT ../images/nwp2.png
+INPUT ../images/authpolicy.png
+INPUT ../images/authpolicy.png
+INPUT ../images/authpolicy.png
+INPUT ../images/authpolicy.png
 INPUT ./thesis.bbl
 INPUT thesis.bbl
 INPUT ./thesis.bbl
