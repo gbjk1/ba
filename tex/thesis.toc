@@ -1,9 +1,9 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Enterprises and Cloud}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Research Objectives}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Methodology}{1}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Structure}{1}{section.1.4}%
+\contentsline {section}{\numberline {1.2}State Of The Art}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Related Work}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objectives And Methodology}{1}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Concepts}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Containervirtualization}{2}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Linux Kernel}{2}{subsection.2.1.1}%
