@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  5 JAN 2024 23:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  5 JAN 2024 23:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -712,17 +712,17 @@ Overfull \hbox (29.07219pt too wide) in paragraph at lines 402--403
 [5 <../images/kubernetes.png>] [6] [7]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--515
+Underfull \hbox (badness 10000) in paragraph at lines 468--514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--515
+Underfull \hbox (badness 10000) in paragraph at lines 468--514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--515
+Underfull \hbox (badness 10000) in paragraph at lines 468--514
 
  []
 
@@ -733,25 +733,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 469--515
 <../images/cvepie.png, id=175, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
-Package pdftex.def Info: ../images/cvepie.png  used on input line 518.
+Package pdftex.def Info: ../images/cvepie.png  used on input line 517.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
 <../images/cvepie2.png, id=176, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
-Package pdftex.def Info: ../images/cvepie2.png  used on input line 538.
+Package pdftex.def Info: ../images/cvepie2.png  used on input line 537.
 (pdftex.def)             Requested size: 255.45726pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--542
+Underfull \hbox (badness 10000) in paragraph at lines 523--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--542
+Underfull \hbox (badness 10000) in paragraph at lines 523--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--621
+Underfull \hbox (badness 10000) in paragraph at lines 542--620
 
  []
 
@@ -759,15 +759,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 543--621
 <../images/service.png, id=193, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
-Package pdftex.def Info: ../images/service.png  used on input line 624.
+Package pdftex.def Info: ../images/service.png  used on input line 623.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 629--662
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 628--661
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--662
+Underfull \hbox (badness 10000) in paragraph at lines 628--661
 
  []
 
@@ -776,18 +776,18 @@ chapter 4.
 <../images/dockerfile.png, id=205, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
-Package pdftex.def Info: ../images/dockerfile.png  used on input line 693.
+Package pdftex.def Info: ../images/dockerfile.png  used on input line 692.
 (pdftex.def)             Requested size: 284.52756pt x 62.50638pt.
 [14
 
 
  <../images/dockerfile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 713--717
+Underfull \hbox (badness 10000) in paragraph at lines 712--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--745
+Underfull \hbox (badness 10000) in paragraph at lines 737--744
 
  []
 
@@ -795,23 +795,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 738--745
 <../images/nwp.png, id=234, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 759.
+Package pdftex.def Info: ../images/nwp.png  used on input line 758.
 (pdftex.def)             Requested size: 214.8699pt x 99.58464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--766
+Underfull \hbox (badness 10000) in paragraph at lines 762--765
 
  []
 
 <../images/nwp2.png, id=235, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 769.
+Package pdftex.def Info: ../images/nwp2.png  used on input line 768.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
 [16 <../images/nwp.png> <../images/nwp2.png>]
 <../images/authpolicy.png, id=244, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
-Package pdftex.def Info: ../images/authpolicy.png  used on input line 793.
+Package pdftex.def Info: ../images/authpolicy.png  used on input line 792.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
  [17 <../images/authpolicy.png>] [18]
 chapter 5.
@@ -877,7 +877,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,19n,106p,10628b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (33 pages, 841679 bytes).
+Output written on thesis.pdf (33 pages, 841490 bytes).
 PDF statistics:
  445 PDF objects out of 1000 (max. 8388607)
  377 compressed objects within 4 object streams

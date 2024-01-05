@@ -412,11 +412,10 @@ utility.
 
 \subsubsection{Kubernetes Namespaces}
 Namespaces are virtual partitions in Kubernetes that arrange and segregate resource groupings inside a single cluster. 
-Through namespaces the cluster is logically separated into more manageable, smaller sections. Improved resource management, 
-security distinction, and coordination amongst several teams or projects using a single Kubernetes infrastructure are 
-made possible as a result. Kubernetes objects which define the state of an application, such as 'Deployment', 'Service' and 'ConfigMap'
-are namespaced. Objects which define the cluster as a whole or which pertain to all applications in all namespaces are not namespaced
-and exist globally. Namespace isolation prevents unintended interactions or interference between applications, 
+Through namespaces the cluster is logically separated into more manageable, smaller sections. Kubernetes objects which define 
+the state of an application, such as 'Deployment', 'Service' and 'ConfigMap' are namespaced. Objects which define the cluster as a 
+whole or which pertain to all applications in all namespaces are not namespaced and exist globally. 
+Namespace isolation prevents unintended interactions or interference between applications, 
 maintaining the integrity of each deployment. Namespaces can be assigned different security policies, allowing for the enforcement 
 of custom authorization rules and access control mechanisms. This helps protect resources and restrict unauthorized access between 
 selected namespaces within the cluster. 
