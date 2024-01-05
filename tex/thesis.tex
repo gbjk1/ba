@@ -297,8 +297,7 @@ low-level networking, disk storage, and the control of processes and memory. The
 
 
 The kernel performs its tasks in its own, designated part of the system memory called "kernel space". In contrast, custom applications
-such as web-browsers, texteditors and mail clients run in "user space". In order to safeguard memory and hardware against harmful or 
-abnormal program behaviour, kernel space and user space are kept apart. While the kernel has access to all of the memory, processes 
+such as web-browsers, texteditors and mail clients run in "user space". Kernel space and user space are kept apart. While the kernel has access to all of the memory, processes 
 operating in the user space can only access a portion of it by calling the kernel interface. Through such system calls, 
 a user-level program invokes services from the kernel. 
 
