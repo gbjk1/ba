@@ -301,14 +301,15 @@ such as web-browsers, texteditors and mail clients run in "user space". Kernel s
 operating in the user space can only access a portion of it by calling the kernel interface. Through such system calls, 
 a user-level program invokes services from the kernel. 
 
-\subsection{Linux Control Groups}
+\subsubsection{Linux Control Groups}
 Cgroups, short for control groups, are a Linux kernel feature that limits, accounts for, and isolates the resource usage 
 (CPU, memory, disk I/O, etc.) of a collection of processes. These limits are enforced by the kernel. They ensure that processes do not
 consume excessive resources and that other processes can access the resources they need. 
 Cgroups support hierarchical grouping of processes, allowing for flexible resource management based on application requirements and user-defined policies. 
 Cgroups are used by Docker and container platforms to isolate and manage resource pool of containers. In a Kubernetes environment, the option
 to implement resource requests and limits of pods are enabled by Cgroups.
-\subsection{Linux Namespaces}
+
+\subsubsection{Linux Namespaces}
 Namespaces are Linux kernel mechanisms that provide a hierarchical partitioning of the system environment. The Linux manpage
 defines namespaces as followed. 
 \newline
@@ -462,6 +463,22 @@ The rules are enforced by the Kubernetes network plugin, ensuring that only auth
 
 \newpage
 \chapter{Literature Review}
+
+\section{Surveys}
+It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
+the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
+in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
+were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
+in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
+2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
+increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
+advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
+But if security is neglected, you can lose out on containerization's biggest benefit: agility.
+It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
+environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
+great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
+
+\section{CVE Scores}
 Kubernetes is highly customizable and offers a range of configuration options which determine the security posture of
 individual applications and the cluster as a whole. 
 The purpose of this literature review is to explore the security threat landscape of Kubernetes environments. 
@@ -543,23 +560,10 @@ between 6.66 and 10. Here, once again, scores smaller than 3.33 are low. These t
 security measures when orchestrating containers in Kubernetes. 
 The script enables to quickly retrieve the tendencially more severe vulnerabilities. Some CVEs marked with a CVSS base scores higher than 7 shall
 be explored in the following chapters.
-\\
-\\
-It is evident that the reliance on Kubernetes comes with the need of a clear security initiative. According to RedHat's report on 
-the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
-in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
-were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
-in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
-2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
-increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
-advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
-But if security is neglected, you can lose out on containerization's biggest benefit: agility.
-It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
-environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
-great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
-\\
-Container Escape
-\\
+
+\section{CVE Reports}
+
+\subsubsection {Container Escape}
 Major vulnerabilities include those which fall under the category of a so called container-escape. Since a container is intended to be a 
 runtime environment isolated from the underlying host, the concept of a container-escape relates to performing an exploit that breaks the confines 
 of exactly this isolation, resulting in full or limited access to the underlying host machine and/or network. A study conducted by Reeves 
@@ -655,7 +659,7 @@ access to Kubernetes and the Kubernetes network. For example, if a malicious act
 compromised container, it significantly reduces his ability to exploit a given vulnerability. Not being able to create that file in the first 
 place, due to missing write permissions, would be a major obstacle for performing a container escape. It is not always possible to completely 
 avoid a vulnerability. This is due to software bugs and unidentified weaknesses in the code that have passed through the testing and review process. 
-\section{State of the Art}
+
 
 \chapter{Hardening Measures}
 These are not problems exclusive to Kubernetes, they exist in any architecture using any tools, setups, services 
