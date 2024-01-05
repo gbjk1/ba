@@ -254,7 +254,7 @@ Its ability to automate tasks, scale applications, and support a wide range of u
 large enterprises and small teams. However, Kubernetes is a large and complex system that consists of many components including additional plugins. 
 To ensure an enterprise grade, production ready Kubernetes environment, there are vast amounts of configurations to make. As a single
 platform that abstracts orchestration, networking, storage, monitoring, access control and more, Kubernetes becomes open to attack from many different
-angles. This complexity, customizability and vastness highlight the amount of precision required to implement Kubernetes for production environments.  
+angles. The complexity, customizability and vastness highlight the amount of precision required to implement Kubernetes for production environments.  
 \label{sec:Unterkapitel1}
 
 \section{Research Objectives}
@@ -277,14 +277,10 @@ This thesis aims to explore the landscape of security in Kubernetes
 \label{sec:Unterkapitel21}
 
 The high level definition of a container is that of a lightweight, standalone, and executable software package 
-that includes everything needed to run a piece of software. A container bundles the code itself, any required
-runtime environments, dependencies, settings as well as system tools and libraries into a tangible, portable format, 
-which is executed in an isolated environment on the underlying host machine.  
-To exemplify this definition, picture a containerized enterprise Java application. Such a container specifies 
-the underlying Host-OS, the JDK, which includes the JVM and other Java binaries, an application 
-server such as JBoss, Wildfly or Tomcat, the source code itself with its dependent libraries and configuration files,
-and host packages such as bash, curl, jq, envsubst, etc.
-This isolation of environments is possible through the namespace and cgroup technology of the Linux kernel
+A container bundles the code itself, any required runtime environments, dependencies, settings as well as system 
+tools and libraries into an isolated environment, which is instantiated on the underlying host machine.  
+Such isolated environments are defined in tangible, portable formats called container images. 
+The isolation of environments is mainly attributed to the namespace and Cgroup technology of the Linux kernel.
 
 
 \subsection{Linux Kernel}
@@ -295,7 +291,7 @@ scheduling processes to providing resources to applications. The kernel performs
 low-level networking, disk storage, and the control of processes and memory. The primary goals of the kernel include:
 
 \begin{itemize}
-  \item Establish the process that will run next on the CPU, when it will run, and for how long.
+  \item Establish the process that will run next on the CPU
   \item Keep track of the amount of memory being used of each process
   \item Act as mediator between processes and hardware
   \item Handle requests for execution from the processes through system calls
@@ -304,14 +300,9 @@ low-level networking, disk storage, and the control of processes and memory. The
 
 The kernel performs its tasks in its own, designated part of the system memory called "kernel space". In contrast, custom applications
 such as web-browsers, texteditors and mail clients run in "user space". In order to safeguard memory and hardware against harmful or 
-abnormal program behaviour, kernel space and user space are kept apart. 
-While the kernel has access to all of the memory, processes operating in the user space can only access a portion of it. Additionally, 
-processes that are operating in user space are not able to access kernel space. Only a limited portion of the kernel is accessible to user 
-space processes through an interface that the kernel exposes, the system calls. Through system calls, a user-level program invokes services
-from the kernel. 
-
-The Linux kernel offers a wide variety of features which can be consumed by programmes. The isolated, virtualized environements which make up
-so called containers are mainly achieved by the namespace and cgroup technology of the Linux kernel.
+abnormal program behaviour, kernel space and user space are kept apart. While the kernel has access to all of the memory, processes 
+operating in the user space can only access a portion of it by calling the kernel interface. Through such system calls, 
+a user-level program invokes services from the kernel. 
 
 \subsection{Linux Control Groups}
 Cgroups, short for control groups, are a Linux kernel feature that limits, accounts for, and isolates the resource usage 
@@ -343,18 +334,16 @@ Linux provides seven main types of namespaces:
   \item Cgroup namespaces: Isolates Cgroup root directory
 \end{itemize}
 
-\newpage
 \subsection{Container Images and Runtimes}
-Finally:
-Piecing together the functionality of cgroups and namespaces: screenshot of 
-Companies like Docker, and initiatives such as the "Open Container Interface" build sophisticated products and standards around
-these features.
-
-A container image is a snapshot of a filesystem that contains the application's code, runtime, and dependencies. It encapsulates the entire environment required to run the application, including the operating system, libraries, and any other necessary files. Container images are created using tools like Docker or Buildah, which package the application's source code, dependencies, and environment settings into a single, immutable image.
-
-A container runtime is a software platform that manages the creation, execution, and lifecycle of containers. It provides the underlying infrastructure and mechanisms for running container images, ensuring that they are isolated from each other and the host system. The runtime maps the container's filesystem to the host system's memory, handles network communication, and manages resource allocation for each container. Popular container runtimes include Docker Engine, Podman, and CRI-O.
-
-The relationship between images and runtimes is that images are the blueprints for containers, while runtimes are the engines that bring them to life. The runtime receives a container image, extracts the required components, mounts the image's filesystem, and establishes communication between the container and the host system. During execution, the runtime manages the container's resources, handles network traffic, and ensures the integrity of the container's environment.
+Piecing together aforementioned concepts, companies like Docker and RedHat, and initiatives such as the Open Container Interface, build 
+sophisticated products and standards around these kernel features. A container image is a snapshot of a filesystem that contains the application's code, 
+runtime, and dependencies. It encapsulates the entire environment required to run the application.
+A container runtime is a software platform that manages the creation, execution, and lifecycle of containers based on an image
+specification. It provides the underlying infrastructure and mechanisms for running isolated container instances.
+Popular container runtimes include Docker Engine, Podman, and CRI-O.
+The relationship between images and runtimes is that images are the blueprints for containers, while runtimes are the 
+engines that bring them to life. The runtime receives a container image, extracts the required components, mounts the image's 
+filesystem, creates cgroups and namespaces to instantiate the container environment.
 
 
 \section{Kubernetes}
@@ -406,8 +395,7 @@ Runtime Interface (CRI) to run and manage containers, and it communicates with t
 Next to the Kubelet, the Kube-proxy, is a network proxy that runs on each node in a Kubernetes cluster. It is responsible for maintaining network connectivity between pods and 
 services. Services are abstractions that represent groups of pods that expose their endpoints to the outside world. Kube-proxy translates service definitions into network 
 rules that direct traffic to the appropriate pods. This ensures that requests to a service are routed to the correct pods, even if the pods are dynamically provisioned or scaled.
-\newline
-Summarizing the aforementioned concepts, figure 3.1 depicts an overview over Kubernetes. ....test
+Figure 2.1 gives a high level overview over Kubernetes components and concepts. 
 \newline
 \begin{figure}[htbp]
   \centering
@@ -416,7 +404,7 @@ Summarizing the aforementioned concepts, figure 3.1 depicts an overview over Kub
   \label{fig:k8arch}
 \end{figure}
 
-\subsection{Cluster Objects}
+\subsection{Core Cluster Objects}
 
 Kubernetes Objects are detailed specifications of the desired state of an application and the cluster as a whole. 
 Objects are formulated in YAML syntax and are communicated to the Kubernetes API using the 'kubectl' command line 
@@ -441,12 +429,10 @@ management, and resource allocation. Pods expose the ports exposed by its contai
 to reach its intendend recipient. 
 
 \subsubsection{Deployment}
-labels
-image
-replicaset amount of instances
+Deployments describe the desired state of an application. A Deployment defines containers of pods, amount of pod replicas, 
+hostnames, security settings, rolling update specifications and more. Its the central object for instantiating applications in Kubernetes.  
 
 \subsubsection{Service}
-Service
 In Kubernetes, a Service is an abstraction layer that defines a logical grouping of Pods and exposes them as a single, 
 unified resource to the network. It simplifies the process of accessing and managing Pods by providing a stable endpoint 
 and load balancing capabilities. Providing a stable endpoint ensures that pods can dynamically scale in the background 
@@ -456,37 +442,27 @@ Service objects use selectors to identify the Pods that belong to the Service.
 \subsubsection{ConfigMap}
 A ConfigMap is a key-value data store that can be mounted into Pods as environment variables, files, or command-line arguments. 
 It provides a way to decouple configuration data from container images, making applications more portable and flexible.
-ConfigMaps can be updated dynamically, without requiring Pod restarts. This enables applications to receive configuration changes without 
-downtime. 
 
 \subsubsection{Ingress}
-
 In Kubernetes, an Ingress is a controller that manages external traffic routing to a set of Services within the cluster. It acts as a 
 front door for applications, handling load balancing, SSL termination, and other advanced traffic management tasks.
-They direct external traffic to the appropriate Services within the cluster. Ingresses can terminate SSL/TLS connections, offloading this work from the applications. 
-Ingresses route traffic based on the request's path, headers, query parameters, and more. 
-Ingresses support TLS passthrough, which allows for direct communication between clients and the application's Pods without the need for SSL termination at the Ingress level.
+They direct external traffic to the appropriate services within the cluster. Ingresses support SSL/TLS termination, routing traffic based on the request's path, headers or query parameters, 
+and more.
 
 \subsubsection{ServiceAccount}
 A ServiceAccount is a security identity that allows pods to access Kubernetes resources and services. It acts as an authentication mechanism for pods, managing their access 
-permissions and controlling their interactions with the cluster. ServiceAccounts manage identities in a centralized manner, simplifying the process of granting and revoking 
-access permissions for pods. ServiceAccounts can be integrated with Kubernetes RBAC, enabling fine-grained control over pod access permissions. 
-ServiceAccounts can mount Secrets into Pods, providing them with access to sensitive data such as passwords, API keys, or certificates.
+permissions and controlling their interactions with the cluster. ServiceAccounts can mount Secrets into Pods, providing them with access to sensitive data such as passwords, 
+API keys, or certificates.
 
 \subsubsection{PersistentVolume and PersistentVolumeClaim}
-In Kubernetes, a PersistentVolume is a storage resource that provides persistent storage to Pods. It ensures that data remains accessible even after Pods are terminated and recreated.
-PersistentVolumes are independent of Pods, which means that data is not tied to the lifecycle of a particular Pod. This allows Pods to be restarted or replaced without affecting the availability of data.
-Kubernetes supports different storage classes, which provide different types of storage with varying characteristics, such as performance, durability, and access modes.
-Kubernetes supports multiple volume providers, such as cloud-based storage providers, on-premises storage systems, or third-party storage solutions.
-A PersistentVolumeClaim is a request for persistent storage from a Kubernetes pod. It defines the desired storage characteristics and specifications, such as storage capacity and access modes.
+In Kubernetes, a PersistentVolume is a storage resource that provides persistent storage to Pods. It ensures that data remains accessible even after Pods are terminated and 
+recreated. A PersistentVolumeClaim object is a request for persistent storage from a Kubernetes pod. It defines the desired storage characteristics and specifications, such as storage capacity and access modes.
 A PVC is referenced in a Deployment object. 
 
 \subsubsection{NetworkPolicy}
 A NetworkPolicy object defines rules for controlling network traffic between Pods. 
 It allows for fine-grained control over network access, ensuring that Pods can only communicate with authorized sources and destinations.
-The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between Pods.
-Pods can be selected based on labels, allowing for granular network configuration based on application requirements.
-NetworkPolicies can be integrated with Ingress Controllers to control external traffic routing and apply security policies to incoming traffic.
+The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between pods.
 
 \newpage
 \chapter{Literature Review}
