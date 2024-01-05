@@ -88,6 +88,8 @@
 \pagestyle{scrheadings}
 \automark{chapter}
 
+\usepackage{csquotes}
+
 %Left header shows chapter and chapter name, will not display on first chapter page use \ihead*{\leftmark} to show on every page
 \ihead{\leftmark} 	
 %\ohead*{\rightmark}	%optional right header
@@ -208,6 +210,11 @@ Date: \hspace{6cm} Signature:\\
       REST & Representational State Transfer \\
       CNI & Container Network Interface \\
       JWT & JSON Web Token \\
+      PV & Persistent Volume \\
+      PVC & Persistent Volume Claim \\
+      UTS & Unix Time Sharing \\
+      IPC & Inter Process Communication \\
+      POSIX & Portable Operating System Interface \\
 		\end{tabular}
 \end{table*}
 
@@ -238,22 +245,22 @@ Date: \hspace{6cm} Signature:\\
 
 Over the last years, there has been a significant shift in the way enterprises around the world deploy, scale and maintain the 
 lifecycle of their computing infrastructure and the software that runs on top of it. Applications used to be primarily constructed 
-as one large software unit that bundles all features, business logic, the user interface and data access components.
+as one large software unit that bundled all features, business logic, user interfaces and data access components.
 Increasing necessity for scalability, flexibility and maintainability made organizations transition from such monolithic architectures
-to Microservices, which are smaller, separated but loosely coupled software units implementing one component of the larger system at hand.
-
-
-This shift goes hand in hand with 'DevOps', a philosophy and an approach to the software lifecycle which aims to increase the 
-efficiency of an organization's by emphasizing integration of responsibilities between development and operations. 
-With the release of Docker in 2013 and Kubernetes in 2014, companies have increasingly adopted microservice architecture. 
-
-Kubernetes has become the go-to choice for managing containerized applications, particularly in cloud-native environments.
+to microservices, which are smaller, separated but loosely coupled software units implementing one component of the larger system at hand.
+The release of the Docker container platform in 2013 had a significant impact on making transitions from monoliths to microservices feasible.  
+Kubernetes has since emerged as the go-to choice for managing containerized applications at scale, particularly in cloud-native environments.
 Its ability to automate tasks, scale applications, and support a wide range of use cases makes it a powerful tool for both 
-large enterprises and small teams.
+large enterprises and small teams. However, Kubernetes is a large and complex system that consists of many components including additional plugins. 
+To ensure an enterprise grade, production ready Kubernetes environment, there are vast amounts of configurations to make. As a single
+platform that abstracts orchestration, networking, storage, monitoring, access control and more, Kubernetes becomes open to attack from many different
+angles. This complexity, customizability and vastness highlight the amount of precision required to implement Kubernetes for production environments.  
 \label{sec:Unterkapitel1}
 
 \section{Research Objectives}
 \label{sec:Unterkapitel2}
+
+This thesis aims to explore the landscape of security in Kubernetes
 
 \section{Methodology}
 \label{sec:Unterkapitel3}
@@ -308,33 +315,34 @@ so called containers are mainly achieved by the namespace and cgroup technology 
 
 \subsection{Linux Control Groups}
 Cgroups, short for control groups, are a Linux kernel feature that limits, accounts for, and isolates the resource usage 
-(CPU, memory, disk I/O, etc.) of a collection of processes. 
-
-Cgroups are a key component of containers because there are often multiple processes running in a container that you need to 
-control together. In a Kubernetes environment, cgroups can be used to implement resource requests and limits and corresponding 
-QoS classes at the pod level.
-
-Control Groups (cgroups) are a Linux kernel feature that provides hierarchical partitioning of system resources among sets of processes. They are used to isolate and control the resource usage of individual processes or groups of processes.
-Resource Quotas
-cgroups allow for limiting the resource consumption of processes or groups of processes. This includes limiting CPU, memory, I/O, and network bandwidth usage. These limits are enforced by the kernel, and they ensure that processes do not consume excessive resources and that other processes can access the resources they need.
-Resource Monitoring
-cgroups provide detailed resource usage statistics for processes or groups of processes. This information can be used to identify resource bottlenecks, troubleshoot performance issues, and optimize resource allocation. cgroups also provide a mechanism for collecting and exporting this data to other tools, such as monitoring systems and performance analysis tools.
-Isolation
-cgroups isolate processes or groups of processes from each other, preventing resource contention and ensuring fair resource allocation. This is important for preventing one process from monopolizing resources and starving other processes.
-Hierarchical Grouping
-cgroups support hierarchical grouping of processes, allowing for flexible resource management based on application requirements and user-defined policies. This means that you can create nested cgroup hierarchies that represent the different levels of a system or application. For example, you could have a cgroup hierarchy for each user, each application, or each container.
-Integration with Docker
-cgroups are used by Docker to isolate and manage containers. This ensures that each container has its own dedicated resource pool, which prevents containers from interfering with each other.
-
+(CPU, memory, disk I/O, etc.) of a collection of processes. These limits are enforced by the kernel. They ensure that processes do not
+consume excessive resources and that other processes can access the resources they need. 
+Cgroups support hierarchical grouping of processes, allowing for flexible resource management based on application requirements and user-defined policies. 
+Cgroups are used by Docker and container platforms to isolate and manage resource pool of containers. In a Kubernetes environment, the option
+to implement resource requests and limits of pods are enabled by Cgroups.
 \subsection{Linux Namespaces}
-Namespaces are Linux kernel mechanisms that provide a hierarchical partitioning of the system environment, allowing processes to operate within their own isolated virtualized environment. Each namespace provides a separate view of the system, effectively hiding the existence of other namespaces and their contents.
-Types of Namespaces
-Linux provides five main types of namespaces:
-Process Namespace: Each process within a container has its own process namespace, separating it from other processes in the host system. This prevents processes from directly accessing or interfering with each other's resources.
-Network Namespace: Each container has its own network namespace, allowing it to have its own private network stack and IP address. This enables containers to communicate with each other without affecting the host network.
-Mount Namespace: Each container has its own mount namespace, allowing it to have its own view of the filesystem hierarchy. This prevents containers from accessing the host filesystem and allows them to have their own isolated root filesystem.
-UTS Namespace: Each container has its own UTS namespace, which manages the system's hostname and domain name. This allows containers to have their own unique hostname and domain name, preventing conflicts with other containers.
-IPC Namespace: Each container has its own IPC namespace, which manages inter-process communication (IPC) mechanisms like shared memory, semaphores, and message queues. This prevents containers from interfering with each other's IPC mechanisms.
+Namespaces are Linux kernel mechanisms that provide a hierarchical partitioning of the system environment. The Linux manpage
+defines namespaces as followed. 
+\newline
+\newline
+\blockquote
+{A namespace wraps a global system resource in an abstraction that
+makes it appear to the processes within the namespace that they
+have their own isolated instance of the global resource.}
+\newline
+\newline
+Linux provides seven main types of namespaces:
+
+\begin{itemize}
+  \item PID namespace: Isolates process IDs
+  \item Network namespace: Isolates Network devices, stacks, ports, etc.
+  \item User namespaces: Isolates user and group IDs
+  \item UTS namespace: Isolates hostname and domain name
+  \item Mount namespaces: Isolates mount points
+  \item IPC namespace: Isolates System V IPC objects and POSIX message queues
+  \item Cgroup namespaces: Isolates Cgroup root directory
+\end{itemize}
+
 \newpage
 \subsection{Container Images and Runtimes}
 Finally:
@@ -351,7 +359,7 @@ The relationship between images and runtimes is that images are the blueprints f
 
 \section{Kubernetes}
 \label{sec:Unterkapitel23}
-Kubernetes is an open-source system for for managing containerized workloads and services. It provides a portable, extensible, 
+Kubernetes is an open-source system for managing containerized workloads and services. It provides a portable, extensible, 
 and scalable platform that automates the deployment, scaling, and management of applications.
 \subsection{Components}
 A Kubernetes cluster is separated into a control plane and data plane. The control plane groups the components responsible for 
@@ -441,131 +449,45 @@ replicaset amount of instances
 Service
 In Kubernetes, a Service is an abstraction layer that defines a logical grouping of Pods and exposes them as a single, 
 unified resource to the network. It simplifies the process of accessing and managing Pods by providing a stable endpoint 
-and load balancing capabilities.
-Load Balancing: Services provide load balancing capabilities, distributing traffic across multiple Pods within the Service. This ensures that requests are handled efficiently and that no single Pod becomes overloaded.
-
-External Exposure: Services can be exposed to external clients, allowing them to access the application running on the Pods. This enables applications to be accessible from outside the Kubernetes cluster, such as from the internet or another network.
-
-Different Service Types: Kubernetes supports different types of Services, each with its own characteristics and capabilities. These include ClusterIP, NodePort, LoadBalancer, and Ingress.
-
-Service Discovery: Services facilitate service discovery, allowing Pods to find and connect to each other within the cluster. This is crucial for distributed applications that communicate with each other.
-
-Health Checks: Services can integrate with health checks to ensure that only healthy Pods are part of the Service's load balancing pool. This prevents traffic from being directed to unhealthy Pods and ensures that the application remains available.
-
-Selectors and Labeling: Services use selectors to identify the Pods that belong to the Service. Selectors can be based on labels applied to the Pods, allowing for flexible and dynamic Service configurations.
-
-DNS Resolution: Services can be resolved to DNS names, simplifying the process for clients to access the application. This provides a consistent and human-readable way to address the application.
+and load balancing capabilities. Providing a stable endpoint ensures that pods can dynamically scale in the background 
+with changing IP addresses. Services can be resolved to DNS names, providing a consistent and human-readable way to address the application.
+Service objects use selectors to identify the Pods that belong to the Service.
 
 \subsubsection{ConfigMap}
 A ConfigMap is a key-value data store that can be mounted into Pods as environment variables, files, or command-line arguments. 
 It provides a way to decouple configuration data from container images, making applications more portable and flexible.
-
-Store Unstructured Data: ConfigMaps store unstructured data, such as configuration files, environment variables, or command-line arguments. This allows for storing a variety of configuration information in a centralized location.
-
-Mountable into Pods: ConfigMaps can be mounted into Pods as environment variables, files, or command-line arguments. This allows applications to access and utilize the configuration data without modifying their container images.
-
-Dynamic Updates: ConfigMaps can be updated dynamically, without requiring Pod restarts. This enables applications to receive configuration changes without downtime, ensuring a consistent experience for users.
-
-Label-based Selection: ConfigMaps can be selected based on labels, allowing for targeted application deployments. This simplifies configuration management and facilitates dynamic updates.
-
-Secret Support: ConfigMaps can also store sensitive data in encrypted form using Kubernetes Secrets. This protects sensitive information and prevents it from being exposed in plain text.
-
-Version History: ConfigMaps track their versions, providing a history of configuration changes. This facilitates rollbacks to previous configurations and simplifies troubleshooting.
-
-Human-readable Names: ConfigMaps have human-readable names, making it easier to identify and manage configuration data.
+ConfigMaps can be updated dynamically, without requiring Pod restarts. This enables applications to receive configuration changes without 
+downtime. 
 
 \subsubsection{Ingress}
-Ingress
 
-In Kubernetes, an Ingress is a controller that manages external traffic routing to a set of Services within the cluster. It acts as a front door for applications, handling load balancing, SSL termination, and other advanced traffic management tasks.
-
-Key Features of Kubernetes Ingresses:
-
-External Traffic Routing: Ingresses direct external traffic to the appropriate Services within the cluster. This allows applications to be accessible from outside the Kubernetes cluster, making them more widely available to users.
-
-Load Balancing: Ingresses handle load balancing across multiple Services, ensuring that requests are distributed evenly and no single Service becomes overloaded. This improves the application's overall responsiveness and scalability.
-
-SSL Termination: Ingresses can terminate SSL/TLS connections, offloading this work from the applications and improving their security posture. This simplifies the application's configuration and reduces the risk of vulnerabilities.
-
-Path-based Routing: Ingresses can route traffic based on the request's path, allowing for different applications or services to be served depending on the URL. This simplifies application deployment and makes it easier to maintain multiple applications.
-
-Customizable Rules: Ingresses can be configured with custom rules that define how traffic is routed, including routing based on headers, query parameters, and more. This provides flexibility in routing traffic to specific applications or services.
-
-TLS Passthrough: Ingresses can support TLS passthrough, which allows for direct communication between clients and the application's Pods without the need for SSL termination at the Ingress level. This is useful for applications that require specific TLS configurations.
-
-Multiple Ingress Controllers: Kubernetes supports multiple Ingress controllers, each with its own strengths and capabilities. This allows for flexibility in selecting the Ingress controller that best suits the application's requirements and infrastructure.
+In Kubernetes, an Ingress is a controller that manages external traffic routing to a set of Services within the cluster. It acts as a 
+front door for applications, handling load balancing, SSL termination, and other advanced traffic management tasks.
+They direct external traffic to the appropriate Services within the cluster. Ingresses can terminate SSL/TLS connections, offloading this work from the applications. 
+Ingresses route traffic based on the request's path, headers, query parameters, and more. 
+Ingresses support TLS passthrough, which allows for direct communication between clients and the application's Pods without the need for SSL termination at the Ingress level.
 
 \subsubsection{ServiceAccount}
-n Kubernetes, a ServiceAccount is a security identity that allows pods to access Kubernetes resources and services. It acts as an authentication mechanism for pods, managing their access permissions and controlling their interactions with the cluster.
-Key Features of Kubernetes ServiceAccounts:
-Authentication and Authorization: ServiceAccounts provide authentication and authorization for pods, granting them access to specific Kubernetes resources and services. This ensures that pods have the necessary permissions to perform their tasks without granting excessive access.
-Centralized Identity Management: ServiceAccounts manage identities in a centralized manner, simplifying the process of granting and revoking access permissions for pods. This reduces the complexity of managing access control across multiple pods.
-Role-Based Access Control (RBAC) Integration: ServiceAccounts can be integrated with Kubernetes RBAC, enabling fine-grained control over pod access permissions. This allows for granular control over what pods can do and what resources they can access.
-Mounting Secrets: ServiceAccounts can mount Secrets into Pods, providing them with access to sensitive data such as passwords, API keys, or certificates. This simplifies the process of managing sensitive information in Pods.
-Ownership of Kubernetes Resources: ServiceAccounts can be associated with Kubernetes resources, such as Deployments, Pods, or Jobs, granting them the appropriate ownership and permissions for those resources. This simplifies resource management and enforces ownership rules.
-Cross-Namespace Access: ServiceAccounts can have access to resources in other namespaces, allowing for secure communication and resource sharing across different namespaces. This promotes flexibility and collaboration in distributed environments.
+A ServiceAccount is a security identity that allows pods to access Kubernetes resources and services. It acts as an authentication mechanism for pods, managing their access 
+permissions and controlling their interactions with the cluster. ServiceAccounts manage identities in a centralized manner, simplifying the process of granting and revoking 
+access permissions for pods. ServiceAccounts can be integrated with Kubernetes RBAC, enabling fine-grained control over pod access permissions. 
+ServiceAccounts can mount Secrets into Pods, providing them with access to sensitive data such as passwords, API keys, or certificates.
 
-\subsubsection{PersistentVolume}
-In Kubernetes, a PersistentVolume (PV) is a storage resource that provides persistent storage to Pods. It ensures that data remains accessible even after Pods are terminated and recreated.
-Key Features of Kubernetes PersistentVolumes:
-Durability and Reliability: PersistentVolumes provide durable and reliable storage, ensuring that data persists even after Pods are deleted. This is crucial for applications that need to store persistent data.
-Independent of Pods: PersistentVolumes are independent of Pods, which means that data is not tied to the lifecycle of a particular Pod. This allows Pods to be restarted or replaced without affecting the availability of data.
-Dynamic Provisioning: Kubernetes supports dynamic provisioning of PersistentVolumes, which means that the cluster can automatically provision storage resources based on the needs of Pods. This simplifies storage management and eliminates the need for manual provisioning.
-Different Storage Classes: Kubernetes supports different storage classes, which provide different types of storage with varying characteristics, such as performance, durability, and access modes. This allows for flexibility in choosing the appropriate storage for different applications.
-Multiple PV Providers: Kubernetes supports multiple PV providers, such as cloud-based storage providers, on-premises storage systems, or third-party storage solutions. This enables the use of various storage options and simplifies integration with existing storage infrastructure.
-
-\subsubsection{PersistentVolumeClaim}
-A PersistentVolumeClaim (PVC) is a request for persistent storage from a Kubernetes cluster. It defines the desired storage characteristics and specifications, such as storage capacity, access modes, and storage class requirements.
-
-Demand-driven Storage Allocation: PVCs allow Pods to request storage requirements from the cluster, rather than manually provisioning storage resources. This simplifies storage management and eliminates the need for overprovisioning.
-
-Dynamic Storage Binding: The cluster automatically binds PersistentVolumes to PersistentVolumeClaims based on their compatibility and availability. This simplifies storage provisioning and eliminates manual management.
-
-Guaranteed Storage Allocation: PVCs guarantee that Pods will receive the requested storage capacity, ensuring that applications have the storage they need to function.
-
-Flexible Storage Classes: PVCs can specify the desired storage class, allowing for the selection of different storage types and providers based on application requirements.
-
-Non-blocking Storage Request: PVCs allow Pods to start and run without waiting for the underlying storage to be provisioned. This enables early Pod startup and application availability.
-
-Multiple PVC Providers: Kubernetes supports multiple PVC providers, such as cloud-based storage providers, on-premises storage systems, or third-party storage solutions. This facilitates integration with existing storage infrastructure and enables flexible storage options.
+\subsubsection{PersistentVolume and PersistentVolumeClaim}
+In Kubernetes, a PersistentVolume is a storage resource that provides persistent storage to Pods. It ensures that data remains accessible even after Pods are terminated and recreated.
+PersistentVolumes are independent of Pods, which means that data is not tied to the lifecycle of a particular Pod. This allows Pods to be restarted or replaced without affecting the availability of data.
+Kubernetes supports different storage classes, which provide different types of storage with varying characteristics, such as performance, durability, and access modes.
+Kubernetes supports multiple volume providers, such as cloud-based storage providers, on-premises storage systems, or third-party storage solutions.
+A PersistentVolumeClaim is a request for persistent storage from a Kubernetes pod. It defines the desired storage characteristics and specifications, such as storage capacity and access modes.
+A PVC is referenced in a Deployment object. 
 
 \subsubsection{NetworkPolicy}
-In Kubernetes, a NetworkPolicy is a declarative configuration that defines rules for controlling network traffic between Pods. It allows for fine-grained control over network access, ensuring that Pods can only communicate with authorized sources and destinations.
+A NetworkPolicy object defines rules for controlling network traffic between Pods. 
+It allows for fine-grained control over network access, ensuring that Pods can only communicate with authorized sources and destinations.
+The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between Pods.
+Pods can be selected based on labels, allowing for granular network configuration based on application requirements.
+NetworkPolicies can be integrated with Ingress Controllers to control external traffic routing and apply security policies to incoming traffic.
 
-Key Features of Kubernetes NetworkPolicy:
-
-Fine-grained Network Control: NetworkPolicies allow for granular control over network traffic, specifying which Pods can communicate with each other and with external sources. This enables secure and controlled communication patterns within the cluster.
-
-Policy Enforcement: NetworkPolicy rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between Pods. This protects applications from unauthorized access and malicious traffic.
-
-Label-based Selection: NetworkPolicies can select Pods based on labels, allowing for dynamic and flexible network configuration based on application requirements. This simplifies network management and enables targeted policy enforcement.
-
-Multi-level Visibility: NetworkPolicies provide multi-level visibility into network traffic, allowing administrators to monitor and control network activity at the pod, namespace, and cluster levels. This enables centralized network security and policy enforcement.
-
-Policy Overrides: NetworkPolicies can be overridden at the pod level, allowing for specific Pods to be exempted from the policy rules. This provides flexibility in configuring network access for individual Pods.
-
-Integration with Ingress Controllers: NetworkPolicies can be integrated with Ingress Controllers to control external traffic routing and apply security policies to incoming traffic. This enhances the overall security posture of the application.
-
-\subsubsection{Role Based Access Control}
-RBAC 
-In Kubernetes, Role-Based Access Control (RBAC) is a centralized authorization mechanism that controls which users or groups can access resources and perform specific actions within the cluster. It provides a fine-grained way to manage access permissions and enforce security policies across the Kubernetes environment.
-
-Key Components of Kubernetes RBAC:
-
-Roles: Roles define a set of permissions that can be granted to users or groups. They specify which resources can be accessed, what actions can be performed on those resources, and the scope of the permissions (e.g., namespace-wide or cluster-wide).
-
-ClusterRoles: ClusterRoles are similar to Roles, but they have a broader scope, applying to all namespaces within the cluster. They are typically used to define permissions for system components or users who need access to resources across multiple namespaces.
-
-RoleBindings: RoleBindings associate Roles or ClusterRoles with users or groups, granting them the specified permissions. They define the mapping between identities and the permissions they hold.
-
-Users: Users represent individual identities in the Kubernetes system. They can be created manually or integrated with existing authentication providers, such as LDAP or Active Directory.
-
-Groups: Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.
-
-Namespaces: Namespaces provide a logical separation of resources within the cluster. RBAC policies can be defined within namespaces, allowing granular control over resource access for specific environments or applications.
-
-Policies: Policies are high-level statements that define access control rules for specific resources or actions. They can be expressed in different formats, such as YAML or JSON, and can be integrated with RBAC to enforce fine-grained access control.
-\newpage
 \newpage
 \chapter{Literature Review}
 Kubernetes is highly customizable and offers a range of configuration options which determine the security posture of

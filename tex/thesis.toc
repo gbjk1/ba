@@ -25,35 +25,33 @@
 \contentsline {subsubsection}{\nonumberline Deployment}{7}{subsubsection*.25}%
 \contentsline {subsubsection}{\nonumberline Service}{7}{subsubsection*.27}%
 \contentsline {subsubsection}{\nonumberline ConfigMap}{7}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline Ingress}{8}{subsubsection*.31}%
-\contentsline {subsubsection}{\nonumberline ServiceAccount}{8}{subsubsection*.33}%
-\contentsline {subsubsection}{\nonumberline PersistentVolume}{9}{subsubsection*.35}%
-\contentsline {subsubsection}{\nonumberline PersistentVolumeClaim}{9}{subsubsection*.37}%
-\contentsline {subsubsection}{\nonumberline NetworkPolicy}{10}{subsubsection*.39}%
-\contentsline {subsubsection}{\nonumberline Role Based Access Control}{10}{subsubsection*.41}%
-\contentsline {chapter}{\numberline {3}Literature Review}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}State of the Art}{17}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Hardening Measures}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Rootless Containers}{18}{section.4.1}%
-\contentsline {subsubsection}{\nonumberline Dockerfile}{18}{subsubsection*.43}%
-\contentsline {subsubsection}{\nonumberline runAsNonRoot}{18}{subsubsection*.45}%
-\contentsline {subsubsection}{\nonumberline runAsUser}{19}{subsubsection*.47}%
-\contentsline {subsubsection}{\nonumberline allowPrivilegeEscalation}{19}{subsubsection*.49}%
-\contentsline {subsubsection}{\nonumberline readOnlyRootFilesystem}{19}{subsubsection*.51}%
-\contentsline {subsubsection}{\nonumberline Capabilities}{19}{subsubsection*.53}%
-\contentsline {subsubsection}{\nonumberline AppArmor}{19}{subsubsection*.55}%
-\contentsline {subsubsection}{\nonumberline SELinux}{19}{subsubsection*.57}%
-\contentsline {subsubsection}{\nonumberline Seccomp}{19}{subsubsection*.59}%
-\contentsline {section}{\numberline {4.2}Network}{20}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Role Based Access Control}{22}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Discussion}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications for businesses}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tradeoffs and Difficulties}{24}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Complexity}{24}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Outlook / Future work}{26}{chapter.7}%
-\contentsline {chapter}{Bibliography}{27}{chapter.7}%
-\contentsline {chapter}{List of Figures}{28}{chapter*.60}%
-\contentsline {chapter}{List of Tables}{29}{chapter*.61}%
-\contentsline {chapter}{\nonumberline Appendix}{30}{chapter*.63}%
+\contentsline {subsubsection}{\nonumberline Ingress}{7}{subsubsection*.31}%
+\contentsline {subsubsection}{\nonumberline ServiceAccount}{7}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline PersistentVolume and PersistentVolumeClaim}{7}{subsubsection*.35}%
+\contentsline {subsubsection}{\nonumberline NetworkPolicy}{8}{subsubsection*.37}%
+\contentsline {chapter}{\numberline {3}Literature Review}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}State of the Art}{14}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Hardening Measures}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Rootless Containers}{15}{section.4.1}%
+\contentsline {subsubsection}{\nonumberline Dockerfile}{15}{subsubsection*.39}%
+\contentsline {subsubsection}{\nonumberline runAsNonRoot}{15}{subsubsection*.41}%
+\contentsline {subsubsection}{\nonumberline runAsUser}{16}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline allowPrivilegeEscalation}{16}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline readOnlyRootFilesystem}{16}{subsubsection*.47}%
+\contentsline {subsubsection}{\nonumberline Capabilities}{16}{subsubsection*.49}%
+\contentsline {subsubsection}{\nonumberline AppArmor}{16}{subsubsection*.51}%
+\contentsline {subsubsection}{\nonumberline SELinux}{16}{subsubsection*.53}%
+\contentsline {subsubsection}{\nonumberline Seccomp}{16}{subsubsection*.55}%
+\contentsline {section}{\numberline {4.2}Network}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Role Based Access Control}{19}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Discussion}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implications for businesses}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tradeoffs and Difficulties}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Complexity}{21}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Outlook / Future work}{23}{chapter.7}%
+\contentsline {chapter}{Bibliography}{24}{chapter.7}%
+\contentsline {chapter}{List of Figures}{25}{chapter*.56}%
+\contentsline {chapter}{List of Tables}{26}{chapter*.57}%
+\contentsline {chapter}{\nonumberline Appendix}{27}{chapter*.59}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

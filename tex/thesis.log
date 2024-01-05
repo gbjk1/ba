@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  4 JAN 2024 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  5 JAN 2024 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/csdc/bachelor/ba/tex/thesis.tex
-(/Users/csdc/bachelor/ba/tex/thesis.tex
+**/Users/gbk/bachelor/ba/tex/thesis.tex
+(/Users/gbk/bachelor/ba/tex/thesis.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
@@ -429,12 +429,37 @@ Package scrlayer-scrpage Warning: replacing deprecated \clearscrheadfoot by
 (scrlayer-scrpage)                \clearpairofpagestyles on input line 87.
 
 1: chapter
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 99.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
+(/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count294
+)
+\csq@reset=\count295
+\csq@gtype=\count296
+\csq@glevel=\count297
+\csq@qlevel=\count298
+\csq@maxlvl=\count299
+\csq@tshold=\count300
+\csq@ltx@everypar=\toks23
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 101.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count294
+\l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box57
 ) (./thesis.aux
 
@@ -455,34 +480,34 @@ LaTeX Warning: Label `fig:cvepie' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-Package scrbase Info: activating english \partname on input line 99.
-Package scrbase Info: activating english \chaptername on input line 99.
-Package scrbase Info: activating english \appendixname on input line 99.
-Package scrbase Info: activating english \figurename on input line 99.
-Package scrbase Info: activating english \tablename on input line 99.
-Package scrbase Info: activating english \contentsname on input line 99.
-Package scrbase Info: activating english \listfigurename on input line 99.
-Package scrbase Info: activating english \listtablename on input line 99.
-Package scrbase Info: activating english \bibname on input line 99.
-Package scrbase Info: activating english \indexname on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+Package scrbase Info: activating english \partname on input line 101.
+Package scrbase Info: activating english \chaptername on input line 101.
+Package scrbase Info: activating english \appendixname on input line 101.
+Package scrbase Info: activating english \figurename on input line 101.
+Package scrbase Info: activating english \tablename on input line 101.
+Package scrbase Info: activating english \contentsname on input line 101.
+Package scrbase Info: activating english \listfigurename on input line 101.
+Package scrbase Info: activating english \listtablename on input line 101.
+Package scrbase Info: activating english \bibname on input line 101.
+Package scrbase Info: activating english \indexname on input line 101.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -520,29 +545,29 @@ Package scrbase Info: activating english \indexname on input line 99.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
+\scratchcounter=\count302
 \scratchdimen=\dimen164
 \scratchbox=\box58
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count298
+\nofMPsegments=\count303
+\nofMParguments=\count304
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count305
 \MPscratchDim=\dimen165
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks24
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count301
-Package hyperref Info: Link coloring OFF on input line 99.
+\c@lstlisting=\count308
+Package hyperref Info: Link coloring OFF on input line 101.
 <images/logo.png, id=4, 113.82526pt x 83.8332pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 107.
+Package pdftex.def Info: images/logo.png  used on input line 109.
 (pdftex.def)             Requested size: 113.82497pt x 83.83298pt.
  [1
 
@@ -550,55 +575,55 @@ Package pdftex.def Info: images/logo.png  used on input line 107.
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./images/logo.png>]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 179.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 181.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 179.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 181.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 179.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 181.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 179.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 181.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 179.
+(Font)              <10.95> on input line 181.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 179.
+(Font)              <8> on input line 181.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 179.
+(Font)              <6> on input line 181.
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--187
 
  []
 
@@ -606,9 +631,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--185
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 \cleardoublepage
+l.189 \cleardoublepage
                        [1]
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 188.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 190.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
@@ -657,145 +682,150 @@ Class scrbook Warning: \float@addtolists detected!
 
 ]
 chapter 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 291.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 298.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
 
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [3] [4]
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 324--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--335
+
+ []
+
+[3] [4]
 <../images/kubernetes.png, id=126, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
-Package pdftex.def Info: ../images/kubernetes.png  used on input line 406.
+Package pdftex.def Info: ../images/kubernetes.png  used on input line 414.
 (pdftex.def)             Requested size: 470.08992pt x 284.52756pt.
 
-Overfull \hbox (29.07219pt too wide) in paragraph at lines 406--407
+Overfull \hbox (29.07219pt too wide) in paragraph at lines 414--415
  [][] 
  []
 
-[5] [6 <../images/kubernetes.png>]
-Overfull \hbox (3.67346pt too wide) in paragraph at lines 467--468
-[]\T1/lmr/m/n/10.95 Dynamic Up-dates: Con-figMaps can be up-dated dy-nam-i-cally, with-out re-quir-ing Pod restarts.
- []
-
-[7] [8] [9] [10] [11]
+[5] [6 <../images/kubernetes.png>] [7] [8]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 493--539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 493--539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--617
+Underfull \hbox (badness 10000) in paragraph at lines 493--539
 
  []
 
-[12
+[9
 
 
 ]
-<../images/cvepie.png, id=196, 1156.32pt x 591.20876pt>
+<../images/cvepie.png, id=179, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
-Package pdftex.def Info: ../images/cvepie.png  used on input line 620.
+Package pdftex.def Info: ../images/cvepie.png  used on input line 542.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
-<../images/cvepie2.png, id=197, 1155.31625pt x 643.40375pt>
+<../images/cvepie2.png, id=180, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
-Package pdftex.def Info: ../images/cvepie2.png  used on input line 640.
+Package pdftex.def Info: ../images/cvepie2.png  used on input line 562.
 (pdftex.def)             Requested size: 255.45726pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--644
+Underfull \hbox (badness 10000) in paragraph at lines 548--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--644
+Underfull \hbox (badness 10000) in paragraph at lines 548--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--723
+Underfull \hbox (badness 10000) in paragraph at lines 567--645
 
  []
 
-[13 <../images/cvepie.png> <../images/cvepie2.png>] [14] [15]
-<../images/service.png, id=214, 337.26pt x 318.18875pt>
+[10 <../images/cvepie.png> <../images/cvepie2.png>] [11] [12]
+<../images/service.png, id=198, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
-Package pdftex.def Info: ../images/service.png  used on input line 726.
+Package pdftex.def Info: ../images/service.png  used on input line 648.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 731--764
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 653--686
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--764
+Underfull \hbox (badness 10000) in paragraph at lines 653--686
 
  []
 
-[16 <../images/service.png>] [17]
+[13 <../images/service.png>] [14]
 chapter 4.
-<../images/dockerfile.png, id=225, 571.13374pt x 125.46875pt>
+<../images/dockerfile.png, id=209, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
-Package pdftex.def Info: ../images/dockerfile.png  used on input line 795.
+Package pdftex.def Info: ../images/dockerfile.png  used on input line 717.
 (pdftex.def)             Requested size: 284.52756pt x 62.50638pt.
-[18
+[15
 
 
  <../images/dockerfile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 815--819
+Underfull \hbox (badness 10000) in paragraph at lines 737--741
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--847
+Underfull \hbox (badness 10000) in paragraph at lines 762--769
 
  []
 
-[19]
-<../images/nwp.png, id=255, 439.6425pt x 203.76125pt>
+[16]
+<../images/nwp.png, id=238, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 861.
+Package pdftex.def Info: ../images/nwp.png  used on input line 783.
 (pdftex.def)             Requested size: 214.8699pt x 99.58464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 865--868
+Underfull \hbox (badness 10000) in paragraph at lines 787--790
 
  []
 
-<../images/nwp2.png, id=256, 525.965pt x 425.59pt>
+<../images/nwp2.png, id=239, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 871.
+Package pdftex.def Info: ../images/nwp2.png  used on input line 793.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
-[20 <../images/nwp.png> <../images/nwp2.png>]
-<../images/authpolicy.png, id=265, 605.26125pt x 463.7325pt>
+[17 <../images/nwp.png> <../images/nwp2.png>]
+<../images/authpolicy.png, id=248, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
-Package pdftex.def Info: ../images/authpolicy.png  used on input line 895.
+Package pdftex.def Info: ../images/authpolicy.png  used on input line 817.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
- [21 <../images/authpolicy.png>] [22]
+ [18 <../images/authpolicy.png>] [19]
 chapter 5.
-[23
+[20
 
 
-] [24]
+] [21]
 chapter 6.
-[25
+[22
 
 
 ]
 chapter 7.
-[26
+[23
 
 
 ] (./thesis.bbl (./thesis.brf)
@@ -807,26 +837,26 @@ chapter 7.
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 23.
 
-) [27
+) [24
 
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [28
+ [25
 
 
 ] (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
- [29
+ [26
 
 
 ]
 chapter without number
-[30
+[27
 
 
 
@@ -839,18 +869,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17064 strings out of 476025
- 326930 string characters out of 5790016
+ 17970 strings out of 476025
+ 340937 string characters out of 5790016
  1872388 words of memory out of 5000000
- 37145 multiletter control sequences out of 15000+600000
+ 38046 multiletter control sequences out of 15000+600000
  553607 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,20n,106p,10629b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10628b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (37 pages, 854345 bytes).
+Output written on thesis.pdf (34 pages, 844325 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 381 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
  286 words of extra memory for PDF output out of 10000 (max. 10000000)
 
