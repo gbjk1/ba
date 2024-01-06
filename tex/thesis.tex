@@ -820,17 +820,51 @@ They define the mapping between identities and the permissions they hold.
 Users represent individual identities in the Kubernetes system. They can be created manually or integrated with existing authentication providers, such as LDAP or Active Directory.
 Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.
 
-\chapter{Discussion}
-\section{Implications for businesses}
-\newpage
-\section{Tradeoffs and Difficulties}
-\section{Complexity}
+\chapter{Discussion And Future Work}
 
-\newpage
+The amount of CVE listings related to containers and orchestration technically allow for more in depth analysis.
+There is still much more to be investigated and there are more improvements to be made to ensure a production grade Kubernetes environment. 
+Exploring all CVE reports in depth would require more time and resources and would go beyond the scope of this bachelor thesis.
+Using Python, consuming APIs for CVE information greatly alleviated the overhead to understand the big picture of CVE reports.
+Future work could describe a more elaborate setup of Kubernetes including policy engines, external secret management, 
+OIDC servers, image scanning and runtime observability tools.  
+\newline
+\newline
+Admission to the cluster can be controlled and validate using solutions like the Open Policy Agent or Kyverno. 
+Using admission controllers, objects that do not adhere to custom policies are denied application to the cluster. 
+This extends possibilities to enforce rootless containers, as the admission controller could block the installation
+of root deployments in the first place.  
+\newline
+\newline
+Another aspect to consider in order to improve the security posture of the environment is secret management. General secrets, 
+like database credentials and API keys, as well as SSL certificates and SSL keys used by applications deployed in Kubernetes, 
+should be externalized from the source code and repository platforms like GitHub. Major cloud providers like AWS and Azure provide 
+services for secret management, or self-hosted open source tools like Hashicorp Vault can be leveraged. 
+\newline
+\newline
+Service mesh implementations and self-hosted OIDC servers like Keycloak or cloud-provided identity management can 
+be tightly integrated to ensure the most granular access control to applications and resources. 
+\newline
+\newline
+Additionally, image scanning in Kubernetes involves checking images used in your Kubernetes cluster for known 
+weaknesses and suspicious installations or configurations. Trivy is an open-source scanner which works by examining the filesystem of the image and looking for 
+known vulnerabilities in the installed software packages, libraries, and binaries. It uses multiple vulnerability databases to provide 
+accurate and timely vulnerability reports. 
+\newline
+\newline
+Runtime security solutions allow for monitoring and blocking certain kernel events or suspicious system calls. 
+Tools like Falco and Tetragon help gain visibility into abnormal behavior of hosts and containers. 
+
 \chapter{Conclusion}
 
-\newpage
-\chapter{Outlook / Future work}
+This thesis aims to shine light on Kubernetes from a security perspective. With the help of scripting, data on CVE 
+reports relating to containers and Kubernetes is collected and analyzed. From this data, significant cases 
+are extracted and further explained in detail. Container and Kubernetes configurations are formulated to minimize
+attack surface. The thesis highlights the importance of a clear security initiative when utilizing Kubernetes in 
+a production environment. 
+
+
+
 
 \newpage
 
@@ -854,13 +888,6 @@ Groups are collections of users that can be granted permissions together. This s
 
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
-
-
-% --- List of Tables -----------------------------------------------------
-
-\newpage
-\addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
 
 % --- Appendix A -----------------------------------------------------
 

@@ -61,14 +61,9 @@
 \contentsline {subsubsection}{\nonumberline Role And ClusterRole}{19}{subsubsection*.85}%
 \contentsline {subsubsection}{\nonumberline RoleBindings And ClusterRoleBinding}{19}{subsubsection*.87}%
 \contentsline {subsubsection}{\nonumberline Users And Groups}{19}{subsubsection*.89}%
-\contentsline {chapter}{\numberline {5}Discussion}{20}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implications for businesses}{20}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tradeoffs and Difficulties}{21}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Complexity}{21}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Outlook / Future work}{23}{chapter.7}%
-\contentsline {chapter}{Bibliography}{24}{chapter.7}%
-\contentsline {chapter}{List of Figures}{25}{chapter*.90}%
-\contentsline {chapter}{List of Tables}{26}{chapter*.91}%
-\contentsline {chapter}{\nonumberline Appendix}{27}{chapter*.93}%
+\contentsline {chapter}{\numberline {5}Discussion And Future Work}{20}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}%
+\contentsline {chapter}{Bibliography}{22}{chapter.6}%
+\contentsline {chapter}{List of Figures}{23}{chapter*.90}%
+\contentsline {chapter}{\nonumberline Appendix}{24}{chapter*.92}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,8 +1,8 @@
-PWD /Users/gbk/bachelor/ba/tex
+PWD /Users/csdc/bachelor/ba/tex
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/gbk/bachelor/ba/tex/thesis.tex
+INPUT /Users/csdc/bachelor/ba/tex/thesis.tex
 OUTPUT thesis.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
@@ -890,10 +890,6 @@ INPUT ./thesis.lof
 INPUT thesis.lof
 INPUT thesis.lof
 OUTPUT thesis.lof
-INPUT ./thesis.lot
-INPUT thesis.lot
-INPUT thesis.lot
-OUTPUT thesis.lot
 INPUT ../images/cvepy1.png
 INPUT ../images/cvepy1.png
 INPUT ../images/cvepy1.png

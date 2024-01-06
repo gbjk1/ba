@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  6 JAN 2024 02:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  7 JAN 2024 00:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gbk/bachelor/ba/tex/thesis.tex
-(/Users/gbk/bachelor/ba/tex/thesis.tex
+**/Users/csdc/bachelor/ba/tex/thesis.tex
+(/Users/csdc/bachelor/ba/tex/thesis.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
@@ -699,7 +699,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--325
 
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [3] [4]
-<../images/kubernetes.png, id=138, 1029.8475pt x 623.32875pt>
+<../images/kubernetes.png, id=128, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
 Package pdftex.def Info: ../images/kubernetes.png  used on input line 401.
@@ -730,12 +730,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--529
 
 
 ]
-<../images/cvepie.png, id=179, 1156.32pt x 591.20876pt>
+<../images/cvepie.png, id=169, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
 Package pdftex.def Info: ../images/cvepie.png  used on input line 532.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
-<../images/cvepie2.png, id=180, 1155.31625pt x 643.40375pt>
+<../images/cvepie2.png, id=170, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
 Package pdftex.def Info: ../images/cvepie2.png  used on input line 552.
@@ -751,7 +751,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 538--556
  []
 
 [9 <../images/cvepie.png>] [10 <../images/cvepie2.png>] [11]
-<../images/service.png, id=209, 337.26pt x 318.18875pt>
+<../images/service.png, id=199, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
 Package pdftex.def Info: ../images/service.png  used on input line 635.
@@ -763,7 +763,7 @@ Overfull \hbox (17.47298pt too wide) in paragraph at lines 641--649
 
 [12 <../images/service.png>] [13] [14]
 chapter 4.
-<../images/dockerfile.png, id=237, 571.13374pt x 125.46875pt>
+<../images/dockerfile.png, id=227, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
 Package pdftex.def Info: ../images/dockerfile.png  used on input line 696.
@@ -782,7 +782,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 741--748
  []
 
 [16]
-<../images/nwp.png, id=267, 439.6425pt x 203.76125pt>
+<../images/nwp.png, id=257, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
 Package pdftex.def Info: ../images/nwp.png  used on input line 762.
@@ -792,30 +792,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 766--769
 
  []
 
-<../images/nwp2.png, id=268, 525.965pt x 425.59pt>
+<../images/nwp2.png, id=258, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
 Package pdftex.def Info: ../images/nwp2.png  used on input line 772.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
 [17 <../images/nwp.png> <../images/nwp2.png>]
-<../images/authpolicy.png, id=277, 605.26125pt x 463.7325pt>
+<../images/authpolicy.png, id=267, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
 Package pdftex.def Info: ../images/authpolicy.png  used on input line 796.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
  [18 <../images/authpolicy.png>] [19]
 chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--857
+
+ []
+
 [20
 
 
-] [21]
-chapter 6.
-[22
-
-
 ]
-chapter 7.
-[23
+chapter 6.
+[21
 
 
 ] (./thesis.bbl (./thesis.brf)
@@ -827,41 +847,34 @@ chapter 7.
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 23.
 
-) [24
+) [22
 
 
 ] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [25
-
-
-] (./thesis.lot)
-\tf@lot=\write6
-\openout6 = `thesis.lot'.
-
- [26
+ [23
 
 
 ]
 chapter without number
-<../images/cvepy1.png, id=333, 1169.36874pt x 996.72375pt>
+<../images/cvepy1.png, id=310, 1169.36874pt x 996.72375pt>
 File: ../images/cvepy1.png Graphic file (type png)
 <use ../images/cvepy1.png>
-Package pdftex.def Info: ../images/cvepy1.png  used on input line 875.
+Package pdftex.def Info: ../images/cvepy1.png  used on input line 902.
 (pdftex.def)             Requested size: 426.79134pt x 363.77834pt.
-<../images/cvepy2.png, id=334, 1169.36874pt x 865.2325pt>
+<../images/cvepy2.png, id=311, 1169.36874pt x 865.2325pt>
 File: ../images/cvepy2.png Graphic file (type png)
 <use ../images/cvepy2.png>
-Package pdftex.def Info: ../images/cvepy2.png  used on input line 880.
+Package pdftex.def Info: ../images/cvepy2.png  used on input line 907.
 (pdftex.def)             Requested size: 426.79134pt x 315.78743pt.
-[27
+[24
 
 
 
 
- <../images/cvepy1.png>] [28 <../images/cvepy2.png>] (./thesis.aux)
+ <../images/cvepy1.png>] [25 <../images/cvepy2.png>] (./thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -869,18 +882,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 18031 strings out of 476025
- 342014 string characters out of 5790016
+ 18007 strings out of 476025
+ 341750 string characters out of 5790016
  1867388 words of memory out of 5000000
- 38070 multiletter control sequences out of 15000+600000
+ 38057 multiletter control sequences out of 15000+600000
  553607 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,19n,106p,10628b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10629b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (35 pages, 1362536 bytes).
+Output written on thesis.pdf (32 pages, 1362366 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
- 162 named destinations out of 1000 (max. 500000)
- 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 460 PDF objects out of 1000 (max. 8388607)
+ 389 compressed objects within 4 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
