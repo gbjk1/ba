@@ -215,6 +215,7 @@ Date: \hspace{6cm} Signature:\\
       UTS & Unix Time Sharing \\
       IPC & Inter Process Communication \\
       POSIX & Portable Operating System Interface \\
+      JSON & JavaScript Object Notation \\
 		\end{tabular}
 \end{table*}
 
@@ -405,7 +406,7 @@ Figure 2.1 gives a high level overview over Kubernetes components and concepts.
 \subsection{Core Cluster Objects}
 
 Kubernetes Objects are detailed specifications of the desired state of an application and the cluster as a whole. 
-Objects are formulated in YAML syntax and are communicated to the Kubernetes API using the 'kubectl' command line 
+Objects are formulated in YAML or JSON syntax and are communicated to the Kubernetes API using the 'kubectl' command line 
 utility.
 
 \subsubsection{Kubernetes Namespaces}
@@ -566,52 +567,62 @@ be explored in the following chapters.
 \subsubsection {Container Escape}
 Major vulnerabilities include those which fall under the category of a so called container-escape. Since a container is intended to be a 
 runtime environment isolated from the underlying host, the concept of a container-escape relates to performing an exploit that breaks the confines 
-of exactly this isolation, resulting in full or limited access to the underlying host machine and/or network. A study conducted by Reeves 
+of exactly this isolation, resulting in full or limited access to the underlying host machine or network. A study conducted by Reeves 
 et al. at the end of 2021 investigates the susceptibility of different container runtime systems to escape-exploits by studying a batch of CVE 
-reports. The study identifies three main causes for container escapes. 
+reports. The study identifies three main causes for container escapes.
+
+\subsubsection{CVE-2019-5736}
 First, mishandled file descriptors, if for example left accessible from within a container under /proc directory, provides malicious actors read and write 
 access to the underlying host filesystem, as seen in CVE-2019-5736. In this reported vulnerability, a container is set up with a symlink from the 
 container's entrypoint to proc/self/exe, which points back to its runC binary, which instantiated the container process. In addition, the container 
 carries a harmful file which is designed to overwrite the  file descriptors of any excecuting process that loads it. If an unknowing person executes 
 a binary within the container, which has been manipulated to symlink to /proc/self/exe, the harmful file is able to overwrite the runC binary. 
 The next time another, unrelated container is spawned, it is done by the compromised runC binary. 
+
+\subsubsection{CVE-2020-15257}
 Secondly, missing access control to runtime components could enable adversaries to gain access to UNIX sockets on the host, as reported in 
 CVE-2020-15257. Here, it was possible to connect to the containerd socket, thus enabling actors to issue API commands to freely create new containers
-on the host, unconstrained by Apparmor, seccomp, or Linux capabilities. 
+on the host, unconstrained by Apparmor, Seccomp, or Linux capabilities. 
 Thirdly, under 'adversary-controlled host execution' problems of similar fashion to mishandled file descriptors are mentioned. In this case however, 
 vulnerability exposure starts with host binaries being executed in the container context, which makes it a target for manipulation. 
-In CVE-2019-101(44–47), the shared library "libc.so.6" is altered in such a way that it mounts the host filesystem when loaded. The new shell loads 
+
+\subsubsection{CVE-2019-101}
+In CVE-2019-101, the shared library "libc.so.6" is altered in such a way that it mounts the host filesystem when loaded. The new shell loads 
 "libc.so" when the administrator runs "rkt-enter", which is the /bin/bash command by default, to create a new shell in the container. This sets off malicious 
-code embedded in "libc.so", which uses the mknod syscall to construct a block device of the host root filesystem inside the container. 
+code embedded in "libc.so", which uses the MKNOD syscall to construct a block device of the host root filesystem inside the container. 
 As a result, the adversary is able to read and write to the host filesystem. 
-\\
+
+\subsubsection{CVE-2022-0811}
 CVE-2022-0811, which is barely discussed in papers due to its young nature, reports a sophisticated container escape possibility of the CRI-O container engine.
-Generally, the interface of the Linux kernel accepts parameters which control its behavior. This interface is consumed by CRI-O to set kernel options for a pod. 
+Generally, as explained in 2.1.1, the interface of the Linux kernel accepts parameters which control its behavior. This interface is consumed by CRI-O to set kernel options for a pod. 
 However, the parameter input string is not checked or sanitized, which allows for injecting additional, otherwise undesired parameters. Specifically in the
 example of CVE-2022-0811, the "kernel.core\_pattern" kernel parameter is specified within the parameter of the safe "kernel.shm\_rmid\_forced" parameter, 
 which controls the kernel's reaction to a core dump. If a core dump is done in a CRI-O container, the parameter states the execution of a malicious binary. 
 This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel.
-\\
-CVE-2022-23648 is another vulnerability related to container-escape, this time found in Containerd, a popular Kubernetes runtime. This vulnerability lies in 
+
+\subsubsection{CVE-2022-23648}
+CVE-2022-23648 is another vulnerability related to container-escape, this time found in containerd, a popular Kubernetes runtime. This vulnerability lies in 
 Containerd's CRI plugin that handles OCI image specs containing "Volumes". An attacker can exploit this vulnerability by adding a Volume containing path traversal 
-to the image. This allows them to copy arbitrary files from the host to a container mounted path. More specifically, The vulnerability resides in the 
+to the image. This allows them to copy arbitrary files from the host to a container mounted path. More specifically, the vulnerability resides in the 
 "copyExistingContents" function in Containerd's code. This function copies the files from the attacker-controlled volume path to a temporary folder that is later 
 mounted inside a container. An attacker can trick this function into copying arbitrary files from the host filesystem using path traversal.
 This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5.
-\\
-CVE-2022-1708 is a vulnerability found in Cri-o, a lightweight container runtime for Kubernetes. This vulnerability is related to the allocation of resources 
+
+\subsubsection{CVE-2022-1708}
+CVE-2022-1708 is a vulnerability found in CRI-O, a lightweight container runtime for Kubernetes. This vulnerability is related to the allocation of resources 
 without any limits or throttling, which can lead to uncontrolled resource consumption. The official CVE description states: "The ExecSync request runs commands 
 in a container and logs the output of the command. This output is then read by CRI-O after command execution, and it is read in a manner where the entire file 
 corresponding to the output of the command is read in." It is thus possible to exhaust memory or disk space of the node when CRI-O reads an extensive output 
 of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability.
-\\
-Cilium is an eBPF-based solution for network connectivity between workloads in Kubernetes CLusters. CVE-2022-29179 reports yet another subjection to the risk of 
+
+\subsubsection{CVE-2022-29179}
+Cilium is an eBPF-based CNI solution for network connectivity between workloads in Kubernetes Clusters. CVE-2022-29179 reports yet another subjection to the risk of 
 container breakouts.  The CVE number is not directly about a technique to gain access outside the container, it rather addresses a vulnerability in Cilium given a 
 successful container escape. It explicitly mentions root containers as a prerequesite. According to this CVE entry, Cilium's service account in versions prior to
 version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as Pods and Nodes. 
-The entry is marked with a base score of 8.2 which is considered high.
-\\
-CVE-2020-8554:
+The entry is marked with a high base score of 8.2.
+
+\subsubsection{CVE-2020-8554}
 In the case of CVE-2020-8554, the source is a design defect in the External IPs and Load Balancer IPs components of Kubernetes Services. An application running on a collection 
 of pods can be exposed as a network service in an abstract manner using Kubernetes Services. One or more IPs are used to access a service. When the cluster's nodes 
 are deployed, traffic intended for the service IPs will be routed through one of the backing pods that comprise the service. By assigning IP addresses that are already 
@@ -626,6 +637,7 @@ pod when it is deployed to the cluster.
   \label{fig:cvepie}
 \end{figure}
 
+\subsubsection{CVE-2023-5043, CVE-2023-5044}
 Of the more recent vulnerabilities with high severity, CVE-2023-5043 and CVE-2023-5044 report problems with the Nginx Ingress Controller. 
 The Nginx Ingress Controller is a popular add-on to Kubernetes with which cluster incoming traffic is managed. Instead of assigning
 each Kubernetes Service an IP and port directly on the underlying node, the Nginx container serves as a single point of entry and acts as a reverse proxy to the cluster
@@ -634,9 +646,9 @@ through so called annotation snippets. This allows for fine-grained, customized 
 specific declarations of the "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-redirect" annotations of an Ingress Object can be 
 used to inject arbitrary commands, making it possible to obtain credentials of the said nginx ingress controller. Utilizing this credential, even more cluster secrets could 
 be obtained. Multi-tenant environments are most affected by the issue.  
-\\
-\\
-As reported in  CVE-2022-24817, Flux2 can reconcile the state of a remote cluster when provided with a kubeconfig with the correct access rights. Kubeconfig files can define commands to be executed to generate 
+
+\subsubsection{CVE-2022-24817}
+As reported in CVE-2022-24817, Flux2 can reconcile the state of a remote cluster when provided with a kubeconfig with the correct access rights. Kubeconfig files can define commands to be executed to generate 
 on-demand authentication tokens. A malicious user with write access to a Flux source or direct access to the target cluster, could craft a kubeconfig to execute arbitrary code 
 inside the controller’s container. In multi-tenancy deployments this can also lead to privilege escalation if the controller's service account has elevated permissions.
 Within the affected versions range, one of the permissions set below would be required for the vulnerability to be exploited:
@@ -644,16 +656,17 @@ Direct access to the cluster to create Flux Kustomization or HelmRelease objects
 Direct access to the cluster to modify existing Kubernetes secrets being used as kubeconfig in existing Flux Kustomization or HelmRelease objects.
 Direct access to the cluster to modify existing Flux Kustomization or HelmRelease objects and access to create or modify existing Kubernetes secrets.
 Access rights to make changes to a configured Flux Source. The vulnerability is marked with a CVSS base score of 9.9. 
-\\
-A successful container-escape arguably poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
+
+\subsubsection{Summary Of Findings}
+A successful container-escape poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,
 network traffic can be inspected and resources can be deleted. In contrast, other vulnerabilities 'only' allow for more restricted exploitability. For example, 
 CVE-2022-1708, CVE------- and CVE---------- target the availability of the system, but not the confidentiality or integrity of data. The average CVE scores of
-\\
+\newline
 The foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container
 The most notable ones, which have a severity score above 8, according to the Common Vulnerability 
-\\
-We see that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying
+\newline
+It can be seen that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying
 kernel of a k8s node. However, all these things can be prevented or alleviated by applying the concept of least privilege to containers, 
 access to Kubernetes and the Kubernetes network. For example, if a malicious actor cannot freely create files in any desired directory of a 
 compromised container, it significantly reduces his ability to exploit a given vulnerability. Not being able to create that file in the first 
@@ -800,9 +813,22 @@ Figure 4.4 is an example of an Istio AuthorizationPolicy object, which implement
 \newpage
 \section{Role Based Access Control}
 
-Roles - bindings 
-ClusterRoles - bindings
-ServiceAccounts 
+RBAC is a authorization mechanism that controls which users or groups can access resources and perform specific actions within the cluster. 
+It provides a fine-grained way to manage access permissions and enforce security policies across the Kubernetes environment.
+
+\subsubsection{Role And ClusterRole}
+Role objects define a set of permissions that can be granted to users or groups. They specify which resources can be accessed, what actions 
+can be performed on those resources, and the scope of the permissions (namespace-wide or cluster-wide).
+ClusterRole objects are similar to Roles, but they have a broader scope, applying to all namespaces within the cluster. They are typically used to define 
+permissions for system components or users who need access to resources across multiple namespaces.
+
+\subsubsection{RoleBindings And ClusterRoleBinding}
+RoleBindings and ClusterRoleBindings associate Roles or ClusterRoles with users or groups, granting them the specified permissions. 
+They define the mapping between identities and the permissions they hold.
+
+\subsubsection{Users And Groups}
+Users represent individual identities in the Kubernetes system. They can be created manually or integrated with existing authentication providers, such as LDAP or Active Directory.
+Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.
 
 \chapter{Discussion}
 \section{Implications for businesses}
@@ -853,7 +879,17 @@ ServiceAccounts
 \begin{appendices}
 \chapter{Appendix}
 
-cve.py
+cve.py, retrieves CVE numbers and associated scores for a search term
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[width=15cm]{../images/cvepy1}
+  \label{fig:cvepy1}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[width=15cm]{../images/cvepy2}
+  \label{fig:cvepy2}
+\end{figure}
 \clearpage
 \end{appendices}
 
