@@ -619,7 +619,7 @@ of the command. The vulnerability is rated as high, with a CVSS base score of 7.
 Cilium is an eBPF-based CNI solution for network connectivity between workloads in Kubernetes Clusters. CVE-2022-29179 reports yet another subjection to the risk of 
 container breakouts.  The CVE number is not directly about a technique to gain access outside the container, it rather addresses a vulnerability in Cilium given a 
 successful container escape. It explicitly mentions root containers as a prerequesite. According to this CVE entry, Cilium's service account in versions prior to
-version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as Pods and Nodes. 
+version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as pods and nodes. 
 The entry is marked with a high base score of 8.2.
 
 \subsubsection{CVE-2020-8554}
@@ -661,30 +661,20 @@ Access rights to make changes to a configured Flux Source. The vulnerability is 
 A successful container-escape poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
 the CIA triad can be targeted: Confidentiality, Integrity, and Availability. Once an attacker gains access of the host, secrets can be read, binaries can be altered,
 network traffic can be inspected and resources can be deleted. In contrast, other vulnerabilities 'only' allow for more restricted exploitability. For example, 
-CVE-2022-1708, CVE------- and CVE---------- target the availability of the system, but not the confidentiality or integrity of data. The average CVE scores of
-\newline
-The foundation of such attacks is being able to either freely instantiate containers or freely move and operate from inside a container
-The most notable ones, which have a severity score above 8, according to the Common Vulnerability 
-\newline
+CVE-2022-1708 targets the availability of the system, but not the confidentiality or integrity of data.
 It can be seen that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying
-kernel of a k8s node. However, all these things can be prevented or alleviated by applying the concept of least privilege to containers, 
-access to Kubernetes and the Kubernetes network. For example, if a malicious actor cannot freely create files in any desired directory of a 
-compromised container, it significantly reduces his ability to exploit a given vulnerability. Not being able to create that file in the first 
-place, due to missing write permissions, would be a major obstacle for performing a container escape. It is not always possible to completely 
-avoid a vulnerability. This is due to software bugs and unidentified weaknesses in the code that have passed through the testing and review process. 
+kernel of a Kubernetes node. However, all these things can be prevented or alleviated by applying the concept of least privilege to containers, 
+access to the Kubernetes control plane and the Kubernetes network. The foundation of severe attacks is being able to move and operate from inside the cluster or a container. 
+If a malicious actor did not have the ability to freely create files in any desired directory of a container, CVEs such as CVE-2019-5736 and CVE-2022-29179 become difficult to exploit.
+Missing write permissions to sensitive directories would be a major obstacle for performing a container escape, and missing Kubernetes API permissions would decrease 
+zn attackers options to query for sensitive data such as secrets. 
 
 
 \chapter{Hardening Measures}
-These are not problems exclusive to Kubernetes, they exist in any architecture using any tools, setups, services 
-Measures are not exclusive to Kubernetes - containers 
-Generally - regardless of the setup, tools and architecture used, granular access controls, network segmentation
-or  
-Kubernetes offers an insane range of configuration possibilitites out of the box / native kubernetes
-or by installing custom tools inside the cluster. 
-
-Principle of least privilege 
-
-
+Missing write permissions to sensitive directories are a major obstacle for performing container escapes, and missing permissions for accessing the Kubernetes API
+would limit an attackers options to query for sensitive cluster data in case of compromise. Strict network settings prevent attackers from installing malicious software packages
+into the cluster. To harden clusters, the principle of least privilege must be applied. The principle of least privilege states that user or entity must only have access to 
+data and permissions to perform actions required to complete their task.  
 
 \section{Rootless Containers}
 

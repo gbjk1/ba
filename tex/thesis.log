@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  6 JAN 2024 01:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  6 JAN 2024 02:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -766,18 +766,18 @@ chapter 4.
 <../images/dockerfile.png, id=237, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
-Package pdftex.def Info: ../images/dockerfile.png  used on input line 706.
+Package pdftex.def Info: ../images/dockerfile.png  used on input line 696.
 (pdftex.def)             Requested size: 284.52756pt x 62.50638pt.
 [15
 
 
  <../images/dockerfile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 726--730
+Underfull \hbox (badness 10000) in paragraph at lines 716--720
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 751--758
+Underfull \hbox (badness 10000) in paragraph at lines 741--748
 
  []
 
@@ -785,23 +785,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 751--758
 <../images/nwp.png, id=267, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 772.
+Package pdftex.def Info: ../images/nwp.png  used on input line 762.
 (pdftex.def)             Requested size: 214.8699pt x 99.58464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 776--779
+Underfull \hbox (badness 10000) in paragraph at lines 766--769
 
  []
 
 <../images/nwp2.png, id=268, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 782.
+Package pdftex.def Info: ../images/nwp2.png  used on input line 772.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
 [17 <../images/nwp.png> <../images/nwp2.png>]
 <../images/authpolicy.png, id=277, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
-Package pdftex.def Info: ../images/authpolicy.png  used on input line 806.
+Package pdftex.def Info: ../images/authpolicy.png  used on input line 796.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
  [18 <../images/authpolicy.png>] [19]
 chapter 5.
@@ -849,12 +849,12 @@ chapter without number
 <../images/cvepy1.png, id=333, 1169.36874pt x 996.72375pt>
 File: ../images/cvepy1.png Graphic file (type png)
 <use ../images/cvepy1.png>
-Package pdftex.def Info: ../images/cvepy1.png  used on input line 885.
+Package pdftex.def Info: ../images/cvepy1.png  used on input line 875.
 (pdftex.def)             Requested size: 426.79134pt x 363.77834pt.
 <../images/cvepy2.png, id=334, 1169.36874pt x 865.2325pt>
 File: ../images/cvepy2.png Graphic file (type png)
 <use ../images/cvepy2.png>
-Package pdftex.def Info: ../images/cvepy2.png  used on input line 890.
+Package pdftex.def Info: ../images/cvepy2.png  used on input line 880.
 (pdftex.def)             Requested size: 426.79134pt x 315.78743pt.
 [27
 
@@ -877,7 +877,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,19n,106p,10628b,590s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (35 pages, 1362740 bytes).
+Output written on thesis.pdf (35 pages, 1362536 bytes).
 PDF statistics:
  499 PDF objects out of 1000 (max. 8388607)
  424 compressed objects within 5 object streams
