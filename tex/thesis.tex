@@ -242,7 +242,7 @@ Date: \hspace{6cm} Signature:\\
 \chapter{Introduction}
 \label{chap:intro}
 
-\section{Enterprises and Cloud}
+\section{State Of The Art: Enterprises and Cloud}
 
 Over the last years, there has been a significant shift in the way enterprises around the world deploy, scale and maintain the 
 lifecycle of their computing infrastructure and the software that runs on top of it. Applications used to be primarily constructed 
@@ -258,14 +258,23 @@ platform that abstracts orchestration, networking, storage, monitoring, access c
 angles. The complexity, customizability and vastness highlight the amount of precision required to implement Kubernetes for production environments.  
 \label{sec:Unterkapitel1}
 
-\section{State Of The Art}
-
 \section{Related Work}
 
 \section{Objectives And Methodology}
 \label{sec:Unterkapitel2}
 
-This thesis aims to explore the landscape of security in Kubernetes
+This thesis aims to investigate the state of Kubernetes in terms of security. 
+What are known vulnerabilities in Kubernetes environments and is there a common denominator between them?
+Which concepts recur across the found vulnerabilities and incidents?
+To answer these questions, the literature review in chapter three explores the security threat landscape of Kubernetes environments. 
+Specifically, recurring concepts and common denominators across vulnerabilities are identified and discussed. For this, Google,
+the Common Vulnerabilities and Exposures database, the IEEE database, the ACM digital library as well as the official
+Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. In order to minimize manual 
+labor to research the sheer amount of CVE reports, a Python script was developed to automate the research by querying public APIs. 
+The script first queries the OpenCVE API for all reports containing keywords related to Kubernetes. With the collected CVE IDs,
+the official NIST API is called to find associated severity scores.
+All acquired papers, articles and slected CVE descriptions are skimmed through. The most relevant results are narrowed down and selected for closer inspection.
+Chapter four presents strategies to mitigate exploitability and impact of vulnerabilities found in chapter three. 
 
 
 \chapter{Concepts}
@@ -483,13 +492,7 @@ great amount of abstraction provided and due to its highly customizable nature. 
 
 \section{CVE Scores}
 Kubernetes is highly customizable and offers a range of configuration options which determine the security posture of
-individual applications and the cluster as a whole. 
-The purpose of this literature review is to explore the security threat landscape of Kubernetes environments. 
-Specifically, recurring concepts and common denominators across vulnerabilities shall be identified and discussed. For this, 
-the database of Common Vulnerabilities and Exposures (CVE), the IEEE database, the ACM digital library and the official
-Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. In order to minimize manual 
-labor to research the sheer amount of CVE reports, a Python script was developed to automate the research. The acquired papers, 
-articles and CVE descriptions are skimmed through. The most relevant results are narrowed down and selected for closer inspection. 
+individual applications and the cluster as a whole.
 It shall be noted that Kubernetes vulnerabilities do not only entail standard Kubernetes components, but also add-ons deployed on
 top of 'plain' Kubernetes. Such can be the Nginx Ingress-Controller, a Service-Mesh, CI/CD tools closely embedded into Kubernetes
 and more. Generally, this can be anything that extends the Kubernetes API through Custom Resource Definitions (CRDs).    
@@ -666,18 +669,16 @@ network traffic can be inspected and resources can be deleted. In contrast, othe
 CVE-2022-1708 targets the availability of the system, but not the confidentiality or integrity of data.
 It can be seen that vulnerabilities vary tremendously in their appearance. CVE so and so targets a tool, CVE so and so targets the actual underlying
 kernel of a Kubernetes node. However, all these things can be prevented or alleviated by applying the concept of least privilege to containers, 
-access to the Kubernetes control plane and the Kubernetes network. The foundation of severe attacks is being able to move and operate from inside the cluster or a container. 
-If a malicious actor did not have the ability to freely create files in any desired directory of a container, CVEs such as CVE-2019-5736 and CVE-2022-29179 become difficult to exploit.
-Missing write permissions to sensitive directories would be a major obstacle for performing a container escape, and missing Kubernetes API permissions would decrease 
-zn attackers options to query for sensitive data such as secrets. 
+access to the Kubernetes control plane and the Kubernetes network. The foundation of any attack and its subsequent damage, whether they pertain to container instances or the network, 
+is being able to freely move and operate from inside the cluster or a container. 
 
 
 \chapter{Hardening Measures}
-Missing write permissions to sensitive directories are a major obstacle for performing container escapes, and missing permissions for accessing the Kubernetes API
-would limit an attackers options to query for sensitive cluster data in case of compromise. Strict network settings prevent attackers from installing malicious software packages
+Missing write permissions to sensitive directories are a major obstacle for performing container escapes. CVEs such as CVE-2019-5736 and CVE-2022-29179 become difficult to exploit.
+Missing permissions for accessing the Kubernetes API limit an attackers options to query for sensitive cluster data in case of compromise. 
+Strict network settings prevent attackers from installing malicious software packages
 into the cluster. To harden clusters, the principle of least privilege must be applied. The principle of least privilege states that user or entity must only have access to 
 data and permissions to perform actions required to complete their task.  
-
 \section{Rootless Containers}
 
 A rootless container is a container which runs its processes without root privileges. The root user in Linux is the account 
@@ -796,7 +797,7 @@ Figure 4.4 is an example of an Istio AuthorizationPolicy object, which implement
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=6.5cm]{../images/authpolicy}
-  \caption{Granular access control with AuthorizationPolicy [source: Istio ]}
+  \caption{Granular access control with AuthorizationPolicy [source: Istio]}
   \label{fig:cvepie}
 \end{figure}
 
@@ -821,6 +822,16 @@ They define the mapping between identities and the permissions they hold.
 \subsubsection{Users And Groups}
 Users represent individual identities in the Kubernetes system. They can be created manually or integrated with existing authentication providers, such as LDAP or Active Directory.
 Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.
+
+\begin{figure}[htbp]
+  \centering
+      \includegraphics[height=3.5cm]{../images/clusterrole}
+  \caption{Read access to pods in Kubernetes [source: Garsha Rostami]}
+  \label{fig:cvepie}
+\end{figure}
+
+Figure 4.5 shows a role with minimal cluster access. A user or serviceaccount bound to this ClusterRole
+through a ClusterRoleBinding will have read access to all pods in the cluster. \cite{rbac}
 
 \chapter{Discussion And Future Work}
 

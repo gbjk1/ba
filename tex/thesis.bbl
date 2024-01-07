@@ -96,4 +96,7 @@ A.~Kohgadai, ``The state of kubernetes security in 2022,'' RedHat, Tech. Rep., 2
 ``{CVE}-2022-24817.'' Available from MITRE, {CVE-ID} {CVE}-2022-24817., 2023. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24817}
 \BIBentrySTDinterwordspacing
 
+\bibitem{rbac}
+G.~Rostami, ``Role-based access control (rbac) authorization in kubernetes,'' \emph{Journal of ICT Standardization}, vol.~11, no.~3, pp. 237--260, 2023.
+
 \end{thebibliography}
