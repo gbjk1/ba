@@ -1,0 +1,16 @@
+\backcite {kernel}{{2}{2.1.1}{subsection.2.1.1}}
+\backcite {cgroups}{{2}{2.1.1}{subsubsection*.7}}
+\backcite {namespaces}{{3}{2.1.1}{subsubsection*.9}}
+\backcite {redhat2022}{{8}{3.1}{section.3.1}}
+\backcite {redhat2023}{{8}{3.1}{section.3.1}}
+\backcite {CVE-2019-5736}{{11}{3.3}{subsubsection*.45}}
+\backcite {CVE-2020-15257}{{11}{3.3}{subsubsection*.47}}
+\backcite {CVE-2019-101}{{11}{3.3}{subsubsection*.49}}
+\backcite {CVE-2022-0811}{{11}{3.3}{subsubsection*.51}}
+\backcite {CVE-2022-23648}{{11}{3.3}{subsubsection*.53}}
+\backcite {CVE-2022-1708}{{12}{3.3}{subsubsection*.55}}
+\backcite {CVE-2022-29179}{{12}{3.3}{subsubsection*.57}}
+\backcite {CVE-2020-8554}{{12}{3.3}{subsubsection*.59}}
+\backcite {CVE-2023-5043}{{13}{3.3}{subsubsection*.61}}
+\backcite {CVE-2023-5044}{{13}{3.3}{subsubsection*.61}}
+\backcite {CVE-2022-24817}{{13}{3.3}{subsubsection*.63}}

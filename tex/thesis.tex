@@ -300,7 +300,7 @@ low-level networking, disk storage, and the control of processes and memory. The
 The kernel performs its tasks in its own, designated part of the system memory called "kernel space". In contrast, custom applications
 such as web-browsers, texteditors and mail clients run in "user space". Kernel space and user space are kept apart. While the kernel has access to all of the memory, processes 
 operating in the user space can only access a portion of it by calling the kernel interface. Through such system calls, 
-a user-level program invokes services from the kernel. 
+a user-level program invokes services from the kernel. \cite{kernel}
 
 \subsubsection{Linux Control Groups}
 Cgroups, short for control groups, are a Linux kernel feature that limits, accounts for, and isolates the resource usage 
@@ -308,7 +308,7 @@ Cgroups, short for control groups, are a Linux kernel feature that limits, accou
 consume excessive resources and that other processes can access the resources they need. 
 Cgroups support hierarchical grouping of processes, allowing for flexible resource management based on application requirements and user-defined policies. 
 Cgroups are used by Docker and container platforms to isolate and manage resource pool of containers. In a Kubernetes environment, the option
-to implement resource requests and limits of pods are enabled by Cgroups.
+to implement resource requests and limits of pods are enabled by Cgroups. \cite{cgroups}
 
 \subsubsection{Linux Namespaces}
 Namespaces are Linux kernel mechanisms that provide a hierarchical partitioning of the system environment. The Linux manpage
@@ -332,6 +332,8 @@ Linux provides seven main types of namespaces:
   \item IPC namespace: Isolates System V IPC objects and POSIX message queues
   \item Cgroup namespaces: Isolates Cgroup root directory
 \end{itemize}
+
+\cite{namespaces}
 
 \subsection{Container Images and Runtimes}
 Piecing together aforementioned concepts, companies like Docker and RedHat, and initiatives such as the Open Container Interface, build 
@@ -470,14 +472,14 @@ It is evident that the reliance on Kubernetes comes with the need of a clear sec
 the state of Kubernetes security of 2022, more than ninety percent of polled organizations underwent at least one security incident
 in their Kubernetes environment, which, in a third of cases, lead to the loss of revenue or customers. The majority of these incidents 
 were detections of misconfigurations. About a third of respondents reported major vulnerabilities and runtime security incidents 
-in relation to containers and/or Kubernetes which required immediate remediation. In a more recent, similar report conducted by RedHat in
+in relation to containers and/or Kubernetes which required immediate remediation. \cite{redhat2022} In a more recent, similar report conducted by RedHat in
 2023, two thirds of respondents had to delay or slow down application deployments because of security concerns. This is a significant
 increase compared to the 2022 survey, where just over half of participants experienced delays. Three of the most frequently mentioned 
 advantages of containerization include quicker release cycles, quicker bug fixes, and increased flexibility to operate and manage applications. 
 But if security is neglected, you can lose out on containerization's biggest benefit: agility.
 It becomes apparent that Kubernetes is not something that is installed once and then never looked at again. Rather, a container-based 
 environement that leverages this orchestration technology requires attention for detail and constant, rigurous inspection, despite the 
-great amount of abstraction provided and due to its highly customizable nature.  CITE REDHAT 2022 2023
+great amount of abstraction provided and due to its highly customizable nature. \cite{redhat2023}
 
 \section{CVE Scores}
 Kubernetes is highly customizable and offers a range of configuration options which determine the security posture of
@@ -577,20 +579,20 @@ access to the underlying host filesystem, as seen in CVE-2019-5736. In this repo
 container's entrypoint to proc/self/exe, which points back to its runC binary, which instantiated the container process. In addition, the container 
 carries a harmful file which is designed to overwrite the  file descriptors of any excecuting process that loads it. If an unknowing person executes 
 a binary within the container, which has been manipulated to symlink to /proc/self/exe, the harmful file is able to overwrite the runC binary. 
-The next time another, unrelated container is spawned, it is done by the compromised runC binary. 
+The next time another, unrelated container is spawned, it is done by the compromised runC binary. \cite{CVE-2019-5736}
 
 \subsubsection{CVE-2020-15257}
 Secondly, missing access control to runtime components could enable adversaries to gain access to UNIX sockets on the host, as reported in 
 CVE-2020-15257. Here, it was possible to connect to the containerd socket, thus enabling actors to issue API commands to freely create new containers
 on the host, unconstrained by Apparmor, Seccomp, or Linux capabilities. 
 Thirdly, under 'adversary-controlled host execution' problems of similar fashion to mishandled file descriptors are mentioned. In this case however, 
-vulnerability exposure starts with host binaries being executed in the container context, which makes it a target for manipulation. 
+vulnerability exposure starts with host binaries being executed in the container context, which makes it a target for manipulation. \cite{CVE-2020-15257}
 
 \subsubsection{CVE-2019-101}
 In CVE-2019-101, the shared library "libc.so.6" is altered in such a way that it mounts the host filesystem when loaded. The new shell loads 
 "libc.so" when the administrator runs "rkt-enter", which is the /bin/bash command by default, to create a new shell in the container. This sets off malicious 
 code embedded in "libc.so", which uses the MKNOD syscall to construct a block device of the host root filesystem inside the container. 
-As a result, the adversary is able to read and write to the host filesystem. 
+As a result, the adversary is able to read and write to the host filesystem. \cite{CVE-2019-101}
 
 \subsubsection{CVE-2022-0811}
 CVE-2022-0811, which is barely discussed in papers due to its young nature, reports a sophisticated container escape possibility of the CRI-O container engine.
@@ -598,7 +600,7 @@ Generally, as explained in 2.1.1, the interface of the Linux kernel accepts para
 However, the parameter input string is not checked or sanitized, which allows for injecting additional, otherwise undesired parameters. Specifically in the
 example of CVE-2022-0811, the "kernel.core\_pattern" kernel parameter is specified within the parameter of the safe "kernel.shm\_rmid\_forced" parameter, 
 which controls the kernel's reaction to a core dump. If a core dump is done in a CRI-O container, the parameter states the execution of a malicious binary. 
-This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel.
+This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel. \cite{CVE-2022-0811}
 
 \subsubsection{CVE-2022-23648}
 CVE-2022-23648 is another vulnerability related to container-escape, this time found in containerd, a popular Kubernetes runtime. This vulnerability lies in 
@@ -606,21 +608,21 @@ Containerd's CRI plugin that handles OCI image specs containing "Volumes". An at
 to the image. This allows them to copy arbitrary files from the host to a container mounted path. More specifically, the vulnerability resides in the 
 "copyExistingContents" function in Containerd's code. This function copies the files from the attacker-controlled volume path to a temporary folder that is later 
 mounted inside a container. An attacker can trick this function into copying arbitrary files from the host filesystem using path traversal.
-This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5.
+This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5. \cite{CVE-2022-23648}
 
 \subsubsection{CVE-2022-1708}
 CVE-2022-1708 is a vulnerability found in CRI-O, a lightweight container runtime for Kubernetes. This vulnerability is related to the allocation of resources 
 without any limits or throttling, which can lead to uncontrolled resource consumption. The official CVE description states: "The ExecSync request runs commands 
 in a container and logs the output of the command. This output is then read by CRI-O after command execution, and it is read in a manner where the entire file 
 corresponding to the output of the command is read in." It is thus possible to exhaust memory or disk space of the node when CRI-O reads an extensive output 
-of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability.
+of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability. \cite{CVE-2022-1708}
 
 \subsubsection{CVE-2022-29179}
 Cilium is an eBPF-based CNI solution for network connectivity between workloads in Kubernetes Clusters. CVE-2022-29179 reports yet another subjection to the risk of 
 container breakouts.  The CVE number is not directly about a technique to gain access outside the container, it rather addresses a vulnerability in Cilium given a 
 successful container escape. It explicitly mentions root containers as a prerequesite. According to this CVE entry, Cilium's service account in versions prior to
 version 1.9.16 allowed for escalating privileges to those of a cluster admin. This gave adversaries the ability to delete cluster resources such as pods and nodes. 
-The entry is marked with a high base score of 8.2.
+The entry is marked with a high base score of 8.2. \cite{CVE-2022-29179}
 
 \subsubsection{CVE-2020-8554}
 In the case of CVE-2020-8554, the source is a design defect in the External IPs and Load Balancer IPs components of Kubernetes Services. An application running on a collection 
@@ -628,7 +630,7 @@ of pods can be exposed as a network service in an abstract manner using Kubernet
 are deployed, traffic intended for the service IPs will be routed through one of the backing pods that comprise the service. By assigning IP addresses that are already 
 being used by other endpoints (internal or external), a malevolent user might intercept all cluster traffic directed towards those IP addresses. 
 With the service shown below, it used to be possible to intercept UDP traffic to IP 8.8.8.8, which is Google's DNS server, and direct it to the "evil-dns-server" 
-pod when it is deployed to the cluster.
+pod when it is deployed to the cluster. \cite{CVE-2020-8554}
 
 \begin{figure}[htbp]
   \centering
@@ -645,7 +647,7 @@ workloads. To expose a cluster workload, a Kubernetes resource of type 'Ingress'
 through so called annotation snippets. This allows for fine-grained, customized behavior of the controller for a respective service. It was however discovered that 
 specific declarations of the "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-redirect" annotations of an Ingress Object can be 
 used to inject arbitrary commands, making it possible to obtain credentials of the said nginx ingress controller. Utilizing this credential, even more cluster secrets could 
-be obtained. Multi-tenant environments are most affected by the issue.  
+be obtained. Multi-tenant environments are most affected by the issue.  \cite{CVE-2023-5043} \cite{CVE-2023-5044}
 
 \subsubsection{CVE-2022-24817}
 As reported in CVE-2022-24817, Flux2 can reconcile the state of a remote cluster when provided with a kubeconfig with the correct access rights. Kubeconfig files can define commands to be executed to generate 
@@ -655,7 +657,7 @@ Within the affected versions range, one of the permissions set below would be re
 Direct access to the cluster to create Flux Kustomization or HelmRelease objects and Kubernetes Secrets.
 Direct access to the cluster to modify existing Kubernetes secrets being used as kubeconfig in existing Flux Kustomization or HelmRelease objects.
 Direct access to the cluster to modify existing Flux Kustomization or HelmRelease objects and access to create or modify existing Kubernetes secrets.
-Access rights to make changes to a configured Flux Source. The vulnerability is marked with a CVSS base score of 9.9. 
+Access rights to make changes to a configured Flux Source. The vulnerability is marked with a CVSS base score of 9.9. \cite{CVE-2022-24817}
 
 \subsubsection{Summary Of Findings}
 A successful container-escape poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
