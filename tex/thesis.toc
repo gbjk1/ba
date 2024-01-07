@@ -2,67 +2,67 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}State Of The Art: Enterprises and Cloud}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Related Work}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Objectives And Methodology}{1}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Concepts}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Containervirtualization}{2}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Linux Kernel}{2}{subsection.2.1.1}%
-\contentsline {subsubsection}{\nonumberline Linux Control Groups}{2}{subsubsection*.7}%
-\contentsline {subsubsection}{\nonumberline Linux Namespaces}{3}{subsubsection*.9}%
-\contentsline {subsection}{\numberline {2.1.2}Container Images and Runtimes}{3}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Kubernetes}{3}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Components}{3}{subsection.2.2.1}%
-\contentsline {subsubsection}{\nonumberline API Server}{4}{subsubsection*.11}%
-\contentsline {subsubsection}{\nonumberline ETCD}{4}{subsubsection*.13}%
-\contentsline {subsubsection}{\nonumberline Kube Scheduler}{4}{subsubsection*.15}%
-\contentsline {subsubsection}{\nonumberline Controller Manager}{4}{subsubsection*.17}%
-\contentsline {subsubsection}{\nonumberline Kube DNS}{4}{subsubsection*.19}%
-\contentsline {subsubsection}{\nonumberline Kubelet}{4}{subsubsection*.21}%
-\contentsline {subsubsection}{\nonumberline Kube Proxy}{5}{subsubsection*.23}%
-\contentsline {subsection}{\numberline {2.2.2}Core Cluster Objects}{5}{subsection.2.2.2}%
-\contentsline {subsubsection}{\nonumberline Kubernetes Namespaces}{5}{subsubsection*.25}%
-\contentsline {subsubsection}{\nonumberline Pod}{6}{subsubsection*.27}%
-\contentsline {subsubsection}{\nonumberline Deployment}{6}{subsubsection*.29}%
-\contentsline {subsubsection}{\nonumberline Service}{6}{subsubsection*.31}%
-\contentsline {subsubsection}{\nonumberline ConfigMap}{6}{subsubsection*.33}%
-\contentsline {subsubsection}{\nonumberline Ingress}{6}{subsubsection*.35}%
-\contentsline {subsubsection}{\nonumberline ServiceAccount}{6}{subsubsection*.37}%
-\contentsline {subsubsection}{\nonumberline PersistentVolume and PersistentVolumeClaim}{7}{subsubsection*.39}%
-\contentsline {subsubsection}{\nonumberline NetworkPolicy}{7}{subsubsection*.41}%
-\contentsline {chapter}{\numberline {3}Literature Review}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Surveys}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}CVE Scores}{8}{section.3.2}%
-\contentsline {section}{\numberline {3.3}CVE Reports}{10}{section.3.3}%
-\contentsline {subsubsection}{\nonumberline Container Escape}{10}{subsubsection*.43}%
-\contentsline {subsubsection}{\nonumberline CVE-2019-5736}{10}{subsubsection*.45}%
-\contentsline {subsubsection}{\nonumberline CVE-2020-15257}{10}{subsubsection*.47}%
-\contentsline {subsubsection}{\nonumberline CVE-2019-101}{11}{subsubsection*.49}%
-\contentsline {subsubsection}{\nonumberline CVE-2022-0811}{11}{subsubsection*.51}%
-\contentsline {subsubsection}{\nonumberline CVE-2022-23648}{11}{subsubsection*.53}%
-\contentsline {subsubsection}{\nonumberline CVE-2022-1708}{11}{subsubsection*.55}%
-\contentsline {subsubsection}{\nonumberline CVE-2022-29179}{12}{subsubsection*.57}%
-\contentsline {subsubsection}{\nonumberline CVE-2020-8554}{12}{subsubsection*.59}%
-\contentsline {subsubsection}{\nonumberline CVE-2023-5043, CVE-2023-5044}{12}{subsubsection*.61}%
-\contentsline {subsubsection}{\nonumberline CVE-2022-24817}{13}{subsubsection*.63}%
-\contentsline {subsubsection}{\nonumberline Summary Of Findings}{13}{subsubsection*.65}%
-\contentsline {chapter}{\numberline {4}Hardening Measures}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Rootless Containers}{14}{section.4.1}%
-\contentsline {subsubsection}{\nonumberline Dockerfile}{14}{subsubsection*.67}%
-\contentsline {subsubsection}{\nonumberline runAsNonRoot}{14}{subsubsection*.69}%
-\contentsline {subsubsection}{\nonumberline runAsUser}{15}{subsubsection*.71}%
-\contentsline {subsubsection}{\nonumberline allowPrivilegeEscalation}{15}{subsubsection*.73}%
-\contentsline {subsubsection}{\nonumberline readOnlyRootFilesystem}{15}{subsubsection*.75}%
-\contentsline {subsubsection}{\nonumberline Capabilities}{15}{subsubsection*.77}%
-\contentsline {subsubsection}{\nonumberline AppArmor}{15}{subsubsection*.79}%
-\contentsline {subsubsection}{\nonumberline SELinux}{15}{subsubsection*.81}%
-\contentsline {subsubsection}{\nonumberline Seccomp}{15}{subsubsection*.83}%
-\contentsline {section}{\numberline {4.2}Network}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Role Based Access Control}{18}{section.4.3}%
-\contentsline {subsubsection}{\nonumberline Role And ClusterRole}{18}{subsubsection*.85}%
-\contentsline {subsubsection}{\nonumberline RoleBindings And ClusterRoleBinding}{18}{subsubsection*.87}%
-\contentsline {subsubsection}{\nonumberline Users And Groups}{18}{subsubsection*.89}%
-\contentsline {chapter}{\numberline {5}Discussion And Future Work}{19}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{20}{chapter.6}%
-\contentsline {chapter}{Bibliography}{21}{chapter.6}%
-\contentsline {chapter}{List of Figures}{22}{chapter*.90}%
-\contentsline {chapter}{\nonumberline Appendix}{23}{chapter*.92}%
+\contentsline {section}{\numberline {1.3}Objectives And Methodology}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Concepts}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Containervirtualization}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Linux Kernel}{3}{subsection.2.1.1}%
+\contentsline {subsubsection}{\nonumberline Linux Control Groups}{3}{subsubsection*.7}%
+\contentsline {subsubsection}{\nonumberline Linux Namespaces}{4}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {2.1.2}Container Images and Runtimes}{4}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Kubernetes}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Components}{4}{subsection.2.2.1}%
+\contentsline {subsubsection}{\nonumberline API Server}{5}{subsubsection*.11}%
+\contentsline {subsubsection}{\nonumberline ETCD}{5}{subsubsection*.13}%
+\contentsline {subsubsection}{\nonumberline Kube Scheduler}{5}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Controller Manager}{5}{subsubsection*.17}%
+\contentsline {subsubsection}{\nonumberline Kube DNS}{5}{subsubsection*.19}%
+\contentsline {subsubsection}{\nonumberline Kubelet}{5}{subsubsection*.21}%
+\contentsline {subsubsection}{\nonumberline Kube Proxy}{6}{subsubsection*.23}%
+\contentsline {subsection}{\numberline {2.2.2}Core Cluster Objects}{6}{subsection.2.2.2}%
+\contentsline {subsubsection}{\nonumberline Kubernetes Namespaces}{6}{subsubsection*.25}%
+\contentsline {subsubsection}{\nonumberline Pod}{7}{subsubsection*.27}%
+\contentsline {subsubsection}{\nonumberline Deployment}{7}{subsubsection*.29}%
+\contentsline {subsubsection}{\nonumberline Service}{7}{subsubsection*.31}%
+\contentsline {subsubsection}{\nonumberline ConfigMap}{7}{subsubsection*.33}%
+\contentsline {subsubsection}{\nonumberline Ingress}{7}{subsubsection*.35}%
+\contentsline {subsubsection}{\nonumberline ServiceAccount}{7}{subsubsection*.37}%
+\contentsline {subsubsection}{\nonumberline PersistentVolume and PersistentVolumeClaim}{8}{subsubsection*.39}%
+\contentsline {subsubsection}{\nonumberline NetworkPolicy}{8}{subsubsection*.41}%
+\contentsline {chapter}{\numberline {3}Literature Review}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Surveys}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}CVE Scores}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}CVE Reports}{11}{section.3.3}%
+\contentsline {subsubsection}{\nonumberline Container Escape}{11}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline CVE-2019-5736}{11}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline CVE-2020-15257}{11}{subsubsection*.47}%
+\contentsline {subsubsection}{\nonumberline CVE-2019-101}{12}{subsubsection*.49}%
+\contentsline {subsubsection}{\nonumberline CVE-2022-0811}{12}{subsubsection*.51}%
+\contentsline {subsubsection}{\nonumberline CVE-2022-23648}{12}{subsubsection*.53}%
+\contentsline {subsubsection}{\nonumberline CVE-2022-1708}{12}{subsubsection*.55}%
+\contentsline {subsubsection}{\nonumberline CVE-2022-29179}{13}{subsubsection*.57}%
+\contentsline {subsubsection}{\nonumberline CVE-2020-8554}{13}{subsubsection*.59}%
+\contentsline {subsubsection}{\nonumberline CVE-2023-5043, CVE-2023-5044}{13}{subsubsection*.61}%
+\contentsline {subsubsection}{\nonumberline CVE-2022-24817}{14}{subsubsection*.63}%
+\contentsline {subsubsection}{\nonumberline Summary Of Findings}{14}{subsubsection*.65}%
+\contentsline {chapter}{\numberline {4}Hardening Measures}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Rootless Containers}{15}{section.4.1}%
+\contentsline {subsubsection}{\nonumberline Dockerfile}{15}{subsubsection*.67}%
+\contentsline {subsubsection}{\nonumberline runAsNonRoot}{15}{subsubsection*.69}%
+\contentsline {subsubsection}{\nonumberline runAsUser}{16}{subsubsection*.71}%
+\contentsline {subsubsection}{\nonumberline allowPrivilegeEscalation}{16}{subsubsection*.73}%
+\contentsline {subsubsection}{\nonumberline readOnlyRootFilesystem}{16}{subsubsection*.75}%
+\contentsline {subsubsection}{\nonumberline Capabilities}{16}{subsubsection*.77}%
+\contentsline {subsubsection}{\nonumberline AppArmor}{16}{subsubsection*.79}%
+\contentsline {subsubsection}{\nonumberline SELinux}{16}{subsubsection*.81}%
+\contentsline {subsubsection}{\nonumberline Seccomp}{16}{subsubsection*.83}%
+\contentsline {section}{\numberline {4.2}Network}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Role Based Access Control}{19}{section.4.3}%
+\contentsline {subsubsection}{\nonumberline Role And ClusterRole}{19}{subsubsection*.85}%
+\contentsline {subsubsection}{\nonumberline RoleBindings And ClusterRoleBinding}{19}{subsubsection*.87}%
+\contentsline {subsubsection}{\nonumberline Users And Groups}{19}{subsubsection*.89}%
+\contentsline {chapter}{\numberline {5}Discussion And Future Work}{20}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}%
+\contentsline {chapter}{Bibliography}{22}{chapter.6}%
+\contentsline {chapter}{List of Figures}{24}{chapter*.90}%
+\contentsline {chapter}{\nonumberline Appendix}{25}{chapter*.92}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

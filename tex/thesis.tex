@@ -260,6 +260,23 @@ angles. The complexity, customizability and vastness highlight the amount of pre
 
 \section{Related Work}
 
+The master thesis of Martínez at Uppsala University in 2023 studies security issues in certain Kubernetes architectures and discusses 
+tradeoffs and opportunities. The study emphasizes tradeoffs of implementing different security solutions in terms of performance, deploy time
+and necessary overhead. \cite{uppsala}
+\newline
+\newline
+At KTH Stockholm, Francesco Giangiulio and Sebastien Malmberg thoroughly tested the security posture of a production Kubernetes environment.
+The study was practically conducted on a specific company use case in Microsoft Azure. 
+\newline
+\newline
+Nordell's master thesis offers a systematic evaluation of CVEs and provides experimental parts in which steps to practically reproduce exploits
+are presented. 
+\newline
+\newline
+At JKU Linz, Hauber presents a concrete scenario of taking over Kubernetes clusters by automating attack chains. The extent of damage that can be made
+by exploiting misconfigurations is shown.  
+
+
 \section{Objectives And Methodology}
 \label{sec:Unterkapitel2}
 
@@ -574,7 +591,7 @@ Major vulnerabilities include those which fall under the category of a so called
 runtime environment isolated from the underlying host, the concept of a container-escape relates to performing an exploit that breaks the confines 
 of exactly this isolation, resulting in full or limited access to the underlying host machine or network. A study conducted by Reeves 
 et al. at the end of 2021 investigates the susceptibility of different container runtime systems to escape-exploits by studying a batch of CVE 
-reports. The study identifies three main causes for container escapes.
+reports. The study identifies three main causes for container escapes. \cite{escape}
 
 \subsubsection{CVE-2019-5736}
 First, mishandled file descriptors, if for example left accessible from within a container under /proc directory, provides malicious actors read and write 
@@ -603,7 +620,7 @@ Generally, as explained in 2.1.1, the interface of the Linux kernel accepts para
 However, the parameter input string is not checked or sanitized, which allows for injecting additional, otherwise undesired parameters. Specifically in the
 example of CVE-2022-0811, the "kernel.core\_pattern" kernel parameter is specified within the parameter of the safe "kernel.shm\_rmid\_forced" parameter, 
 which controls the kernel's reaction to a core dump. If a core dump is done in a CRI-O container, the parameter states the execution of a malicious binary. 
-This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel. \cite{CVE-2022-0811}
+This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel. \cite{CVE-2022-0811} \cite{cr8escape}
 
 \subsubsection{CVE-2022-23648}
 CVE-2022-23648 is another vulnerability related to container-escape, this time found in containerd, a popular Kubernetes runtime. This vulnerability lies in 
@@ -866,15 +883,16 @@ accurate and timely vulnerability reports.
 \newline
 \newline
 Runtime security solutions allow for monitoring and blocking certain kernel events or suspicious system calls. 
-Tools like Falco and Tetragon help gain visibility into abnormal behavior of hosts and containers. 
+Tools like Falco, Tetragon and NeuVector help gain visibility into abnormal behavior of hosts and containers. \cite{falco}
 
 \chapter{Conclusion}
 
 This thesis aims to shine light on Kubernetes from a security perspective. With the help of scripting, data on CVE 
 reports relating to containers and Kubernetes is collected and analyzed. From this data, significant cases 
 are extracted and further explained in detail. Container and Kubernetes configurations are formulated to minimize
-attack surface. The thesis highlights the importance of a clear security initiative when utilizing Kubernetes in 
-a production environment. 
+attack surface. Rootless processes, strict network segmentation and minimal RBAC rules must be made to ensure 
+a hardened environment.  The thesis highlights the importance of a clear security initiative when utilizing Kubernetes in 
+a production environment.
 
 
 

@@ -41,6 +41,9 @@ A.~Kohgadai, ``The state of kubernetes security in 2022,'' RedHat, Tech. Rep., 2
 \bibitem{redhat2023}
 ------, ``The state of kubernetes security in 2023,'' RedHat, Tech. Rep., 2023.
 
+\bibitem{escape}
+Z.~Guo, Z.~Lv, N.~Li, T.~Yuan, X.~Gao, and Z.~Yuan, ``Comprehensive defense scheme against container escape related to container management procedure,'' in \emph{2022 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC)}, 2022, pp. 263--266.
+
 \bibitem{CVE-2019-5736}
 \BIBentryALTinterwordspacing
 ``{CVE}-2019-5736.'' Available from MITRE, {CVE-ID} {CVE}-2019-5736., 2019. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5736}
@@ -59,6 +62,11 @@ A.~Kohgadai, ``The state of kubernetes security in 2022,'' RedHat, Tech. Rep., 2
 \bibitem{CVE-2022-0811}
 \BIBentryALTinterwordspacing
 ``{CVE}-2022-0811.'' Available from MITRE, {CVE-ID} {CVE}-2022-0811., 2022. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0811}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cr8escape}
+\BIBentryALTinterwordspacing
+J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered by crowdstrike (cve-2022-0811),'' March 2022, [Accessed 16.12.2023]. [Online]. Available: \url{https://www.redhat.com/sysadmin/cni-kubernetes}
 \BIBentrySTDinterwordspacing
 
 \bibitem{CVE-2022-23648}
@@ -98,5 +106,8 @@ A.~Kohgadai, ``The state of kubernetes security in 2022,'' RedHat, Tech. Rep., 2
 
 \bibitem{rbac}
 G.~Rostami, ``Role-based access control (rbac) authorization in kubernetes,'' \emph{Journal of ICT Standardization}, vol.~11, no.~3, pp. 237--260, 2023.
+
+\bibitem{falco}
+K.~German and O.~Ponomareva, ``An overview of container security in a kubernetes cluster,'' in \emph{2023 IEEE Ural-Siberian Conference on Biomedical Engineering, Radioelectronics and Information Technology (USBEREIT)}, 2023, pp. 283--285.
 
 \end{thebibliography}
