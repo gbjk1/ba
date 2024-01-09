@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  7 JAN 2024 18:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  9 JAN 2024 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gbk/bachelor/ba/tex/thesis.tex
-(/Users/gbk/bachelor/ba/tex/thesis.tex
+**/Users/csdc/bachelor/ba/tex/thesis.tex
+(/Users/csdc/bachelor/ba/tex/thesis.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
@@ -680,20 +680,20 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface.
 
 
-LaTeX Warning: Citation `uppsala' on page 1 undefined on input line 265.
+LaTeX Warning: Citation `uppsala' on page 1 undefined on input line 271.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--278
+Underfull \hbox (badness 10000) in paragraph at lines 269--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--278
+Underfull \hbox (badness 10000) in paragraph at lines 269--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--284
 
  []
 
@@ -703,16 +703,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--278
 
 ] [2]
 chapter 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 319.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 325.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 340--351
+Underfull \hbox (badness 10000) in paragraph at lines 346--357
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--351
+Underfull \hbox (badness 10000) in paragraph at lines 346--357
 
  []
 
@@ -723,27 +723,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--351
 <../images/kubernetes.png, id=136, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
-Package pdftex.def Info: ../images/kubernetes.png  used on input line 429.
+Package pdftex.def Info: ../images/kubernetes.png  used on input line 435.
 (pdftex.def)             Requested size: 470.08992pt x 284.52756pt.
 
-Overfull \hbox (29.07219pt too wide) in paragraph at lines 429--430
+Overfull \hbox (29.07219pt too wide) in paragraph at lines 435--436
  [][] 
  []
 
 [6 <../images/kubernetes.png>] [7] [8]
 chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--551
+Underfull \hbox (badness 10000) in paragraph at lines 517--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--551
+Underfull \hbox (badness 10000) in paragraph at lines 517--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--551
+Underfull \hbox (badness 10000) in paragraph at lines 517--557
 
  []
 
@@ -754,20 +754,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 511--551
 <../images/cvepie.png, id=181, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
-Package pdftex.def Info: ../images/cvepie.png  used on input line 554.
+Package pdftex.def Info: ../images/cvepie.png  used on input line 560.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
 <../images/cvepie2.png, id=182, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
-Package pdftex.def Info: ../images/cvepie2.png  used on input line 574.
+Package pdftex.def Info: ../images/cvepie2.png  used on input line 580.
 (pdftex.def)             Requested size: 255.45726pt x 142.26378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--578
+Underfull \hbox (badness 10000) in paragraph at lines 566--584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--578
+Underfull \hbox (badness 10000) in paragraph at lines 566--584
 
  []
 
@@ -775,10 +775,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 560--578
 <../images/service.png, id=231, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
-Package pdftex.def Info: ../images/service.png  used on input line 657.
+Package pdftex.def Info: ../images/service.png  used on input line 663.
 (pdftex.def)             Requested size: 150.78781pt x 142.26378pt.
 
-Overfull \hbox (17.47298pt too wide) in paragraph at lines 663--671
+Overfull \hbox (17.47298pt too wide) in paragraph at lines 669--677
 \T1/lmr/m/n/10.95 "nginx.ingress.kubernetes.io/configuration-snippet" and "nginx.ingress.kubernetes.io/permanent-
  []
 
@@ -787,18 +787,18 @@ chapter 4.
 <../images/dockerfile.png, id=261, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
-Package pdftex.def Info: ../images/dockerfile.png  used on input line 716.
+Package pdftex.def Info: ../images/dockerfile.png  used on input line 722.
 (pdftex.def)             Requested size: 284.52756pt x 62.50638pt.
 [15
 
 
  <../images/dockerfile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 736--740
+Underfull \hbox (badness 10000) in paragraph at lines 742--746
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--768
+Underfull \hbox (badness 10000) in paragraph at lines 767--774
 
  []
 
@@ -806,54 +806,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 761--768
 <../images/nwp.png, id=291, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
-Package pdftex.def Info: ../images/nwp.png  used on input line 782.
+Package pdftex.def Info: ../images/nwp.png  used on input line 788.
 (pdftex.def)             Requested size: 214.8699pt x 99.58464pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--789
+Underfull \hbox (badness 10000) in paragraph at lines 792--795
 
  []
 
 <../images/nwp2.png, id=292, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
-Package pdftex.def Info: ../images/nwp2.png  used on input line 792.
+Package pdftex.def Info: ../images/nwp2.png  used on input line 798.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
 [17 <../images/nwp.png> <../images/nwp2.png>]
 <../images/authpolicy.png, id=301, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
-Package pdftex.def Info: ../images/authpolicy.png  used on input line 816.
+Package pdftex.def Info: ../images/authpolicy.png  used on input line 822.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
  [18 <../images/authpolicy.png>]
 <../images/clusterrole.png, id=309, 381.425pt x 165.61874pt>
 File: ../images/clusterrole.png Graphic file (type png)
 <use ../images/clusterrole.png>
-Package pdftex.def Info: ../images/clusterrole.png  used on input line 845.
+Package pdftex.def Info: ../images/clusterrole.png  used on input line 851.
 (pdftex.def)             Requested size: 229.34564pt x 99.58464pt.
  [19 <../images/clusterrole.png>]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--887
+Underfull \hbox (badness 10000) in paragraph at lines 861--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--887
+Underfull \hbox (badness 10000) in paragraph at lines 861--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--887
+Underfull \hbox (badness 10000) in paragraph at lines 861--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--887
+Underfull \hbox (badness 10000) in paragraph at lines 861--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 855--887
+Underfull \hbox (badness 10000) in paragraph at lines 861--893
 
  []
 
@@ -884,12 +884,12 @@ chapter without number
 <../images/cvepy1.png, id=394, 1169.36874pt x 996.72375pt>
 File: ../images/cvepy1.png Graphic file (type png)
 <use ../images/cvepy1.png>
-Package pdftex.def Info: ../images/cvepy1.png  used on input line 933.
+Package pdftex.def Info: ../images/cvepy1.png  used on input line 939.
 (pdftex.def)             Requested size: 426.79134pt x 363.77834pt.
 <../images/cvepy2.png, id=395, 1169.36874pt x 865.2325pt>
 File: ../images/cvepy2.png Graphic file (type png)
 <use ../images/cvepy2.png>
-Package pdftex.def Info: ../images/cvepy2.png  used on input line 938.
+Package pdftex.def Info: ../images/cvepy2.png  used on input line 944.
 (pdftex.def)             Requested size: 426.79134pt x 315.78743pt.
 [25
 
@@ -908,14 +908,14 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  18127 strings out of 476025
- 343648 string characters out of 5790016
+ 343651 string characters out of 5790016
  1870388 words of memory out of 5000000
  38154 multiletter control sequences out of 15000+600000
  557870 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,19n,106p,10628b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10629b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (33 pages, 1422066 bytes).
+Output written on thesis.pdf (33 pages, 1422547 bytes).
 PDF statistics:
  548 PDF objects out of 1000 (max. 8388607)
  471 compressed objects within 5 object streams

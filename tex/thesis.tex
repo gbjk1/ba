@@ -188,7 +188,13 @@ Date: \hspace{6cm} Signature:\\
 % --- English Abstract ----------------------------------------------------
 \cleardoublepage
 \chapter*{Abstract}
-(E.g. ``This thesis investigates...'')
+Kubernetes is a modern, extendable platform which abstracts the orchestration of containers.
+As institutions increasingly rely on Kubernetes in their production environments, especially those
+native in the cloud, securing the Kubernetes environment becomes paramount. This thesis analyzes
+CVEs to investigate Kubernetes from a security perspective. Solutions to minimize
+susceptibility to those problems found in prior collected CVEs are elaborated.  
+Kubernetes configurations for API access, container runtimes and the container network
+that follow the concept of least privilege are presented as solutions.
 
 % --- German Abstract ----------------------------------------------------
 \cleardoublepage
@@ -285,7 +291,7 @@ What are known vulnerabilities in Kubernetes environments and is there a common 
 Which concepts recur across the found vulnerabilities and incidents?
 To answer these questions, the literature review in chapter three explores the security threat landscape of Kubernetes environments. 
 Specifically, recurring concepts and common denominators across vulnerabilities are identified and discussed. For this, Google,
-the Common Vulnerabilities and Exposures database, the IEEE database, the ACM digital library as well as the official
+the Common Vulnerabilities and Exposures (CVE) database, the IEEE database, the ACM digital library as well as the official
 Kubernetes feed of CVEs are queried using keywords pertaining to Container and Kubernetes Security. In order to minimize manual 
 labor to research the sheer amount of CVE reports, a Python script was developed to automate the research by querying public APIs. 
 The script first queries the OpenCVE API for all reports containing keywords related to Kubernetes. With the collected CVE IDs,
