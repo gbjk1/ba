@@ -317,7 +317,7 @@ The high level definition of a container is that of a lightweight, standalone, a
 A container bundles the code itself, any required runtime environments, dependencies, settings as well as system 
 tools and libraries into an isolated environment, which is instantiated on the underlying host machine.  
 Such isolated environments are defined in tangible, portable formats called container images. 
-The isolation of environments is mainly attributed to the namespace and Cgroup technology of the Linux kernel.
+The isolation of environments is mainly attributed to the namespace and Cgroup technology of the Linux kernel. \cite{container}
 
 
 \subsection{Linux Kernel}
@@ -388,34 +388,34 @@ filesystem, creates cgroups and namespaces to instantiate the container environm
 \section{Kubernetes}
 \label{sec:Unterkapitel23}
 Kubernetes is an open-source system for managing containerized workloads and services. It provides a portable, extensible, 
-and scalable platform that automates the deployment, scaling, and management of applications.
+and scalable platform that automates the deployment, scaling, and management of applications \cite{k8soverview}.
 \subsection{Components}
 A Kubernetes cluster is separated into a control plane and data plane. The control plane groups the components responsible for 
 the underlying system of Kubernetes itself. The data plane hosts the actual user containers. Machines that run control-plane services
 are referred to as master-nodes, whereas machines that host user applications are referred to as worker-nodes. 
 There are four core control-plane components which work together to manage the cluster and ensure that applications run smoothly.
-These components run as containers themselves inside the reserved 'kube-system' namespace. 
+These components run as containers themselves inside the reserved 'kube-system' namespace. \cite{k8scomponents}
 
 \subsubsection{API Server}
 The API server is the entrance to the Kubernetes cluster. It provides a REST API that allows users and applications to interact 
 with the cluster and manage its resources. The API server is responsible for handling requests from clients, validating them, and 
 enforcing access control policies. It allows you to query the state of the cluster, as well as the configuration of all resources and the 
-status of all pods.
+status of all pods. \cite{k8sapi}
 
 \subsubsection{ETCD}
 Etcd is a distributed key-value store that is used to store the cluster's state. It is highly available and replicated across multiple nodes, 
 ensuring that the cluster's state is always consistent. Etcd is used by all of the control plane components to store information about the cluster, 
-such as the configuration of resources and the status of pods.
+such as the configuration of resources and the status of pods. \cite{k8setcd}
 
 \subsubsection{Kube Scheduler}
 The scheduler is responsible for assigning pods to nodes in the cluster. It takes into account the resources available on each node, as well as the 
 resource requirements of each pod, to ensure that pods are placed on nodes where they can run successfully. The scheduler also tries to spread pods 
-across multiple nodes to improve availability and resilience. 
+across multiple nodes to improve availability and resilience. \cite{k8sscheduler}
 
 \subsubsection{Controller Manager}
 The controller manager is a process that runs on each node in the cluster. It is responsible for monitoring the state of the cluster and taking corrective 
 action when necessary. The controller manager watches for events, such as the creation or deletion of pods, and takes action to ensure that the cluster 
-remains in a healthy state. For example, the controller manager can restart pods that are unhealthy or create new pods to meet demand. 
+remains in a healthy state. For example, the controller manager can restart pods that are unhealthy or create new pods to meet demand. \cite{k8scontrollermanager}
 
 \subsubsection{Kube DNS}
 In addition, Kube-DNS provides DNS resolution for services and pods within the cluster. It creates DNS records for services, allowing pods to reach services by name 
@@ -423,18 +423,18 @@ rather than IP address. This simplifies the process of accessing services and ma
 the need to map IP addresses to service names. It also  acts as the authoritative DNS server for the cluster's default domain, which is 'cluster.local'.
 This ensures that DNS queries for names within the cluster are resolved correctly and consistently across all pods in the cluster. For example, if a service
 named 'frontend' inside the 'myapp' namespace exposes an application, it can be called from another application inside the cluster via the domain 
-'frontend.myapp.svc.cluster.local' or just 'frontend.myapp'. 
+'frontend.myapp.svc.cluster.local' or just 'frontend.myapp'. \cite{k8sdns}
 
 \subsubsection{Kubelet}
 The Kubelet is an agent process that runs on each node in a Kubernetes cluster. Its primary responsibility is to manage the lifecycle of Kubernetes pods, which are the 
 fundamental unit of deployment in Kubernetes. Kubelet ensures that pods are running, healthy, and up-to-date with the desired state. It also interacts with the Container 
-Runtime Interface (CRI) to run and manage containers, and it communicates with the Kubernetes API server to retrieve and update pod information.
+Runtime Interface (CRI) to run and manage containers, and it communicates with the Kubernetes API server to retrieve and update pod information. \cite{kubelet}
 
 \subsubsection{Kube Proxy}
 Next to the Kubelet, the Kube-proxy, is a network proxy that runs on each node in a Kubernetes cluster. It is responsible for maintaining network connectivity between pods and 
 services. Services are abstractions that represent groups of pods that expose their endpoints to the outside world. Kube-proxy translates service definitions into network 
 rules that direct traffic to the appropriate pods. This ensures that requests to a service are routed to the correct pods, even if the pods are dynamically provisioned or scaled.
-Figure 2.1 gives a high level overview over Kubernetes components and concepts. 
+Figure 2.1 gives a high level overview over Kubernetes components and concepts. \cite{kubeproxy}
 \newline
 \begin{figure}[htbp]
   \centering
@@ -447,7 +447,7 @@ Figure 2.1 gives a high level overview over Kubernetes components and concepts.
 
 Kubernetes Objects are detailed specifications of the desired state of an application and the cluster as a whole. 
 Objects are formulated in YAML or JSON syntax and are communicated to the Kubernetes API using the 'kubectl' command line 
-utility.
+utility \cite{k8sobjects}.
 
 \subsubsection{Kubernetes Namespaces}
 Namespaces are virtual partitions in Kubernetes that arrange and segregate resource groupings inside a single cluster. 
@@ -457,50 +457,50 @@ whole or which pertain to all applications in all namespaces are not namespaced 
 Namespace isolation prevents unintended interactions or interference between applications, 
 maintaining the integrity of each deployment. Namespaces can be assigned different security policies, allowing for the enforcement 
 of custom authorization rules and access control mechanisms. This helps protect resources and restrict unauthorized access between 
-selected namespaces within the cluster. 
+selected namespaces within the cluster. \cite{namespace}
 
 \subsubsection{Pod}
 In Kubernetes, pods are fundamental building blocks for deploying and managing containerized applications. 
 A pod is a group of one or more containers, which are tightly coupled and share resources such as network 
 namespaces and filesystems. This tight coupling allows pods to be treated as a single unit for scheduling, 
 management, and resource allocation. Pods expose the ports exposed by its containers, allowing external traffic 
-to reach its intendend recipient. 
+to reach its intendend recipient. \cite{pod}
 
 \subsubsection{Deployment}
 Deployments describe the desired state of an application. A Deployment defines containers of pods, amount of pod replicas, 
-hostnames, security settings, rolling update specifications and more. Its the central object for instantiating applications in Kubernetes.  
+hostnames, security settings, rolling update specifications and more. Its the central object for instantiating applications in Kubernetes. \cite{deployment}
 
 \subsubsection{Service}
 In Kubernetes, a Service is an abstraction layer that defines a logical grouping of Pods and exposes them as a single, 
 unified resource to the network. It simplifies the process of accessing and managing Pods by providing a stable endpoint 
 and load balancing capabilities. Providing a stable endpoint ensures that pods can dynamically scale in the background 
 with changing IP addresses. Services can be resolved to DNS names, providing a consistent and human-readable way to address the application.
-Service objects use selectors to identify the Pods that belong to the Service.
+Service objects use selectors to identify the Pods that belong to the Service. \cite{service}
 
 \subsubsection{ConfigMap}
 A ConfigMap is a key-value data store that can be mounted into Pods as environment variables, files, or command-line arguments. 
-It provides a way to decouple configuration data from container images, making applications more portable and flexible.
+It provides a way to decouple configuration data from container images, making applications more portable and flexible. \cite{configmap}
 
 \subsubsection{Ingress}
 In Kubernetes, an Ingress is a controller that manages external traffic routing to a set of Services within the cluster. It acts as a 
 front door for applications, handling load balancing, SSL termination, and other advanced traffic management tasks.
 They direct external traffic to the appropriate services within the cluster. Ingresses support SSL/TLS termination, routing traffic based on the request's path, headers or query parameters, 
-and more.
+and more. \cite{ingress}
 
 \subsubsection{ServiceAccount}
 A ServiceAccount is a security identity that allows pods to access Kubernetes resources and services. It acts as an authentication mechanism for pods, managing their access 
 permissions and controlling their interactions with the cluster. ServiceAccounts can mount Secrets into Pods, providing them with access to sensitive data such as passwords, 
-API keys, or certificates.
+API keys, or certificates. \cite{serviceaccount}
 
 \subsubsection{PersistentVolume and PersistentVolumeClaim}
 In Kubernetes, a PersistentVolume is a storage resource that provides persistent storage to Pods. It ensures that data remains accessible even after Pods are terminated and 
 recreated. A PersistentVolumeClaim object is a request for persistent storage from a Kubernetes pod. It defines the desired storage characteristics and specifications, such as storage capacity and access modes.
-A PVC is referenced in a Deployment object. 
+A PVC is referenced in a Deployment object. \cite{pvpvc}
 
 \subsubsection{NetworkPolicy}
 A NetworkPolicy object defines rules for controlling network traffic between Pods. 
 It allows for fine-grained control over network access, ensuring that Pods can only communicate with authorized sources and destinations.
-The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between pods.
+The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between pods. \cite{networkpolicy}s
 
 \newpage
 \chapter{Literature Review}
@@ -707,7 +707,7 @@ Missing write permissions to sensitive directories are a major obstacle for perf
 Missing permissions for accessing the Kubernetes API limit an attackers options to query for sensitive cluster data in case of compromise. 
 Strict network settings prevent attackers from installing malicious software packages
 into the cluster. To harden clusters, the principle of least privilege must be applied. The principle of least privilege states that user or entity must only have access to 
-data and permissions to perform actions required to complete their task.  
+data and permissions to perform actions required to complete their task.  \cite{leastpriv}
 \section{Rootless Containers}
 
 A rootless container is a container which runs its processes without root privileges. The root user in Linux is the account 
@@ -787,7 +787,7 @@ traffic to any other endpoints inside the cluster or the outside world. This ove
 'NetworkPolicy' objects. Such objects require the installation of a Container Networking Interface (CNI) on top of Kubernetes. CNIs are Kubernetes
 plugins which set up the network environment of the cluster. It handles network interfaces, IP addresses and routing of traffic of containers.  A CNI is a prerequesite 
 for implementing Ingress, Service and NetworkPolicy objects. The NetworkPolicy rules work at Layer 3 (Network) and Layer 4 (Transport) of the OSI model. 
-The following figure depicts a NetworkPolicy object which blocks all ingress and egress traffic. 
+The following figure depicts a NetworkPolicy object which blocks all ingress and egress traffic. \cite{networkplugins}
 
 \begin{figure}[htbp]
   \centering

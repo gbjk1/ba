@@ -9,9 +9,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Rootless image specification using Dockerfile}}{15}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A NetworkPolicy blocking all ingress and egress [source: author]}}{17}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A NetworkPolicy allowing ingress from a namespace and egress to a public IP [source: author]}}{17}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Granular access control with AuthorizationPolicy [source: Istio]}}{18}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Read access to pods in Kubernetes [source: Garsha Rostami]}}{19}{figure.4.5}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A NetworkPolicy allowing ingress from a namespace and egress to a public IP [source: author]}}{18}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Granular access control with AuthorizationPolicy [source: Istio]}}{19}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Read access to pods in Kubernetes [source: Garsha Rostami]}}{20}{figure.4.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

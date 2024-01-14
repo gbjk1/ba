@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  13 JAN 2024 17:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  14 JAN 2024 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,8 +719,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 352--363
 [3
 
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [4] [5]
-<../images/kubernetes.png, id=136, 1029.8475pt x 623.32875pt>
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [4]
+
+LaTeX Warning: Citation `k8sdns' on page 5 undefined on input line 426.
+
+
+LaTeX Warning: Citation `kubelet' on page 5 undefined on input line 431.
+
+[5]
+
+LaTeX Warning: Citation `kubeproxy' on page 6 undefined on input line 437.
+
+<../images/kubernetes.png, id=151, 1029.8475pt x 623.32875pt>
 File: ../images/kubernetes.png Graphic file (type png)
 <use ../images/kubernetes.png>
 Package pdftex.def Info: ../images/kubernetes.png  used on input line 441.
@@ -730,7 +740,11 @@ Overfull \hbox (29.07219pt too wide) in paragraph at lines 441--442
  [][] 
  []
 
-[6 <../images/kubernetes.png>] [7] [8]
+[6 <../images/kubernetes.png>]
+
+LaTeX Warning: Citation `service' on page 7 undefined on input line 478.
+
+[7] [8]
 chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 523--563
@@ -751,12 +765,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--563
 
 
 ]
-<../images/cvepie.png, id=181, 1156.32pt x 591.20876pt>
+<../images/cvepie.png, id=213, 1156.32pt x 591.20876pt>
 File: ../images/cvepie.png Graphic file (type png)
 <use ../images/cvepie.png>
 Package pdftex.def Info: ../images/cvepie.png  used on input line 566.
 (pdftex.def)             Requested size: 278.24586pt x 142.26378pt.
-<../images/cvepie2.png, id=182, 1155.31625pt x 643.40375pt>
+<../images/cvepie2.png, id=214, 1155.31625pt x 643.40375pt>
 File: ../images/cvepie2.png Graphic file (type png)
 <use ../images/cvepie2.png>
 Package pdftex.def Info: ../images/cvepie2.png  used on input line 586.
@@ -772,7 +786,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 572--590
  []
 
 [10 <../images/cvepie.png>] [11 <../images/cvepie2.png>] [12]
-<../images/service.png, id=231, 337.26pt x 318.18875pt>
+<../images/service.png, id=263, 337.26pt x 318.18875pt>
 File: ../images/service.png Graphic file (type png)
 <use ../images/service.png>
 Package pdftex.def Info: ../images/service.png  used on input line 669.
@@ -784,7 +798,7 @@ Overfull \hbox (17.47298pt too wide) in paragraph at lines 675--683
 
 [13 <../images/service.png>] [14]
 chapter 4.
-<../images/dockerfile.png, id=261, 571.13374pt x 125.46875pt>
+<../images/dockerfile.png, id=295, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
 Package pdftex.def Info: ../images/dockerfile.png  used on input line 728.
@@ -803,7 +817,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 773--780
  []
 
 [16]
-<../images/nwp.png, id=291, 439.6425pt x 203.76125pt>
+<../images/nwp.png, id=326, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
 Package pdftex.def Info: ../images/nwp.png  used on input line 794.
@@ -813,24 +827,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 798--801
 
  []
 
-<../images/nwp2.png, id=292, 525.965pt x 425.59pt>
+<../images/nwp2.png, id=327, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
 Package pdftex.def Info: ../images/nwp2.png  used on input line 804.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
-[17 <../images/nwp.png> <../images/nwp2.png>]
-<../images/authpolicy.png, id=301, 605.26125pt x 463.7325pt>
+[17 <../images/nwp.png>]
+<../images/authpolicy.png, id=335, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
 Package pdftex.def Info: ../images/authpolicy.png  used on input line 828.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
- [18 <../images/authpolicy.png>]
-<../images/clusterrole.png, id=309, 381.425pt x 165.61874pt>
+ [18 <../images/nwp2.png>]
+<../images/clusterrole.png, id=343, 381.425pt x 165.61874pt>
 File: ../images/clusterrole.png Graphic file (type png)
 <use ../images/clusterrole.png>
 Package pdftex.def Info: ../images/clusterrole.png  used on input line 857.
 (pdftex.def)             Requested size: 229.34564pt x 99.58464pt.
- [19 <../images/clusterrole.png>]
+ [19 <../images/authpolicy.png>] [20 <../images/clusterrole.png>]
 chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 867--899
@@ -857,46 +871,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 867--899
 
  []
 
-[20
+[21
 
 
 ]
 chapter 6.
-[21
+[22
 
 
 ] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write4
 \openout4 = `thesis.brf'.
 
- [22
+
+Underfull \hbox (badness 3838) in paragraph at lines 72--72
+[]\T1/lmr/m/n/10.95 ``kube-controller-manager,'' [Ac-cessed 10.11.2023]. [On-line]. Avail-
+ []
 
 
-]) [23] (./thesis.lof)
+Underfull \hbox (badness 7963) in paragraph at lines 72--72
+\T1/lmr/m/n/10.95 able: []$https : / / kubernetes . io / docs / reference / command-[]line-[]tools-[]reference /
+ []
+
+[23
+
+
+] [24]) [25] (./thesis.lof)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [24
+ [26
 
 
 ]
 chapter without number
-<../images/cvepy1.png, id=394, 1169.36874pt x 996.72375pt>
+<../images/cvepy1.png, id=491, 1169.36874pt x 996.72375pt>
 File: ../images/cvepy1.png Graphic file (type png)
 <use ../images/cvepy1.png>
 Package pdftex.def Info: ../images/cvepy1.png  used on input line 945.
 (pdftex.def)             Requested size: 426.79134pt x 363.77834pt.
-<../images/cvepy2.png, id=395, 1169.36874pt x 865.2325pt>
+<../images/cvepy2.png, id=492, 1169.36874pt x 865.2325pt>
 File: ../images/cvepy2.png Graphic file (type png)
 <use ../images/cvepy2.png>
 Package pdftex.def Info: ../images/cvepy2.png  used on input line 950.
 (pdftex.def)             Requested size: 426.79134pt x 315.78743pt.
-[25
+[27
 
 
 
 
- <../images/cvepy1.png>] [26 <../images/cvepy2.png>] (./thesis.aux)
+ <../images/cvepy1.png>] [28 <../images/cvepy2.png>] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -904,21 +928,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 33164D07EE94D9AD2124ECC35337BAEB;1085.
+(rerunfilecheck)             Checksum: A4731BAAEA6D2AACD4D0A69271E453E5;2227.
  ) 
 Here is how much of TeX's memory you used:
- 18127 strings out of 476025
- 343651 string characters out of 5790016
- 1870388 words of memory out of 5000000
- 38154 multiletter control sequences out of 15000+600000
+ 18223 strings out of 476025
+ 344953 string characters out of 5790016
+ 1873388 words of memory out of 5000000
+ 38230 multiletter control sequences out of 15000+600000
  557870 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,19n,106p,10629b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10629b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (33 pages, 1423459 bytes).
+Output written on thesis.pdf (35 pages, 1428782 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
- 175 named destinations out of 1000 (max. 500000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 195 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

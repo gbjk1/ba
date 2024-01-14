@@ -20,6 +20,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{container}
+\BIBentryALTinterwordspacing
+``Use containers to build, share and run your applications,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://www.docker.com/resources/what-container/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{kernel}
 \BIBentryALTinterwordspacing
 ``What is the linux kernel?'' February 2019, [Accessed 20.11.2023]. [Online]. Available: \url{https://www.redhat.com/en/topics/linux/what-is-the-linux-kernel}
@@ -33,6 +38,81 @@
 \bibitem{namespaces}
 \BIBentryALTinterwordspacing
 ``namespaces (7) — linux manual page,'' [Accessed 19.12.2023]. [Online]. Available: \url{https://man7.org/linux/man-pages/man7/namespaces.7.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8soverview}
+\BIBentryALTinterwordspacing
+``Kubernetes overview,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8scomponents}
+\BIBentryALTinterwordspacing
+``Kubernetes components,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/components/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8sapi}
+\BIBentryALTinterwordspacing
+``The kubernetes api,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/kubernetes-api/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8setcd}
+\BIBentryALTinterwordspacing
+``Operating etcd clusters for kubernetes,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8sscheduler}
+\BIBentryALTinterwordspacing
+``Kubernetes scheduler,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8scontrollermanager}
+\BIBentryALTinterwordspacing
+``kube-controller-manager,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8sobjects}
+\BIBentryALTinterwordspacing
+``Objects in kubernetes,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{namespace}
+\BIBentryALTinterwordspacing
+``Namespaces,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pod}
+\BIBentryALTinterwordspacing
+``Pods,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/workloads/pods/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{deployment}
+\BIBentryALTinterwordspacing
+``Deployments,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/workloads/controllers/deployment/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{configmap}
+\BIBentryALTinterwordspacing
+``Configmaps,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/configuration/configmap/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ingress}
+\BIBentryALTinterwordspacing
+``Ingress,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/services-networking/ingress/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{serviceaccount}
+\BIBentryALTinterwordspacing
+``Service accounts,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/security/service-accounts/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pvpvc}
+\BIBentryALTinterwordspacing
+``Persistent volumes,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/storage/persistent-volumes/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{networkpolicy}
+\BIBentryALTinterwordspacing
+``Network policies,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/services-networking/network-policies/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{redhat2022}
@@ -102,6 +182,16 @@ J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered b
 \bibitem{CVE-2022-24817}
 \BIBentryALTinterwordspacing
 ``{CVE}-2022-24817.'' Available from MITRE, {CVE-ID} {CVE}-2022-24817., 2023. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24817}
+\BIBentrySTDinterwordspacing
+
+\bibitem{leastpriv}
+\BIBentryALTinterwordspacing
+``Network plugins,'' [Accessed 25.11.2023]. [Online]. Available: \url{https://www.paloaltonetworks.com/cyberpedia/what-is-the-principle-of-least-privilege}
+\BIBentrySTDinterwordspacing
+
+\bibitem{networkplugins}
+\BIBentryALTinterwordspacing
+``Network plugins,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{rbac}
