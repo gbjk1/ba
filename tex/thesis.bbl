@@ -90,6 +90,21 @@ C.~Hauber, ``Taking over a kubernetes cluster: Automating an attack chain,'' [Ac
 ``kube-controller-manager,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{k8sdns}
+\BIBentryALTinterwordspacing
+``Dns for services and pods,'' [Accessed 12.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kubelet}
+\BIBentryALTinterwordspacing
+``kubelet,'' [Accessed 12.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kubeproxy}
+\BIBentryALTinterwordspacing
+``kube-proxy,'' [Accessed 12.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{k8sobjects}
 \BIBentryALTinterwordspacing
 ``Objects in kubernetes,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/}
@@ -108,6 +123,11 @@ C.~Hauber, ``Taking over a kubernetes cluster: Automating an attack chain,'' [Ac
 \bibitem{deployment}
 \BIBentryALTinterwordspacing
 ``Deployments,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/workloads/controllers/deployment/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{service}
+\BIBentryALTinterwordspacing
+``Service,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/services-networking/service/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{configmap}
@@ -141,6 +161,11 @@ A.~Kohgadai, ``The state of kubernetes security in 2022,'' RedHat, Tech. Rep., 2
 \bibitem{redhat2023}
 ------, ``The state of kubernetes security in 2023,'' RedHat, Tech. Rep., 2023.
 
+\bibitem{nist}
+\BIBentryALTinterwordspacing
+``Vulnerabilities,'' [Accessed 29.11.2023]. [Online]. Available: \url{https://nvd.nist.gov/vuln}
+\BIBentrySTDinterwordspacing
+
 \bibitem{escape}
 Z.~Guo, Z.~Lv, N.~Li, T.~Yuan, X.~Gao, and Z.~Yuan, ``Comprehensive defense scheme against container escape related to container management procedure,'' in \emph{2022 International Conference on Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC)}, 2022, pp. 263--266.
 
@@ -154,6 +179,9 @@ Z.~Guo, Z.~Lv, N.~Li, T.~Yuan, X.~Gao, and Z.~Yuan, ``Comprehensive defense sche
 ``{CVE}-2020-15257.'' Available from MITRE, {CVE-ID} {CVE}-2020-15257., 2020. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15257}
 \BIBentrySTDinterwordspacing
 
+\bibitem{purdue}
+M.~Reeves, ``Investigating escape vulnerabilities in container runtimes,'' Master's thesis, Purdue University, Indiana, 2021.
+
 \bibitem{CVE-2019-101}
 \BIBentryALTinterwordspacing
 ``{CVE}-2019-101.'' Available from MITRE, {CVE-ID} {CVE}-2019-101., 2019. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-101}
@@ -166,12 +194,22 @@ Z.~Guo, Z.~Lv, N.~Li, T.~Yuan, X.~Gao, and Z.~Yuan, ``Comprehensive defense sche
 
 \bibitem{cr8escape}
 \BIBentryALTinterwordspacing
-J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered by crowdstrike (cve-2022-0811),'' March 2022, [Accessed 16.12.2023]. [Online]. Available: \url{https://www.redhat.com/sysadmin/cni-kubernetes}
+J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered by crowdstrike (cve-2022-0811),'' March 2022, [Accessed 16.12.2023]. [Online]. Available: \url{https://www.crowdstrike.com/blog/cr8escape-new-vulnerability-discovered-in-cri-o-container-engine-cve-2022-0811/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{crowd}
+\BIBentryALTinterwordspacing
+M.~Ahuje, ``Cve-2022-23648: Kubernetes container escape using containerd cri plugin and mitigation,'' May 2022, [Accessed 22.11.2023]. [Online]. Available: \url{https://www.crowdstrike.com/blog/understanding-cve-2022-23648-kubernetes-vulnerability/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{CVE-2022-23648}
 \BIBentryALTinterwordspacing
 ``{CVE}-2022-23648.'' Available from MITRE, {CVE-ID} {CVE}-2022-23648., 2022. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23648}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nist2}
+\BIBentryALTinterwordspacing
+``Cve-2022-1708 detail,'' [Accessed 29.11.2023]. [Online]. Available: \url{https://nvd.nist.gov/vuln/detail/cve-2022-1708}
 \BIBentrySTDinterwordspacing
 
 \bibitem{CVE-2022-1708}
@@ -202,6 +240,11 @@ J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered b
 \bibitem{CVE-2023-5044}
 \BIBentryALTinterwordspacing
 ``{CVE}-2023-5044.'' Available from MITRE, {CVE-ID} {CVE}-2023-5044., 2023. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5044}
+\BIBentrySTDinterwordspacing
+
+\bibitem{flux2}
+\BIBentryALTinterwordspacing
+``Improper kubeconfig validation allows arbitrary code execution,'' [Accessed 29.11.2023]. [Online]. Available: \url{https://github.com/fluxcd/flux2/security/advisories/GHSA-vvmq-fwmg-2gjc}
 \BIBentrySTDinterwordspacing
 
 \bibitem{CVE-2022-24817}

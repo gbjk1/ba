@@ -183,7 +183,7 @@ I declare that this Bachelor Thesis has been written by myself. I have not used 
 I hereby certify that I have not submitted this Bachelor Thesis in any form (to a reviewer for assessment) either in Austria or abroad.\\\\
 Furthermore, I assure that the (printed and electronic) copies I have submitted are identical.
 \\\\\\
-Date: \hspace{6cm} Signature:\\
+Date: 14.01.2024 \hspace{6cm} Signature:\\
 
 % --- English Abstract ----------------------------------------------------
 \cleardoublepage
@@ -221,6 +221,7 @@ die dem Konzept der geringsten Privilegien folgen, werden als Lösungen vorgeste
       IPC & Inter Process Communication \\
       JSON & JavaScript Object Notation \\
       JWT & JSON Web Token \\
+      NIST & National Institute Of Standards And Technology (USA) \\
       OS & Operating System \\
       POSIX & Portable Operating System Interface \\
       PV & Persistent Volume \\
@@ -464,7 +465,7 @@ selected namespaces within the cluster. \cite{namespace}
 
 \subsubsection{Pod}
 In Kubernetes, pods are fundamental building blocks for deploying and managing containerized applications. 
-A pod is a group of one or more containers, which are tightly coupled and share resources such as network 
+A pod is a unit of one or more containers, which belong together and share resources such as network 
 namespaces and filesystems. This tight coupling allows pods to be treated as a single unit for scheduling, 
 management, and resource allocation. Pods expose the ports exposed by its containers, allowing external traffic 
 to reach its intendend recipient. \cite{pod}
@@ -503,7 +504,7 @@ A PVC is referenced in a Deployment object. \cite{pvpvc}
 \subsubsection{NetworkPolicy}
 A NetworkPolicy object defines rules for controlling network traffic between Pods. 
 It allows for fine-grained control over network access, ensuring that Pods can only communicate with authorized sources and destinations.
-The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between pods. \cite{networkpolicy}s
+The rules are enforced by the Kubernetes network plugin, ensuring that only authorized traffic is allowed to pass between pods. \cite{networkpolicy}
 
 \newpage
 \chapter{Literature Review}
@@ -537,9 +538,9 @@ defines a vulnerability as:
 \\
 "A weakness in the computational logic (e.g., code) found in software and hardware components that, when exploited, results in a negative impact 
 to confidentiality, integrity, or availability. Mitigation of the vulnerabilities in this context typically involves coding changes, but could 
-also include specification changes or even specification deprecations (e.g., removal of affected protocols or functionality in their entirety)."
+also include specification changes or even specification deprecations (e.g., removal of affected protocols or functionality in their entirety). \cite{nist}"
 \\
-In addition, the Common Vulnerability Scoring System (CVSS) "is a method used to supply a qualitative measure of severity"CITE HERE. 
+In addition, the Common Vulnerability Scoring System (CVSS) "is a method used to supply a qualitative measure of severity" \cite{nist}. 
 The three metric groups that make up CVSS are Base, Temporal, and Environmental. Once the Temporal and Environmental metrics have been scored, 
 the Base metrics produce a score between 0 and 10. A vector string, which is a condensed textual representation of the values required to calculate 
 the score, is another way to visualise a CVSS score. Therefore, enterprises, organisations, and governments that require precise and consistent 
@@ -625,9 +626,9 @@ vulnerability exposure starts with host binaries being executed in the container
 
 \subsubsection{CVE-2019-101}
 In CVE-2019-101, the shared library "libc.so.6" is altered in such a way that it mounts the host filesystem when loaded. The new shell loads 
-"libc.so" when the administrator runs "rkt-enter", which is the /bin/bash command by default, to create a new shell in the container. This sets off malicious 
+"libc.so" as soon as a developer runs "rkt-enter", which is the default /bin/bash command, to create a new shell. This sets off malicious 
 code embedded in "libc.so", which uses the MKNOD syscall to construct a block device of the host root filesystem inside the container. 
-As a result, the adversary is able to read and write to the host filesystem. \cite{CVE-2019-101}
+As a result, the adversary is able to read and write to the host filesystem. \cite{purdue} \cite{CVE-2019-101} 
 
 \subsubsection{CVE-2022-0811}
 CVE-2022-0811, which is barely discussed in papers due to its young nature, reports a sophisticated container escape possibility of the CRI-O container engine.
@@ -638,18 +639,21 @@ which controls the kernel's reaction to a core dump. If a core dump is done in a
 This binary sits inside the container but is invoked on the host in the root context of the container from the perspective of the kernel. \cite{CVE-2022-0811} \cite{cr8escape}
 
 \subsubsection{CVE-2022-23648}
-CVE-2022-23648 is another vulnerability related to container-escape, this time found in containerd, a popular Kubernetes runtime. This vulnerability lies in 
-Containerd's CRI plugin that handles OCI image specs containing "Volumes". An attacker can exploit this vulnerability by adding a Volume containing path traversal 
-to the image. This allows them to copy arbitrary files from the host to a container mounted path. More specifically, the vulnerability resides in the 
-"copyExistingContents" function in Containerd's code. This function copies the files from the attacker-controlled volume path to a temporary folder that is later 
-mounted inside a container. An attacker can trick this function into copying arbitrary files from the host filesystem using path traversal.
-This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5. \cite{CVE-2022-23648}
+CVE-2022-23648 is another vulnerability related to container-escape, this time found in containerd, a popular Kubernetes runtime. The vulnerability is due to a vulnerable part of Containerd's CRI plugin that deals with volumes. 
+It can be taken advantage of by an attacker by including a volume that contains path traversal in the image. This enables copying files from the host to a mounted path inside a container. More precisely, 
+the "copyExistingContents" function in Containerd's code is where the vulnerability is located. This feature transfers the files from the volume path under the control of 
+the attacker to a temporary folder that is subsequently mounted inside a container. Path traversal can be used by an attacker to deceive this method into copying any files 
+from the host filesystem. This may result in private information being revealed.
+This can lead to the disclosure of confidential information. The severity of this vulnerability is rated as high, with a CVSS base score of 7.5. \cite{crowd} \cite{CVE-2022-23648}
 
 \subsubsection{CVE-2022-1708}
 CVE-2022-1708 is a vulnerability found in CRI-O, a lightweight container runtime for Kubernetes. This vulnerability is related to the allocation of resources 
-without any limits or throttling, which can lead to uncontrolled resource consumption. The official CVE description states: "The ExecSync request runs commands 
-in a container and logs the output of the command. This output is then read by CRI-O after command execution, and it is read in a manner where the entire file 
-corresponding to the output of the command is read in." It is thus possible to exhaust memory or disk space of the node when CRI-O reads an extensive output 
+without any limits or throttling, which can lead to uncontrolled resource consumption. The official CVE description of NIST states:
+\newline
+\newline
+ "The ExecSync request runs commands in a container and logs the output of the command. This output is then read by CRI-O after command execution, and it is read in a manner where the entire file 
+corresponding to the output of the command is read in." \cite{nist2}
+\newline It is thus possible to drain memory or disk space of the machine when CRI-O reads an extensive output. 
 of the command. The vulnerability is rated as high, with a CVSS base score of 7.5 and targets system availability. \cite{CVE-2022-1708}
 
 \subsubsection{CVE-2022-29179}
@@ -685,14 +689,19 @@ used to inject arbitrary commands, making it possible to obtain credentials of t
 be obtained. Multi-tenant environments are most affected by the issue.  \cite{CVE-2023-5043} \cite{CVE-2023-5044}
 
 \subsubsection{CVE-2022-24817}
-As reported in CVE-2022-24817, Flux2 can reconcile the state of a remote cluster when provided with a kubeconfig with the correct access rights. Kubeconfig files can define commands to be executed to generate 
-on-demand authentication tokens. A malicious user with write access to a Flux source or direct access to the target cluster, could craft a kubeconfig to execute arbitrary code 
-inside the controller’s container. In multi-tenancy deployments this can also lead to privilege escalation if the controller's service account has elevated permissions.
-Within the affected versions range, one of the permissions set below would be required for the vulnerability to be exploited:
-Direct access to the cluster to create Flux Kustomization or HelmRelease objects and Kubernetes Secrets.
-Direct access to the cluster to modify existing Kubernetes secrets being used as kubeconfig in existing Flux Kustomization or HelmRelease objects.
-Direct access to the cluster to modify existing Flux Kustomization or HelmRelease objects and access to create or modify existing Kubernetes secrets.
-Access rights to make changes to a configured Flux Source. The vulnerability is marked with a CVSS base score of 9.9. \cite{CVE-2022-24817}
+Flux2 is a continuous deployment tool which periodically aligns the state of a cluster with the state defined in a remote repository. 
+As reported in CVE-2022-24817, when provided with a kubeconfig file with the correct access rights, such files can be used to define commands to be executed.
+A perpatrator might create a kubeconfig file to run any code inside the controller's container if they had write access to a flux source or direct access 
+to the target cluster. If the service account of the controller has high permissions, this can also result in privilege escalation in multi-tenancy setups.
+To exploit the issue, one of the following permission sets would need to be established within the range of affected versions: 
+\begin{itemize}
+  \item Direct access to the cluster for Kubernetes Secrets and Flux Kustomization
+  \item Direct access to the cluster to change the Kubernetes secrets that are currently being utilised in Flux Kustomization.
+  \item Direct access to the cluster allows for the creation or modification of existing Kubernetes secrets as well as Flux Kustomization. 
+  \item Authorization to alter a Flux Source's configuration. 
+\end{itemize}
+\cite{flux2}
+The vulnerability is marked with a CVSS base score of 9.9. \cite{CVE-2022-24817}
 
 \subsubsection{Summary Of Findings}
 A successful container-escape poses one of the greatest risk in a Kubernetes environment as it provides a starting point from which all three pillars of 
@@ -739,13 +748,13 @@ Under 'securityContext', properties such as 'runAsNonRoot', 'runAsUser', 'allowP
 allow for restrictive access control settings inside containers. \cite{seccontext}
 
 \subsubsection{runAsNonRoot}
-The container is started with a non-root user ID (UID) rather than the normal root UID of 0 when runAsNonRoot is set to true. 
-Whenever possible, it is advised to run containers as non-root to lower the risk of privilege escalation attacks. \cite{seccontext}
+This ensures that the container is started with a non-root user ID rather than the normal root UID of 0. 
+Whenever possible, it is advised to run containers as non-root to limit the possibilities to create privilege escalation or escape exploits.  \cite{seccontext}
 \subsubsection{runAsUser}
-This setting in Kubernetes is used to specify the user ID that should be used to run the container. \cite{seccontext}
+This setting in Kubernetes declares the user ID that will be used to run the container.  \cite{seccontext}
 \subsubsection{allowPrivilegeEscalation}
-This setting determines whether a container's privileges can be escalated. When true, it grants a container additional privileges 
-beyond those granted by default. When set to false, obtaining higher privileges, by 'sudo' or 'setuid' operations for example, 
+The ability to escalate a container's privileges is determined by this setting. When true, it gives a container access to extra privileges not available by default.
+When set to false, obtaining higher privileges, by 'sudo' or 'setuid' operations for example, 
 will be denied. \cite{seccontext}
 \subsubsection{readOnlyRootFilesystem}
 When set to true, this property ensures that the root filesystem is not writable. \cite{seccontext}

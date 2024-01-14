@@ -8,54 +8,49 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: testBib.bib
-Warning--I didn't find a database entry for "k8sdns"
-Warning--I didn't find a database entry for "kubelet"
-Warning--I didn't find a database entry for "kubeproxy"
-Warning--I didn't find a database entry for "service"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 53 entries,
+You've used 62 entries,
             4087 wiz_defined-function locations,
-            1050 strings with 14418 characters,
-and the built_in function-call counts, 20199 in all, are:
-= -- 1551
-> -- 163
+            1077 strings with 15415 characters,
+and the built_in function-call counts, 23207 in all, are:
+= -- 1783
+> -- 178
 < -- 32
-+ -- 108
-- -- 23
-* -- 796
-:= -- 3449
-add.period$ -- 106
-call.type$ -- 53
-change.case$ -- 89
++ -- 119
+- -- 25
+* -- 909
+:= -- 3984
+add.period$ -- 124
+call.type$ -- 62
+change.case$ -- 106
 chr.to.int$ -- 78
-cite$ -- 53
-duplicate$ -- 1736
-empty$ -- 1996
-format.name$ -- 28
-if$ -- 4509
+cite$ -- 62
+duplicate$ -- 2006
+empty$ -- 2299
+format.name$ -- 30
+if$ -- 5171
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 385
-newline$ -- 276
-num.names$ -- 13
-pop$ -- 1213
+int.to.str$ -- 62
+missing$ -- 448
+newline$ -- 319
+num.names$ -- 15
+pop$ -- 1413
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1554
+skip$ -- 1782
 stack$ -- 0
-substring$ -- 307
-swap$ -- 958
+substring$ -- 332
+swap$ -- 1095
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 53
+type$ -- 62
 warning$ -- 0
-while$ -- 25
-width$ -- 55
-write$ -- 523
-(There were 4 warnings)
+while$ -- 27
+width$ -- 64
+write$ -- 606
