@@ -1,4 +1,7 @@
 \backcite {uppsala}{{1}{1.2}{section.1.2}}
+\backcite {kth}{{1}{1.2}{section.1.2}}
+\backcite {lund}{{1}{1.2}{section.1.2}}
+\backcite {linz}{{1}{1.2}{section.1.2}}
 \backcite {container}{{3}{2.1}{section.2.1}}
 \backcite {kernel}{{3}{2.1.1}{subsection.2.1.1}}
 \backcite {cgroups}{{3}{2.1.1}{subsubsection*.7}}
@@ -63,7 +66,7 @@
 \backcite {secretmgmt}{{21}{5}{chapter.5}}
 \backcite {trivy}{{21}{5}{chapter.5}}
 \backcite {falco}{{21}{5}{chapter.5}}
-\backcite {github}{{26}{6}{chapter*.91}}
-\backcite {networkpolicy}{{26}{6}{chapter*.91}}
-\backcite {istio}{{26}{6}{chapter*.91}}
-\backcite {rbac}{{26}{6}{chapter*.91}}
+\backcite {github}{{27}{6}{chapter*.91}}
+\backcite {networkpolicy}{{27}{6}{chapter*.91}}
+\backcite {istio}{{27}{6}{chapter*.91}}
+\backcite {rbac}{{27}{6}{chapter*.91}}

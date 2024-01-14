@@ -63,6 +63,6 @@
 \contentsline {chapter}{\numberline {5}Discussion And Future Work}{21}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
 \contentsline {chapter}{Bibliography}{23}{chapter.6}%
-\contentsline {chapter}{List of Figures}{26}{chapter*.90}%
-\contentsline {chapter}{\nonumberline Appendix}{27}{chapter*.92}%
+\contentsline {chapter}{List of Figures}{27}{chapter*.90}%
+\contentsline {chapter}{\nonumberline Appendix}{28}{chapter*.92}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

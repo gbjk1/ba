@@ -8,7 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: testBib.bib
-Warning--I didn't find a database entry for "uppsala"
 Warning--I didn't find a database entry for "k8sdns"
 Warning--I didn't find a database entry for "kubelet"
 Warning--I didn't find a database entry for "kubeproxy"
@@ -18,45 +17,45 @@ Warning--I didn't find a database entry for "service"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 49 entries,
+You've used 53 entries,
             4087 wiz_defined-function locations,
-            1035 strings with 13728 characters,
-and the built_in function-call counts, 18636 in all, are:
-= -- 1428
-> -- 142
+            1050 strings with 14418 characters,
+and the built_in function-call counts, 20199 in all, are:
+= -- 1551
+> -- 163
 < -- 32
-+ -- 98
-- -- 18
-* -- 736
-:= -- 3162
-add.period$ -- 98
-call.type$ -- 49
-change.case$ -- 81
++ -- 108
+- -- 23
+* -- 796
+:= -- 3449
+add.period$ -- 106
+call.type$ -- 53
+change.case$ -- 89
 chr.to.int$ -- 78
-cite$ -- 49
-duplicate$ -- 1605
-empty$ -- 1850
-format.name$ -- 22
-if$ -- 4170
+cite$ -- 53
+duplicate$ -- 1736
+empty$ -- 1996
+format.name$ -- 28
+if$ -- 4509
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 352
-newline$ -- 256
-num.names$ -- 9
-pop$ -- 1113
+int.to.str$ -- 53
+missing$ -- 385
+newline$ -- 276
+num.names$ -- 13
+pop$ -- 1213
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1439
+skip$ -- 1554
 stack$ -- 0
-substring$ -- 295
-swap$ -- 887
+substring$ -- 307
+swap$ -- 958
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 49
+type$ -- 53
 warning$ -- 0
-while$ -- 21
-width$ -- 51
-write$ -- 483
-(There were 5 warnings)
+while$ -- 25
+width$ -- 55
+write$ -- 523
+(There were 4 warnings)
