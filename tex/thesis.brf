@@ -45,6 +45,7 @@
 \backcite {github}{{13}{3.3}{figure.3.3}}
 \backcite {CVE-2023-5043}{{14}{3.3}{subsubsection*.61}}
 \backcite {CVE-2023-5044}{{14}{3.3}{subsubsection*.61}}
+\backcite {CVE-2022-24817}{{14}{3.3}{subsubsection*.63}}
 \backcite {flux2}{{14}{3.3}{subsubsection*.63}}
 \backcite {CVE-2022-24817}{{14}{3.3}{subsubsection*.63}}
 \backcite {leastpriv}{{15}{4}{chapter.4}}

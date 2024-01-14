@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  14 JAN 2024 19:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  14 JAN 2024 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -796,7 +796,7 @@ Overfull \hbox (17.47298pt too wide) in paragraph at lines 682--690
 
 [13 <../images/service.png>] [14]
 chapter 4.
-<../images/dockerfile.png, id=327, 571.13374pt x 125.46875pt>
+<../images/dockerfile.png, id=328, 571.13374pt x 125.46875pt>
 File: ../images/dockerfile.png Graphic file (type png)
 <use ../images/dockerfile.png>
 Package pdftex.def Info: ../images/dockerfile.png  used on input line 740.
@@ -815,7 +815,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 785--792
  []
 
 [16]
-<../images/nwp.png, id=372, 439.6425pt x 203.76125pt>
+<../images/nwp.png, id=373, 439.6425pt x 203.76125pt>
 File: ../images/nwp.png Graphic file (type png)
 <use ../images/nwp.png>
 Package pdftex.def Info: ../images/nwp.png  used on input line 806.
@@ -825,19 +825,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 810--813
 
  []
 
-<../images/nwp2.png, id=375, 525.965pt x 425.59pt>
+<../images/nwp2.png, id=376, 525.965pt x 425.59pt>
 File: ../images/nwp2.png Graphic file (type png)
 <use ../images/nwp2.png>
 Package pdftex.def Info: ../images/nwp2.png  used on input line 816.
 (pdftex.def)             Requested size: 228.56018pt x 184.9429pt.
 [17 <../images/nwp.png> <../images/nwp2.png>]
-<../images/authpolicy.png, id=386, 605.26125pt x 463.7325pt>
+<../images/authpolicy.png, id=387, 605.26125pt x 463.7325pt>
 File: ../images/authpolicy.png Graphic file (type png)
 <use ../images/authpolicy.png>
 Package pdftex.def Info: ../images/authpolicy.png  used on input line 841.
 (pdftex.def)             Requested size: 241.38907pt x 184.9429pt.
  [18 <../images/authpolicy.png>]
-<../images/clusterrole.png, id=400, 381.425pt x 165.61874pt>
+<../images/clusterrole.png, id=401, 381.425pt x 165.61874pt>
 File: ../images/clusterrole.png Graphic file (type png)
 <use ../images/clusterrole.png>
 Package pdftex.def Info: ../images/clusterrole.png  used on input line 870.
@@ -908,12 +908,12 @@ Underfull \hbox (badness 1694) in paragraph at lines 259--259
 
 ]
 chapter without number
-<../images/cvepy1.png, id=631, 1169.36874pt x 996.72375pt>
+<../images/cvepy1.png, id=632, 1169.36874pt x 996.72375pt>
 File: ../images/cvepy1.png Graphic file (type png)
 <use ../images/cvepy1.png>
 Package pdftex.def Info: ../images/cvepy1.png  used on input line 958.
 (pdftex.def)             Requested size: 426.79134pt x 363.77834pt.
-<../images/cvepy2.png, id=632, 1169.36874pt x 865.2325pt>
+<../images/cvepy2.png, id=633, 1169.36874pt x 865.2325pt>
 File: ../images/cvepy2.png Graphic file (type png)
 <use ../images/cvepy2.png>
 Package pdftex.def Info: ../images/cvepy2.png  used on input line 963.
@@ -928,7 +928,7 @@ Package pdftex.def Info: ../images/cvepy2.png  used on input line 963.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 2A6C25FD6BBDE9190CE1A71B71DC6947;3820.
+(rerunfilecheck)             Checksum: D72AE2616F360CC128E34DEB2A383057;3877.
  ) 
 Here is how much of TeX's memory you used:
  18338 strings out of 476025
@@ -939,10 +939,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,19n,106p,10629b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on thesis.pdf (35 pages, 1439345 bytes).
+Output written on thesis.pdf (35 pages, 1439424 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 711 compressed objects within 8 object streams
+ 798 PDF objects out of 1000 (max. 8388607)
+ 712 compressed objects within 8 object streams
  219 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

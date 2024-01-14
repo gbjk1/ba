@@ -183,7 +183,7 @@ I declare that this Bachelor Thesis has been written by myself. I have not used 
 I hereby certify that I have not submitted this Bachelor Thesis in any form (to a reviewer for assessment) either in Austria or abroad.\\\\
 Furthermore, I assure that the (printed and electronic) copies I have submitted are identical.
 \\\\\\
-Date: 14.01.2024 \hspace{6cm} Signature:\\
+Date: \hspace{6cm} Signature:\\
 
 % --- English Abstract ----------------------------------------------------
 \cleardoublepage
@@ -690,7 +690,7 @@ be obtained. Multi-tenant environments are most affected by the issue.  \cite{CV
 
 \subsubsection{CVE-2022-24817}
 Flux2 is a continuous deployment tool which periodically aligns the state of a cluster with the state defined in a remote repository. 
-As reported in CVE-2022-24817, when provided with a kubeconfig file with the correct access rights, such files can be used to define commands to be executed.
+As reported in CVE-2022-24817, when provided with a kubeconfig file with the correct access rights, such files can be used to define commands to be executed. \cite{CVE-2022-24817}
 A perpatrator might create a kubeconfig file to run any code inside the controller's container if they had write access to a flux source or direct access 
 to the target cluster. If the service account of the controller has high permissions, this can also result in privilege escalation in multi-tenancy setups.
 To exploit the issue, one of the following permission sets would need to be established within the range of affected versions: 
@@ -698,9 +698,9 @@ To exploit the issue, one of the following permission sets would need to be esta
   \item Direct access to the cluster for Kubernetes Secrets and Flux Kustomization
   \item Direct access to the cluster to change the Kubernetes secrets that are currently being utilised in Flux Kustomization.
   \item Direct access to the cluster allows for the creation or modification of existing Kubernetes secrets as well as Flux Kustomization. 
-  \item Authorization to alter a Flux Source's configuration. 
+  \item Authorization to alter a Flux Source's configuration. \cite{flux2}
 \end{itemize}
-\cite{flux2}
+
 The vulnerability is marked with a CVSS base score of 9.9. \cite{CVE-2022-24817}
 
 \subsubsection{Summary Of Findings}
