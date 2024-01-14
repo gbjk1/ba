@@ -169,6 +169,11 @@ J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered b
 ``{CVE}-2020-8554.'' Available from MITRE, {CVE-ID} {CVE}-2020-8554., 2020. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8554}
 \BIBentrySTDinterwordspacing
 
+\bibitem{github}
+\BIBentryALTinterwordspacing
+``Cve-2020-8554: Man in the middle using loadbalancer or externalips,'' [Accessed 29.11.2023]. [Online]. Available: \url{https://github.com/kubernetes/kubernetes/issues/97076}
+\BIBentrySTDinterwordspacing
+
 \bibitem{CVE-2023-5043}
 \BIBentryALTinterwordspacing
 ``{CVE}-2023-5043.'' Available from MITRE, {CVE-ID} {CVE}-2023-5043., 2023. [Online]. Available: \url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5043}
@@ -186,7 +191,32 @@ J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered b
 
 \bibitem{leastpriv}
 \BIBentryALTinterwordspacing
-``Network plugins,'' [Accessed 25.11.2023]. [Online]. Available: \url{https://www.paloaltonetworks.com/cyberpedia/what-is-the-principle-of-least-privilege}
+``What is the principle of least privilege?'' [Accessed 25.11.2023]. [Online]. Available: \url{https://www.paloaltonetworks.com/cyberpedia/what-is-the-principle-of-least-privilege}
+\BIBentrySTDinterwordspacing
+
+\bibitem{dockerfile}
+\BIBentryALTinterwordspacing
+``Overview of best practices for writing dockerfiles,'' [Accessed 25.12.2023]. [Online]. Available: \url{https://docs.docker.com/develop/develop-images/dockerfile_best-practices/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{seccontext}
+\BIBentryALTinterwordspacing
+``Configure a security context for a pod or container,'' [Accessed 26.12.2023]. [Online]. Available: \url{https://kubernetes.io/docs/tasks/configure-pod-container/security-context/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{snyk}
+\BIBentryALTinterwordspacing
+E.~Smalling and M.~Jarvis, ``10 kubernetes security context settings you should understand,'' March 2021, [Accessed 16.12.2023]. [Online]. Available: \url{https://snyk.io/blog/10-kubernetes-security-context-settings-you-should-understand/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{apparmor}
+\BIBentryALTinterwordspacing
+``Restrict a container's access to resources with apparmor,'' [Accessed 26.12.2023]. [Online]. Available: \url{https://kubernetes.io/docs/tutorials/security/apparmor/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{seccomp}
+\BIBentryALTinterwordspacing
+``Restrict a container's syscalls with seccomp,'' [Accessed 26.12.2023]. [Online]. Available: \url{https://kubernetes.io/docs/tutorials/security/seccomp/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{networkplugins}
@@ -194,8 +224,31 @@ J.~Walker, ``cr8escape: New vulnerability in cri-o container engine discovered b
 ``Network plugins,'' [Accessed 10.11.2023]. [Online]. Available: \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{istio}
+\BIBentryALTinterwordspacing
+``Authorization policy,'' [Accessed 29.12.2023]. [Online]. Available: \url{https://istio.io/latest/docs/reference/config/security/authorization-policy/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{k8srbac}
+\BIBentryALTinterwordspacing
+``Using rbac authorization,'' [Accessed 29.12.2023]. [Online]. Available: \url{https://kubernetes.io/docs/reference/access-authn-authz/rbac/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{rbac}
 G.~Rostami, ``Role-based access control (rbac) authorization in kubernetes,'' \emph{Journal of ICT Standardization}, vol.~11, no.~3, pp. 237--260, 2023.
+
+\bibitem{kyverno}
+\BIBentryALTinterwordspacing
+``Require runasnonroot,'' [Accessed 28.12.2023]. [Online]. Available: \url{https://kyverno.io/policies/pod-security/restricted/require-run-as-nonroot/require-run-as-nonroot/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{secretmgmt}
+\BIBentryALTinterwordspacing
+J.~Walsh, ``Kubernetes security: best practices for kubernetes secrets management,'' September 2023, [Accessed 28.12.2023]. [Online]. Available: \url{https://www.cncf.io/blog/2023/09/28/kubernetes-security-best-practices-for-kubernetes-secrets-management/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{trivy}
+F.~Campo, H.~Wang, and J.~Coffman, ``Exploring solutions for container image security,'' in \emph{2023 IEEE 14th Annual Ubiquitous Computing, Electronics and Mobile Communication Conference (UEMCON)}, 2023, pp. 82--88.
 
 \bibitem{falco}
 K.~German and O.~Ponomareva, ``An overview of container security in a kubernetes cluster,'' in \emph{2023 IEEE Ural-Siberian Conference on Biomedical Engineering, Radioelectronics and Information Technology (USBEREIT)}, 2023, pp. 283--285.

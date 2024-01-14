@@ -157,6 +157,7 @@
 }
 
 
+
 @MISC{cgroups,
   title = {cgroups(7) — Linux manual page},
   url={https://man7.org/linux/man-pages/man7/cgroups.7.html},
@@ -299,15 +300,78 @@
  }
 
  @MISC{leastpriv,
-   title =        {Network Plugins},
-   editor =       {kubernetes.io},
+   title =        {What Is the Principle of Least Privilege?},
+   editor =       {paloaltonetworks.com},
    url =          {https://www.paloaltonetworks.com/cyberpedia/what-is-the-principle-of-least-privilege},
    note =         {[Accessed 25.11.2023]},
  }
 
- 
+ @MISC{dockerfile,
+   title =        {Overview of best practices for writing Dockerfiles},
+   editor =       {docs.docker.com},
+   url =          {https://docs.docker.com/develop/develop-images/dockerfile_best-practices/},
+   note =         {[Accessed 25.12.2023]},
+ }
 
- 
+ @MISC{seccontext,
+   title =        {Configure a Security Context for a Pod or Container},
+   editor =       {kubernetes.io},
+   url =          {https://kubernetes.io/docs/tasks/configure-pod-container/security-context/},
+   note =         {[Accessed 26.12.2023]},
+ }
+
+ @MISC{seccomp,
+   title =        {Restrict a Container's Syscalls with seccomp},
+   editor =       {kubernetes.io},
+   url =          {https://kubernetes.io/docs/tutorials/security/seccomp/},
+   note =         {[Accessed 26.12.2023]},
+ }
+
+  @MISC{apparmor,
+   title =        {Restrict a Container's Access to Resources with AppArmor},
+   editor =       {kubernetes.io},
+   url =          {https://kubernetes.io/docs/tutorials/security/apparmor/},
+   note =         {[Accessed 26.12.2023]},
+ }
+
+ @MISC{snyk,
+   author =       {Smalling, Eric and Jarvis, Matt},
+   title =        {10 Kubernetes Security Context settings you should understand},
+   editor =       {snyk.io},
+   month =        {March},
+   year =         {2021},
+   url = {https://snyk.io/blog/10-kubernetes-security-context-settings-you-should-understand/},
+   note =         {[Accessed 16.12.2023]},
+ }
+
+ @MISC{secretmgmt,
+   author =       {Walsh, John},
+   title =        {Kubernetes security: best practices for Kubernetes secrets management},
+   editor =       {cncf.io},
+   month =        {September},
+   year =         {2023},
+   url = {https://www.cncf.io/blog/2023/09/28/kubernetes-security-best-practices-for-kubernetes-secrets-management/},
+   note =         {[Accessed 28.12.2023]},
+ }
+
+  @MISC{kyverno,
+   title =        {Require runAsNonRoot},
+   editor =       {kyverno.io},
+   url =          {https://kyverno.io/policies/pod-security/restricted/require-run-as-nonroot/require-run-as-nonroot/},
+   note =         {[Accessed 28.12.2023]},
+ }
+
+
+@INPROCEEDINGS{trivy,
+  author={Campo, Frank and Wang, Howe and Coffman, Joel},
+  booktitle={2023 IEEE 14th Annual Ubiquitous Computing, Electronics and Mobile Communication Conference (UEMCON)}, 
+  title={Exploring Solutions for Container Image Security}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={82-88},
+  doi={10.1109/UEMCON59035.2023.10316032}}
+
 
 @INPROCEEDINGS{falco,
   author={German, Kazenas and Ponomareva, Olga},
@@ -337,6 +401,28 @@
    year =         {2022},
    url = {https://www.redhat.com/sysadmin/cni-kubernetes},
    note =         {[Accessed 16.12.2023]},
+ }
+
+ 
+ @MISC{k8srbac,
+   title =        {Using RBAC Authorization},
+   editor =       {kubernetes.io},
+   url =          {https://kubernetes.io/docs/reference/access-authn-authz/rbac/},
+   note =         {[Accessed 29.12.2023]},
+ }
+
+ @MISC{istio,
+   title =        {Authorization Policy},
+   editor =       {istio.io},
+   url =          {https://istio.io/latest/docs/reference/config/security/authorization-policy/},
+   note =         {[Accessed 29.12.2023]},
+ }
+
+ @MISC{github,
+   title =        {CVE-2020-8554: Man in the middle using LoadBalancer or ExternalIPs},
+   editor =       {github.com},
+   url =          {https://github.com/kubernetes/kubernetes/issues/97076},
+   note =         {[Accessed 29.11.2023]},
  }
 
 

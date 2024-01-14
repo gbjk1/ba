@@ -564,7 +564,7 @@ Base score modus: 6.5
 \begin{figure}[htbp]
 	  \centering
 		    \includegraphics[height=5cm]{../images/cvepie}
-	  \caption{Makeup of base scores of CVEs about Kubernetes}
+	  \caption{Makeup of base scores of CVEs about Kubernetes [source: author]}
 	  \label{fig:cvepie}
 \end{figure}
 
@@ -584,7 +584,7 @@ Base score modus: 9.8
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=5cm]{../images/cvepie2}
-  \caption{Makeup of base scores of CVEs about Kubernetes}
+  \caption{Makeup of base scores of CVEs about Kubernetes [source: author]}
   \label{fig:cvepie}
 \end{figure}
 
@@ -667,7 +667,7 @@ pod when it is deployed to the cluster. \cite{CVE-2020-8554}
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=5cm]{../images/service}
-  \caption{YAML declaration of a malicious service}
+  \caption{YAML declaration of a malicious service [source: \cite{github}]}
   \label{fig:cvepie}
 \end{figure}
 
@@ -714,38 +714,38 @@ A rootless container is a container which runs its processes without root privil
 with the highest access rights on the instance. It can modify any system configuration, install and remove software packages, upgrade 
 the operating system and firmware, read, write and execute any files on the system, and operate as any other user on the host. 
 Any process that does not require such powerful access must be restricted in its permissions. The user which executes the application 
-process inside the container must have the limited ability to perform only absolutely necessary actions to fulfill its purpose. 
+process inside the container must have the limited ability to perform only absolutely necessary actions to fulfill its purpose. \cite{escape}
 
 \subsubsection{Dockerfile}
 
 Running rootless containers in Kubernetes starts at the definition of the image. A Dockerfile is a text document which specifies 
 commands to be executed for constructing the environment. This file is consumed by the Docker to build the image. The following 
 Dockerfile, based on Alpine-Linux, installs nodejs, creates an unprivileged user with UID 1000, and assigns that user ownership
-to the /app directory, from where it can run its application process. 
+to the /app directory, from where it can run its application process. \cite{dockerfile}
 
 \begin{figure}[htbp]
   \centering
       \includegraphics[width=10cm]{../images/dockerfile}
-  \caption{Rootless image specification using Dockerfile}
+  \caption{Rootless image specification using Dockerfile [source: author]}
   \label{fig:dockerfile}
 \end{figure}
 
 
 Kubernetes offers the 'securityContext' configuration section for declaration of pods, deployments and statefulsets.
 Under 'securityContext', properties such as 'runAsNonRoot', 'runAsUser', 'allowPrivilegeEscalation' and 'readOnlyRootFilesystem' 
-allow for restrictive access control settings inside containers. 
+allow for restrictive access control settings inside containers. \cite{seccontext}
 
 \subsubsection{runAsNonRoot}
 The container is started with a non-root user ID (UID) rather than the normal root UID of 0 when runAsNonRoot is set to true. 
-Whenever possible, it is advised to run containers as non-root to lower the risk of privilege escalation attacks. 
+Whenever possible, it is advised to run containers as non-root to lower the risk of privilege escalation attacks. \cite{seccontext}
 \subsubsection{runAsUser}
-This setting in Kubernetes is used to specify the user ID that should be used to run the container. 
+This setting in Kubernetes is used to specify the user ID that should be used to run the container. \cite{seccontext}
 \subsubsection{allowPrivilegeEscalation}
 This setting determines whether a container's privileges can be escalated. When true, it grants a container additional privileges 
 beyond those granted by default. When set to false, obtaining higher privileges, by 'sudo' or 'setuid' operations for example, 
-will be denied. 
+will be denied. \cite{seccontext}
 \subsubsection{readOnlyRootFilesystem}
-When set to true, this property ensures that the root filesystem is not writable.  
+When set to true, this property ensures that the root filesystem is not writable. \cite{seccontext}
 \newline
 \newline
 Linux offers different security architectures such as AppArmor, SELinux, and Seccomp. 
@@ -756,23 +756,23 @@ tasks. Kubernetes offers configuration to remove or add capabilities using secur
 or as a comma-separated list in a string array. The -all shorthand is used to collectively drop or add all capabilitites. 
 When the container runtime constructs the container, it uses this configuration to set capabilities. The container is 
 given the default set of capabilities that the container runtime provides if the capabilities section is absent from 
-the securityContext.
+the securityContext. \cite{snyk}
 \subsubsection{AppArmor}
 AppArmor is a Linux kernel security module that allows administrators to restrict programs' capabilities with per-program 
 profiles. Profiles can allow capabilities like network access, raw socket access, and the permission to read, write, or execute files 
-on matching paths. AppArmor is supported in Kubernetes through the securityContext field. 
+on matching paths. AppArmor is supported in Kubernetes through the securityContext field. \cite{apparmor}
 
 \subsubsection{SELinux}
 Security-Enhanced Linux (SELinux) is a security module for Linux systems that provides a mechanism for supporting fine-grained
 access control security policies. Theconfiguration component of SELinux is a so called context label which defines permissions 
 through combinations of user roles, types, levels, and security classes.  
 The securityContext allows administrators to define such labels for Kubernetes deployments.  
-The SELinux security module must be loaded on the host operating system to assing SELinux labels. 
+The SELinux security module must be loaded on the host operating system to assing SELinux labels. \cite{snyk}
 
 \subsubsection{Seccomp}
 The Linux kernel's seccomp feature can be used to restrict allowed system calls of a process, 
 thereby lowering the kernel's attack surface. The set of system calls that the container is permitted to make is specified by 
-seccomp-profiles also defined under securityContext. 
+seccomp-profiles also defined under securityContext. \cite{seccomp}
 \newline
 \newline
 Thus, compromising the container instance through a reverse shell, for example, gives perpatrators limited ability to operate 
@@ -792,7 +792,7 @@ The following figure depicts a NetworkPolicy object which blocks all ingress and
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=3.5cm]{../images/nwp}
-  \caption{A NetworkPolicy blocking all ingress and egress [source: author]}
+  \caption{A NetworkPolicy blocking all ingress and egress [source: \cite{networkpolicy}]}
   \label{fig:cvepie}
 \end{figure}
 NetworkPolicies are additive. If there is a policy allowing traffic for certain IPs, ports and namespaces, it overrules a blocking policy. 
@@ -823,10 +823,11 @@ Figure 4.4 is an example of an Istio AuthorizationPolicy object, which implement
   \item Any other requests are denied 
 \end{itemize}
 
+\cite{istio}
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=6.5cm]{../images/authpolicy}
-  \caption{Granular access control with AuthorizationPolicy [source: Istio]}
+  \caption{Granular access control with AuthorizationPolicy [source: \cite{istio}]}
   \label{fig:cvepie}
 \end{figure}
 
@@ -842,20 +843,20 @@ It provides a fine-grained way to manage access permissions and enforce security
 Role objects define a set of permissions that can be granted to users or groups. They specify which resources can be accessed, what actions 
 can be performed on those resources, and the scope of the permissions (namespace-wide or cluster-wide).
 ClusterRole objects are similar to Roles, but they have a broader scope, applying to all namespaces within the cluster. They are typically used to define 
-permissions for system components or users who need access to resources across multiple namespaces.
+permissions for system components or users who need access to resources across multiple namespaces. \cite{k8srbac}
 
 \subsubsection{RoleBindings And ClusterRoleBinding}
 RoleBindings and ClusterRoleBindings associate Roles or ClusterRoles with users or groups, granting them the specified permissions. 
-They define the mapping between identities and the permissions they hold.
+They define the mapping between identities and the permissions they hold.  \cite{k8srbac}
 
 \subsubsection{Users And Groups}
 Users represent individual identities in the Kubernetes system. They can be created manually or integrated with existing authentication providers, such as LDAP or Active Directory.
-Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.
+Groups are collections of users that can be granted permissions together. This simplifies access management for related users and promotes role-based access control.  \cite{k8srbac}
 
 \begin{figure}[htbp]
   \centering
       \includegraphics[height=3.5cm]{../images/clusterrole}
-  \caption{Read access to pods in Kubernetes [source: Garsha Rostami]}
+  \caption{Read access to pods in Kubernetes [source: \cite{rbac}]}
   \label{fig:cvepie}
 \end{figure}
 
@@ -875,13 +876,13 @@ OIDC servers, image scanning and runtime observability tools.
 Admission to the cluster can be controlled and validate using solutions like the Open Policy Agent or Kyverno. 
 Using admission controllers, objects that do not adhere to custom policies are denied application to the cluster. 
 This extends possibilities to enforce rootless containers, as the admission controller could block the installation
-of root deployments in the first place.  
+of root deployments in the first place. \cite{kyverno}  
 \newline
 \newline
 Another aspect to consider in order to improve the security posture of the environment is secret management. General secrets, 
 like database credentials and API keys, as well as SSL certificates and SSL keys used by applications deployed in Kubernetes, 
-should be externalized from the source code and repository platforms like GitHub. Major cloud providers like AWS and Azure provide 
-services for secret management, or self-hosted open source tools like Hashicorp Vault can be leveraged. 
+should be externalized from the source code and repository platforms like GitHub \cite{secretmgmt} Major cloud providers like AWS and Azure provide 
+services for secret management, or self-hosted open source tools like Hashicorp Vault can be leveraged.
 \newline
 \newline
 Service mesh implementations and self-hosted OIDC servers like Keycloak or cloud-provided identity management can 
@@ -891,7 +892,7 @@ be tightly integrated to ensure the most granular access control to applications
 Additionally, image scanning in Kubernetes involves checking images used in your Kubernetes cluster for known 
 weaknesses and suspicious installations or configurations. Trivy is an open-source scanner which works by examining the filesystem of the image and looking for 
 known vulnerabilities in the installed software packages, libraries, and binaries. It uses multiple vulnerability databases to provide 
-accurate and timely vulnerability reports. 
+accurate and timely vulnerability reports. \cite{trivy}
 \newline
 \newline
 Runtime security solutions allow for monitoring and blocking certain kernel events or suspicious system calls. 
